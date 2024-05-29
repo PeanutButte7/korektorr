@@ -16,7 +16,8 @@ const FloatingToolbarSuggestions = ({ dictionary }: { dictionary: Typo }) => {
 
   const node = Node.get(editor, selection.anchor.path);
   if (!isText(node)) throw new Error("Node is not a text node");
-  if (!node.spellError) return null;
+  if (!node.spellError) return null; // Return if there is no spell error
+  if (node.text.length > 20) return null; // Return if the text is too long and would cause the site to hang
 
   const suggestions = dictionary.suggest(node.text) ?? ["no suggestions"];
 
