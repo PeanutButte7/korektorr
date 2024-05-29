@@ -2,9 +2,11 @@ import { ENode, ENodeEntry, isElement, TNode, Value } from "@udecode/plate-commo
 import { TypoDictionary } from "@/components/text-editor/text-editor";
 import { BaseRange, Editor, Node, Path, Transforms, Text, BaseText, BaseElement } from "slate";
 import { createPluginFactory } from "@udecode/plate";
+import Typo from "typo-js";
 
-const checkSpelling = (editor: Editor, entry: ENodeEntry<Value>, dictionary: TypoDictionary): void => {
+const checkSpelling = (editor: Editor, entry: ENodeEntry<Value>, dictionary: Typo): void => {
   const [node, path] = entry;
+  console.log("checkSpelling", node, path);
 
   if (!Node.string(node)) {
     return;
@@ -13,18 +15,14 @@ const checkSpelling = (editor: Editor, entry: ENodeEntry<Value>, dictionary: Typ
   const text = Node.string(node);
   const wordRegex = /(\p{L}+)/gu;
   const words = text.match(wordRegex);
-  console.log("words", words);
 
   if (!words) {
     return;
   }
 
-  let match;
-  while ((match = wordRegex.exec(text)) !== null) {
-    if (!dictionary) return;
-
-    const word = match[0];
-    const wordStart = match.index;
+  words.forEach((word) => {
+    console.log("Checking word: ", word);
+    const wordStart = text.indexOf(word);
     const wordEnd = wordStart + word.length;
     const range = {
       anchor: { path, offset: wordStart },
@@ -32,25 +30,24 @@ const checkSpelling = (editor: Editor, entry: ENodeEntry<Value>, dictionary: Typ
     };
 
     if (!dictionary.check(word)) {
-      // Does the node already have a spell error mark?
-      const marks = Editor.marks(editor);
-      const spellErrorMark = marks && Object.values(marks).includes("spellError");
-      // console.log(range);
-      // console.log("spellErrorMark", spellErrorMark);
+      console.log("Word is incorrect: ", word);
 
-      // if (!spellErrorMark) {
-      //   Transforms.wrapNodes(editor, { spellError: true }, { at: range, match: Text.isText });
-      // }
       Transforms.setNodes(editor, { spellError: true } as Partial<BaseText>, {
         at: range,
         match: Text.isText,
         split: true,
       });
     } else {
+      // If node is already in that state do nothing
+      if (node.spellError === false) return;
+
       // Remove the spell error mark
-      Transforms.setNodes(editor, { spellError: false } as Partial<BaseText>, { at: range, match: Text.isText });
+      Transforms.setNodes(editor, { spellError: false } as Partial<BaseText>, {
+        at: range,
+        match: Text.isText,
+      });
     }
-  }
+  });
 };
 
 const debouncedCheckSpelling = debounce((editor: Editor, [node, path]: [ENode<Value>, Path], dictionary: any) => {

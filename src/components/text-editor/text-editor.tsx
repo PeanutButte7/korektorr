@@ -47,7 +47,6 @@ const TextEditor = () => {
     <Plate
       onChange={(newValue) => {
         setDebugValue(newValue);
-        console.log("New value:", newValue);
       }}
       plugins={plugins}
     >
