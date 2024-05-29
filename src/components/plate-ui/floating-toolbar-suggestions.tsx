@@ -1,6 +1,5 @@
 import React from "react";
-import { isMarkActive, isText, useEditorSelector } from "@udecode/plate-common";
-import { MARK_BOLD } from "@udecode/plate-basic-marks";
+import { isText, useEditorSelector } from "@udecode/plate-common";
 import { Editor, Node, Transforms } from "slate";
 import Typo from "typo-js";
 import { ToolbarButton } from "@/components/plate-ui/toolbar";

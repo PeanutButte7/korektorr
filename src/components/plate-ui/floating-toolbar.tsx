@@ -5,8 +5,8 @@ import React from "react";
 import { cn, withRef } from "@udecode/cn";
 import { PortalBody, useComposedRef } from "@udecode/plate-common";
 import {
-  type FloatingToolbarState,
   flip,
+  type FloatingToolbarState,
   offset,
   useFloatingToolbar,
   useFloatingToolbarState,

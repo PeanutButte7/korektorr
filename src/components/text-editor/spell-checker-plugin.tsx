@@ -1,6 +1,5 @@
-import { ENode, ENodeEntry, isElement, TNode, Value } from "@udecode/plate-common";
-import { TypoDictionary } from "@/components/text-editor/text-editor";
-import { BaseRange, Editor, Node, Path, Transforms, Text, BaseText, BaseElement } from "slate";
+import { ENode, ENodeEntry, TNode, Value } from "@udecode/plate-common";
+import { BaseText, Editor, Node, Path, Text, Transforms } from "slate";
 import { createPluginFactory } from "@udecode/plate";
 import Typo from "typo-js";
 
@@ -62,7 +61,7 @@ function debounce(func: (...args: any[]) => void, wait: number) {
   };
 }
 
-const useSpellCheckPlugin = (dictionary: TypoDictionary) => {
+const useSpellCheckPlugin = (dictionary: Typo) => {
   return createPluginFactory({
     key: "spellCheck",
     withOverrides: (editor) => {

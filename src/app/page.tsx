@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import TextEditor from "@/components/text-editor/text-editor";
 import Typo from "typo-js";
 
-export type TypoDictionary = Typo | null;
+type TypoDictionary = Typo | null;
 
 // Load Typo.js dictionary
 const loadDictionary = async () => {

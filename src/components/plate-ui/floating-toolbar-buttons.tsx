@@ -1,14 +1,11 @@
 import React from "react";
 
-import { MARK_BOLD, MARK_CODE, MARK_ITALIC, MARK_STRIKETHROUGH, MARK_UNDERLINE } from "@udecode/plate-basic-marks";
-import { useEditorReadOnly } from "@udecode/plate-common";
+import { MARK_BOLD, MARK_ITALIC, MARK_STRIKETHROUGH, MARK_UNDERLINE } from "@udecode/plate-basic-marks";
 
 import { MarkToolbarButton } from "./mark-toolbar-button";
 import { IconBold, IconItalic, IconStrikethrough, IconUnderline } from "@tabler/icons-react";
 
 export function FloatingToolbarButtons() {
-  const readOnly = useEditorReadOnly();
-
   return (
     <div className="flex">
       <MarkToolbarButton nodeType={MARK_BOLD} tooltip="Bold (⌘+B)">
