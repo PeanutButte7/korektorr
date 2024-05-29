@@ -10,16 +10,30 @@ import { FloatingToolbarButtons } from "@/components/plate-ui/floating-toolbar-b
 import FloatingToolbarSuggestions from "@/components/plate-ui/floating-toolbar-suggestions";
 import useSpellCheckPlugin from "@/components/text-editor/spell-checker-plugin";
 
+const defaultInitialValue = [
+  {
+    children: [
+      {
+        text: "Toto je editor s automatickou kontrolou chyb!",
+      },
+    ],
+    type: "p",
+  },
+];
+
 const TextEditor = ({ dictionary }: { dictionary: Typo }) => {
   const [debugValue, setDebugValue] = useState<Value>([]);
+  const initialLocalStorageValue = localStorage.getItem("editorValue");
 
   const spellCheckPlugin = useSpellCheckPlugin(dictionary);
   const plugins = createPlugins([spellCheckPlugin, createBasicMarksPlugin()]);
 
   return (
     <Plate
+      initialValue={initialLocalStorageValue ? JSON.parse(initialLocalStorageValue) : defaultInitialValue}
       onChange={(newValue) => {
         setDebugValue(newValue);
+        localStorage.setItem("editorValue", JSON.stringify(newValue));
       }}
       plugins={plugins}
     >
