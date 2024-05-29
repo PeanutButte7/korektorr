@@ -16,6 +16,7 @@ const FloatingToolbarSuggestions = ({ dictionary }: { dictionary: Typo }) => {
 
   const node = Node.get(editor, selection.anchor.path);
   if (!isText(node)) throw new Error("Node is not a text node");
+  if (!node.spellError) return null;
 
   const suggestions = dictionary.suggest(node.text) ?? ["no suggestions"];
 
