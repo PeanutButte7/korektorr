@@ -30,6 +30,7 @@ const RAW_RUNTIME_STATE =
           ["@radix-ui/react-separator", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.0.3"],\
           ["@radix-ui/react-toolbar", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.0.4"],\
           ["@radix-ui/react-tooltip", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.0.7"],\
+          ["@tabler/icons-react", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:3.5.0"],\
           ["@trivago/prettier-plugin-sort-imports", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:4.3.0"],\
           ["@types/node", "npm:20.12.12"],\
           ["@types/react", "npm:18.3.3"],\
@@ -47,7 +48,6 @@ const RAW_RUNTIME_STATE =
           ["class-variance-authority", "npm:0.7.0"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-config-next", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:14.2.3"],\
-          ["lucide-react", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:0.379.0"],\
           ["next", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:14.2.3"],\
           ["postcss", "npm:8.4.38"],\
           ["prettier", "npm:3.2.5"],\
@@ -1578,6 +1578,38 @@ const RAW_RUNTIME_STATE =
           ["@swc/helpers", "npm:0.5.5"],\
           ["@swc/counter", "npm:0.1.3"],\
           ["tslib", "npm:2.6.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@tabler/icons", [\
+      ["npm:3.5.0", {\
+        "packageLocation": "../../.yarn/berry/cache/@tabler-icons-npm-3.5.0-c2b6865ae9-10c0.zip/node_modules/@tabler/icons/",\
+        "packageDependencies": [\
+          ["@tabler/icons", "npm:3.5.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@tabler/icons-react", [\
+      ["npm:3.5.0", {\
+        "packageLocation": "../../.yarn/berry/cache/@tabler-icons-react-npm-3.5.0-6f1ee2012a-10c0.zip/node_modules/@tabler/icons-react/",\
+        "packageDependencies": [\
+          ["@tabler/icons-react", "npm:3.5.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:3.5.0", {\
+        "packageLocation": "./.yarn/__virtual__/@tabler-icons-react-virtual-09edf2ed04/3/.yarn/berry/cache/@tabler-icons-react-npm-3.5.0-6f1ee2012a-10c0.zip/node_modules/@tabler/icons-react/",\
+        "packageDependencies": [\
+          ["@tabler/icons-react", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:3.5.0"],\
+          ["@tabler/icons", "npm:3.5.0"],\
+          ["@types/react", "npm:18.3.3"],\
+          ["react", "npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -6973,28 +7005,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["lucide-react", [\
-      ["npm:0.379.0", {\
-        "packageLocation": "../../.yarn/berry/cache/lucide-react-npm-0.379.0-8418856f50-10c0.zip/node_modules/lucide-react/",\
-        "packageDependencies": [\
-          ["lucide-react", "npm:0.379.0"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
-      ["virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:0.379.0", {\
-        "packageLocation": "./.yarn/__virtual__/lucide-react-virtual-d93b602547/3/.yarn/berry/cache/lucide-react-npm-0.379.0-8418856f50-10c0.zip/node_modules/lucide-react/",\
-        "packageDependencies": [\
-          ["lucide-react", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:0.379.0"],\
-          ["@types/react", "npm:18.3.3"],\
-          ["react", "npm:18.3.1"]\
-        ],\
-        "packagePeers": [\
-          "@types/react",\
-          "react"\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["make-fetch-happen", [\
       ["npm:13.0.1", {\
         "packageLocation": "../../.yarn/berry/cache/make-fetch-happen-npm-13.0.1-4180f2aaa8-10c0.zip/node_modules/make-fetch-happen/",\
@@ -7851,6 +7861,7 @@ const RAW_RUNTIME_STATE =
           ["@radix-ui/react-separator", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.0.3"],\
           ["@radix-ui/react-toolbar", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.0.4"],\
           ["@radix-ui/react-tooltip", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.0.7"],\
+          ["@tabler/icons-react", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:3.5.0"],\
           ["@trivago/prettier-plugin-sort-imports", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:4.3.0"],\
           ["@types/node", "npm:20.12.12"],\
           ["@types/react", "npm:18.3.3"],\
@@ -7868,7 +7879,6 @@ const RAW_RUNTIME_STATE =
           ["class-variance-authority", "npm:0.7.0"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-config-next", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:14.2.3"],\
-          ["lucide-react", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:0.379.0"],\
           ["next", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:14.2.3"],\
           ["postcss", "npm:8.4.38"],\
           ["prettier", "npm:3.2.5"],\

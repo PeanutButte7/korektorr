@@ -4,31 +4,25 @@ import { MARK_BOLD, MARK_CODE, MARK_ITALIC, MARK_STRIKETHROUGH, MARK_UNDERLINE }
 import { useEditorReadOnly } from "@udecode/plate-common";
 
 import { MarkToolbarButton } from "./mark-toolbar-button";
+import { IconBold, IconItalic, IconStrikethrough, IconUnderline } from "@tabler/icons-react";
 
 export function FloatingToolbarButtons() {
   const readOnly = useEditorReadOnly();
 
   return (
-    <>
-      {!readOnly && (
-        <>
-          <MarkToolbarButton nodeType={MARK_BOLD} tooltip="Bold (⌘+B)">
-            B
-          </MarkToolbarButton>
-          <MarkToolbarButton nodeType={MARK_ITALIC} tooltip="Italic (⌘+I)">
-            I
-          </MarkToolbarButton>
-          <MarkToolbarButton nodeType={MARK_UNDERLINE} tooltip="Underline (⌘+U)">
-            U
-          </MarkToolbarButton>
-          <MarkToolbarButton nodeType={MARK_STRIKETHROUGH} tooltip="Strikethrough (⌘+⇧+M)">
-            S
-          </MarkToolbarButton>
-          <MarkToolbarButton nodeType={MARK_CODE} tooltip="Code (⌘+E)">
-            C
-          </MarkToolbarButton>
-        </>
-      )}
-    </>
+    <div className="flex">
+      <MarkToolbarButton nodeType={MARK_BOLD} tooltip="Bold (⌘+B)">
+        <IconBold />
+      </MarkToolbarButton>
+      <MarkToolbarButton nodeType={MARK_ITALIC} tooltip="Italic (⌘+I)">
+        <IconItalic />
+      </MarkToolbarButton>
+      <MarkToolbarButton nodeType={MARK_UNDERLINE} tooltip="Underline (⌘+U)">
+        <IconUnderline />
+      </MarkToolbarButton>
+      <MarkToolbarButton nodeType={MARK_STRIKETHROUGH} tooltip="Strikethrough (⌘+⇧+M)">
+        <IconStrikethrough />
+      </MarkToolbarButton>
+    </div>
   );
 }

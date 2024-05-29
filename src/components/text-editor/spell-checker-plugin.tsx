@@ -52,7 +52,7 @@ const checkSpelling = (editor: Editor, entry: ENodeEntry<Value>, dictionary: Typ
 
 const debouncedCheckSpelling = debounce((editor: Editor, [node, path]: [ENode<Value>, Path], dictionary: any) => {
   checkSpelling(editor, [node, path], dictionary);
-}, 100);
+}, 500);
 
 function debounce(func: (...args: any[]) => void, wait: number) {
   let timeout: ReturnType<typeof setTimeout>;

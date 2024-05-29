@@ -54,7 +54,7 @@ const TextEditor = () => {
       <p>{JSON.stringify(debugValue)}</p>
       <FloatingToolbar>
         <FloatingToolbarButtons />
-        {/*<FloatingToolbarSuggestions*/}
+        <FloatingToolbarSuggestions dictionary={dictionary} />
       </FloatingToolbar>
     </Plate>
   );

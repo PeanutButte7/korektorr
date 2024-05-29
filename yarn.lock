@@ -1146,6 +1146,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tabler/icons-react@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "@tabler/icons-react@npm:3.5.0"
+  dependencies:
+    "@tabler/icons": "npm:3.5.0"
+  peerDependencies:
+    react: ">= 16"
+  checksum: 10c0/9669d26e2ab4654d3d1c124a5ffd42c276d5a7ebc83b81ecb200e1f89dc3e9271557cf6eccc78bdd0ebdd0536fa4cd566e2b638ab4407e9415457c28ef05786e
+  languageName: node
+  linkType: hard
+
+"@tabler/icons@npm:3.5.0":
+  version: 3.5.0
+  resolution: "@tabler/icons@npm:3.5.0"
+  checksum: 10c0/0d6b15266e116dcf56bca417d013f1027b57404e5ed7f9a2a14e216eabdd04980ff971129491b666ffdc11953107c0b4540033c92d611fa74e127fc9d443fc4f
+  languageName: node
+  linkType: hard
+
 "@trivago/prettier-plugin-sort-imports@npm:^4.3.0":
   version: 4.3.0
   resolution: "@trivago/prettier-plugin-sort-imports@npm:4.3.0"
@@ -4575,15 +4593,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^0.379.0":
-  version: 0.379.0
-  resolution: "lucide-react@npm:0.379.0"
-  peerDependencies:
-    react: ^16.5.1 || ^17.0.0 || ^18.0.0
-  checksum: 10c0/b2521db4b2329e51f3b31abf5f6e03caa6cc1c736e8dc27e79fd92c09ed2e95bd7d85ea46a765d264ddbafb525c783bd4689ef512434972fdfcd33fa2bdfb1c6
-  languageName: node
-  linkType: hard
-
 "make-fetch-happen@npm:^13.0.0":
   version: 13.0.1
   resolution: "make-fetch-happen@npm:13.0.1"
@@ -5322,6 +5331,7 @@ __metadata:
     "@radix-ui/react-separator": "npm:^1.0.3"
     "@radix-ui/react-toolbar": "npm:^1.0.4"
     "@radix-ui/react-tooltip": "npm:^1.0.7"
+    "@tabler/icons-react": "npm:^3.5.0"
     "@trivago/prettier-plugin-sort-imports": "npm:^4.3.0"
     "@types/node": "npm:^20"
     "@types/react": "npm:^18"
@@ -5339,7 +5349,6 @@ __metadata:
     class-variance-authority: "npm:^0.7.0"
     eslint: "npm:^8"
     eslint-config-next: "npm:14.2.3"
-    lucide-react: "npm:^0.379.0"
     next: "npm:14.2.3"
     postcss: "npm:^8"
     prettier: "npm:^3.2.5"

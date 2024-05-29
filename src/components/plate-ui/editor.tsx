@@ -3,9 +3,9 @@ import React from "react";
 import type { PlateContentProps } from "@udecode/plate-common";
 import type { VariantProps } from "class-variance-authority";
 
-import { cn } from "@udecode/cn";
 import { PlateContent } from "@udecode/plate-common";
 import { cva } from "class-variance-authority";
+import { cn } from "@udecode/cn";
 
 const editorVariants = cva(
   cn(
@@ -46,11 +46,29 @@ const Editor = React.forwardRef<HTMLDivElement, EditorProps>(
     return (
       <div className="relative w-full" ref={ref}>
         <PlateContent
-          renderLeaf={({ attributes, children, leaf }) => (
-            <span {...attributes} style={{ backgroundColor: leaf.spellError ? "rgba(255,0,0,0.3)" : "transparent" }}>
-              {children}
-            </span>
-          )}
+          spellCheck={false}
+          renderLeaf={({ attributes, children, leaf }) => {
+            const spellError = !!leaf.spellError;
+            const bold = !!leaf.bold;
+            const italic = !!leaf.italic;
+            const underline = !!leaf.underline;
+            const strikethrough = !!leaf.strikethrough;
+
+            return (
+              <span
+                {...attributes}
+                className={cn(
+                  spellError && "bg-red-200",
+                  bold && "font-bold",
+                  italic && "italic",
+                  underline && "underline",
+                  strikethrough && "line-through"
+                )}
+              >
+                {children}
+              </span>
+            );
+          }}
           aria-disabled={disabled}
           className={cn(
             editorVariants({
