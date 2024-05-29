@@ -17,17 +17,12 @@ const editorVariants = cva(
   ),
   {
     defaultVariants: {
-      focusRing: true,
       size: "sm",
       variant: "outline",
     },
     variants: {
       disabled: {
         true: "cursor-not-allowed opacity-50",
-      },
-      focusRing: {
-        false: "",
-        true: "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
       },
       focused: {
         true: "ring-2 ring-ring ring-offset-2",
@@ -47,7 +42,7 @@ const editorVariants = cva(
 export type EditorProps = PlateContentProps & VariantProps<typeof editorVariants>;
 
 const Editor = React.forwardRef<HTMLDivElement, EditorProps>(
-  ({ className, disabled, focusRing, focused, readOnly, size, variant, ...props }, ref) => {
+  ({ className, disabled, focused, readOnly, size, variant, ...props }, ref) => {
     return (
       <div className="relative w-full" ref={ref}>
         <PlateContent
@@ -60,7 +55,6 @@ const Editor = React.forwardRef<HTMLDivElement, EditorProps>(
           className={cn(
             editorVariants({
               disabled,
-              focusRing,
               focused,
               size,
               variant,
