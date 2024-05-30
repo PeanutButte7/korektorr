@@ -5,7 +5,7 @@ import { MARK_BOLD, MARK_ITALIC, MARK_STRIKETHROUGH, MARK_UNDERLINE } from "@ude
 import { MarkToolbarButton } from "./mark-toolbar-button";
 import { IconBold, IconItalic, IconStrikethrough, IconUnderline } from "@tabler/icons-react";
 
-export function FloatingToolbarButtons() {
+export function FixedToolbarButtons() {
   return (
     <div className="flex">
       <MarkToolbarButton nodeType={MARK_BOLD} tooltip="Bold (⌘+B)">

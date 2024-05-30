@@ -1,22 +1,8 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import TextEditor from "@/components/text-editor/text-editor";
-import Typo from "typo-js";
 import { useWorker } from "@/app/worker-context";
-
-type TypoDictionary = Typo | null;
-
-// Load Typo.js dictionary
-const loadDictionary = async () => {
-  const affResponse = await fetch("/dictionaries/cs_CZ.aff");
-  const affData = await affResponse.text();
-
-  const dicResponse = await fetch("/dictionaries/cs_CZ.dic");
-  const dicData = await dicResponse.text();
-
-  return new Typo("cs_CZ", affData, dicData);
-};
 
 const HomePage = () => {
   const { dictionaryReady } = useWorker();
