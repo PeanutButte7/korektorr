@@ -7,42 +7,8 @@ import { cva } from "class-variance-authority";
 import { cn } from "@udecode/cn";
 import { useWorker } from "@/app/worker-context";
 
-const editorVariants = cva(
-  cn(
-    "relative overflow-x-auto whitespace-pre-wrap break-words",
-    "min-h-[80px] w-full rounded-md bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none",
-    "[&_[data-slate-placeholder]]:text-muted-foreground [&_[data-slate-placeholder]]:!opacity-100",
-    "[&_[data-slate-placeholder]]:top-[auto_!important]",
-    "[&_strong]:font-bold"
-  ),
-  {
-    defaultVariants: {
-      size: "sm",
-      variant: "outline",
-    },
-    variants: {
-      disabled: {
-        true: "cursor-not-allowed opacity-50",
-      },
-      focused: {
-        true: "ring-2 ring-ring ring-offset-2",
-      },
-      size: {
-        md: "text-base",
-        sm: "text-sm",
-      },
-      variant: {
-        ghost: "",
-        outline: "border border-input",
-      },
-    },
-  }
-);
-
-export type EditorProps = PlateContentProps & VariantProps<typeof editorVariants>;
-
-const Editor = React.forwardRef<HTMLDivElement, EditorProps>(
-  ({ className, disabled, focused, readOnly, size, variant, ...props }, ref) => {
+const Editor = React.forwardRef<HTMLDivElement, PlateContentProps>(
+  ({ className, disabled, readOnly, ...props }, ref) => {
     const { dictionaryReady } = useWorker();
 
     return (
@@ -72,14 +38,11 @@ const Editor = React.forwardRef<HTMLDivElement, EditorProps>(
             );
           }}
           aria-disabled={disabled}
-          className={cn(
-            editorVariants({
-              disabled,
-              focused,
-              size,
-              variant,
-            }),
-            className
+          className={cn("relative overflow-x-auto whitespace-pre-wrap break-words",
+            "min-h-[80px] h-[50vh] w-full rounded-md bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none",
+            "[&_[data-slate-placeholder]]:text-muted-foreground [&_[data-slate-placeholder]]:!opacity-100",
+            "[&_[data-slate-placeholder]]:top-[auto_!important]",
+            "[&_strong]:font-bold"
           )}
           disableDefaultStyles
           readOnly={disabled ?? readOnly}

@@ -30,6 +30,7 @@ const checkSpelling = async (editor: Editor, entry: ENodeEntry<Value>, worker: W
   if (!words) {
     return;
   }
+  console.log("words", words);
 
   for (const word of words) {
     console.log("Checking word: ", word);

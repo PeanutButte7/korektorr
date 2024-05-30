@@ -18,9 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, "flex min-h-screen flex-col  relative")}>
-    <Providers>{children}</Providers>
-  </body>
-</html>
+      <body className={cn(inter.className, "relative flex min-h-screen flex-col bg-slate-100")}>
+        <Providers>{children}</Providers>
+      </body>
+    </html>
   );
 }

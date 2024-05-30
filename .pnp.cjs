@@ -26,19 +26,21 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["@radix-ui/react-accordion", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.1.2"],\
           ["@radix-ui/react-dropdown-menu", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:2.0.6"],\
+          ["@radix-ui/react-icons", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.3.0"],\
           ["@radix-ui/react-separator", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.0.3"],\
           ["@radix-ui/react-toolbar", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.0.4"],\
           ["@radix-ui/react-tooltip", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.0.7"],\
           ["@tabler/icons-react", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:3.5.0"],\
           ["@trivago/prettier-plugin-sort-imports", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:4.3.0"],\
-          ["@types/node", "npm:20.12.12"],\
+          ["@types/node", "npm:20.12.13"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/scheduler", "npm:0.23.0"],\
           ["@types/typo-js", "npm:1.2.2"],\
           ["@udecode/cn", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.0"],\
-          ["@udecode/plate", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.6"],\
+          ["@udecode/plate", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.7"],\
           ["@udecode/plate-basic-marks", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.3"],\
           ["@udecode/plate-block-quote", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.0"],\
           ["@udecode/plate-common", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.4"],\
@@ -46,6 +48,7 @@ const RAW_RUNTIME_STATE =
           ["@udecode/plate-heading", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.3"],\
           ["@udecode/plate-paragraph", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.0"],\
           ["class-variance-authority", "npm:0.7.0"],\
+          ["clsx", "npm:2.1.1"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-config-next", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:14.2.3"],\
           ["next", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:14.2.3"],\
@@ -710,6 +713,42 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@radix-ui/react-accordion", [\
+      ["npm:1.1.2", {\
+        "packageLocation": "../../.yarn/berry/cache/@radix-ui-react-accordion-npm-1.1.2-ebb388b4c7-10c0.zip/node_modules/@radix-ui/react-accordion/",\
+        "packageDependencies": [\
+          ["@radix-ui/react-accordion", "npm:1.1.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.1.2", {\
+        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-accordion-virtual-271438657e/3/.yarn/berry/cache/@radix-ui-react-accordion-npm-1.1.2-ebb388b4c7-10c0.zip/node_modules/@radix-ui/react-accordion/",\
+        "packageDependencies": [\
+          ["@radix-ui/react-accordion", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.1.2"],\
+          ["@babel/runtime", "npm:7.24.6"],\
+          ["@radix-ui/primitive", "npm:1.0.1"],\
+          ["@radix-ui/react-collapsible", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
+          ["@radix-ui/react-collection", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
+          ["@radix-ui/react-compose-refs", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-context", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-direction", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-id", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-primitive", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
+          ["@radix-ui/react-use-controllable-state", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@types/react", "npm:18.3.3"],\
+          ["@types/react-dom", "npm:18.3.0"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@radix-ui/react-arrow", [\
       ["npm:1.0.3", {\
         "packageLocation": "../../.yarn/berry/cache/@radix-ui-react-arrow-npm-1.0.3-d57b8cf08f-10c0.zip/node_modules/@radix-ui/react-arrow/",\
@@ -723,7 +762,42 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@radix-ui/react-arrow", "virtual:11e35d491cce9816a22df2ebb607ce24ce7e4917b4a6a86426a9b8f4d1631dbee8b60729ca3126eba2530326a93d7e184830e64bdbe8be8e3a736395592bdf31#npm:1.0.3"],\
           ["@babel/runtime", "npm:7.24.6"],\
-          ["@radix-ui/react-primitive", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.3"],\
+          ["@radix-ui/react-primitive", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
+          ["@types/react", "npm:18.3.3"],\
+          ["@types/react-dom", "npm:18.3.0"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@radix-ui/react-collapsible", [\
+      ["npm:1.0.3", {\
+        "packageLocation": "../../.yarn/berry/cache/@radix-ui-react-collapsible-npm-1.0.3-9f51b76dfb-10c0.zip/node_modules/@radix-ui/react-collapsible/",\
+        "packageDependencies": [\
+          ["@radix-ui/react-collapsible", "npm:1.0.3"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3", {\
+        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-collapsible-virtual-c55d525b71/3/.yarn/berry/cache/@radix-ui-react-collapsible-npm-1.0.3-9f51b76dfb-10c0.zip/node_modules/@radix-ui/react-collapsible/",\
+        "packageDependencies": [\
+          ["@radix-ui/react-collapsible", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
+          ["@babel/runtime", "npm:7.24.6"],\
+          ["@radix-ui/primitive", "npm:1.0.1"],\
+          ["@radix-ui/react-compose-refs", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-context", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-id", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-presence", "virtual:c55d525b710302b5198abfa19e0a527976955e279605c7da3984d1ce7169e0f9755410f30a2bc6e786859346a0eb900e66cee7168f336219f0735ed4549928e6#npm:1.0.1"],\
+          ["@radix-ui/react-primitive", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
+          ["@radix-ui/react-use-controllable-state", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-use-layout-effect", "virtual:c55d525b710302b5198abfa19e0a527976955e279605c7da3984d1ce7169e0f9755410f30a2bc6e786859346a0eb900e66cee7168f336219f0735ed4549928e6#npm:1.0.1"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["react", "npm:18.3.1"],\
@@ -746,15 +820,15 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.3", {\
-        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-collection-virtual-b9e2c42c03/3/.yarn/berry/cache/@radix-ui-react-collection-npm-1.0.3-e63f97f38b-10c0.zip/node_modules/@radix-ui/react-collection/",\
+      ["virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3", {\
+        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-collection-virtual-2ab2fa223f/3/.yarn/berry/cache/@radix-ui-react-collection-npm-1.0.3-e63f97f38b-10c0.zip/node_modules/@radix-ui/react-collection/",\
         "packageDependencies": [\
-          ["@radix-ui/react-collection", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.3"],\
+          ["@radix-ui/react-collection", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
           ["@babel/runtime", "npm:7.24.6"],\
-          ["@radix-ui/react-compose-refs", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
-          ["@radix-ui/react-context", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
-          ["@radix-ui/react-primitive", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.3"],\
-          ["@radix-ui/react-slot", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.2"],\
+          ["@radix-ui/react-compose-refs", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-context", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-primitive", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
+          ["@radix-ui/react-slot", "virtual:2ab2fa223f31908973e4b3a48b1181356e7a8b85bf1b8706d892f9fa3899fe808cff510644861b8226f1f8a96695520dde2d1c1262a0071567c70ab0b71fa399#npm:1.0.2"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["react", "npm:18.3.1"],\
@@ -777,10 +851,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1", {\
-        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-compose-refs-virtual-0ff30796d3/3/.yarn/berry/cache/@radix-ui-react-compose-refs-npm-1.0.1-02d1046f7d-10c0.zip/node_modules/@radix-ui/react-compose-refs/",\
+      ["virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1", {\
+        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-compose-refs-virtual-39e6c399fa/3/.yarn/berry/cache/@radix-ui-react-compose-refs-npm-1.0.1-02d1046f7d-10c0.zip/node_modules/@radix-ui/react-compose-refs/",\
         "packageDependencies": [\
-          ["@radix-ui/react-compose-refs", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
+          ["@radix-ui/react-compose-refs", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
           ["@babel/runtime", "npm:7.24.6"],\
           ["@types/react", "npm:18.3.3"],\
           ["react", "npm:18.3.1"]\
@@ -800,10 +874,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1", {\
-        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-context-virtual-7f4bc184ae/3/.yarn/berry/cache/@radix-ui-react-context-npm-1.0.1-c6d8414c9a-10c0.zip/node_modules/@radix-ui/react-context/",\
+      ["virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1", {\
+        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-context-virtual-a01b8a72d6/3/.yarn/berry/cache/@radix-ui-react-context-npm-1.0.1-c6d8414c9a-10c0.zip/node_modules/@radix-ui/react-context/",\
         "packageDependencies": [\
-          ["@radix-ui/react-context", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
+          ["@radix-ui/react-context", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
           ["@babel/runtime", "npm:7.24.6"],\
           ["@types/react", "npm:18.3.3"],\
           ["react", "npm:18.3.1"]\
@@ -823,10 +897,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1", {\
-        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-direction-virtual-171590a94e/3/.yarn/berry/cache/@radix-ui-react-direction-npm-1.0.1-ab286e4395-10c0.zip/node_modules/@radix-ui/react-direction/",\
+      ["virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1", {\
+        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-direction-virtual-8c1d609bf1/3/.yarn/berry/cache/@radix-ui-react-direction-npm-1.0.1-ab286e4395-10c0.zip/node_modules/@radix-ui/react-direction/",\
         "packageDependencies": [\
-          ["@radix-ui/react-direction", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1"],\
+          ["@radix-ui/react-direction", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
           ["@babel/runtime", "npm:7.24.6"],\
           ["@types/react", "npm:18.3.3"],\
           ["react", "npm:18.3.1"]\
@@ -852,9 +926,9 @@ const RAW_RUNTIME_STATE =
           ["@radix-ui/react-dismissable-layer", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.5"],\
           ["@babel/runtime", "npm:7.24.6"],\
           ["@radix-ui/primitive", "npm:1.0.1"],\
-          ["@radix-ui/react-compose-refs", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
-          ["@radix-ui/react-primitive", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.3"],\
-          ["@radix-ui/react-use-callback-ref", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1"],\
+          ["@radix-ui/react-compose-refs", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-primitive", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
+          ["@radix-ui/react-use-callback-ref", "virtual:ba528d9e9db70d694b64efb95692926fb440a8eb62c62547fa742d3de5f9d415e5b351ad13106ec2d0df00004a4f40e77dcf340530bd2d9805814a6fc0e940ab#npm:1.0.1"],\
           ["@radix-ui/react-use-escape-keydown", "virtual:3c63a02b1fc2e5064ffd2f264f37076d77a492c3b6c08208fa31b04dc3df948cd314dad101720cd0b0620fb206c000828aeb56c2bc26e2d2481ea05aeff51ff9#npm:1.0.3"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
@@ -884,12 +958,12 @@ const RAW_RUNTIME_STATE =
           ["@radix-ui/react-dropdown-menu", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:2.0.6"],\
           ["@babel/runtime", "npm:7.24.6"],\
           ["@radix-ui/primitive", "npm:1.0.1"],\
-          ["@radix-ui/react-compose-refs", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
-          ["@radix-ui/react-context", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
-          ["@radix-ui/react-id", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
+          ["@radix-ui/react-compose-refs", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-context", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-id", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
           ["@radix-ui/react-menu", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:2.0.6"],\
-          ["@radix-ui/react-primitive", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.3"],\
-          ["@radix-ui/react-use-controllable-state", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
+          ["@radix-ui/react-primitive", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
+          ["@radix-ui/react-use-controllable-state", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["react", "npm:18.3.1"],\
@@ -940,9 +1014,9 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@radix-ui/react-focus-scope", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.4"],\
           ["@babel/runtime", "npm:7.24.6"],\
-          ["@radix-ui/react-compose-refs", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
-          ["@radix-ui/react-primitive", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.3"],\
-          ["@radix-ui/react-use-callback-ref", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1"],\
+          ["@radix-ui/react-compose-refs", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-primitive", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
+          ["@radix-ui/react-use-callback-ref", "virtual:ba528d9e9db70d694b64efb95692926fb440a8eb62c62547fa742d3de5f9d415e5b351ad13106ec2d0df00004a4f40e77dcf340530bd2d9805814a6fc0e940ab#npm:1.0.1"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["react", "npm:18.3.1"],\
@@ -957,6 +1031,28 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@radix-ui/react-icons", [\
+      ["npm:1.3.0", {\
+        "packageLocation": "../../.yarn/berry/cache/@radix-ui-react-icons-npm-1.3.0-2aeeb348f1-10c0.zip/node_modules/@radix-ui/react-icons/",\
+        "packageDependencies": [\
+          ["@radix-ui/react-icons", "npm:1.3.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.3.0", {\
+        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-icons-virtual-9c2c6cdb24/3/.yarn/berry/cache/@radix-ui-react-icons-npm-1.3.0-2aeeb348f1-10c0.zip/node_modules/@radix-ui/react-icons/",\
+        "packageDependencies": [\
+          ["@radix-ui/react-icons", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.3.0"],\
+          ["@types/react", "npm:18.3.3"],\
+          ["react", "npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@radix-ui/react-id", [\
       ["npm:1.0.1", {\
         "packageLocation": "../../.yarn/berry/cache/@radix-ui-react-id-npm-1.0.1-d2f01e7fd5-10c0.zip/node_modules/@radix-ui/react-id/",\
@@ -965,12 +1061,12 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1", {\
-        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-id-virtual-ef2618e840/3/.yarn/berry/cache/@radix-ui-react-id-npm-1.0.1-d2f01e7fd5-10c0.zip/node_modules/@radix-ui/react-id/",\
+      ["virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1", {\
+        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-id-virtual-40bb3db42b/3/.yarn/berry/cache/@radix-ui-react-id-npm-1.0.1-d2f01e7fd5-10c0.zip/node_modules/@radix-ui/react-id/",\
         "packageDependencies": [\
-          ["@radix-ui/react-id", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
+          ["@radix-ui/react-id", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
           ["@babel/runtime", "npm:7.24.6"],\
-          ["@radix-ui/react-use-layout-effect", "virtual:ef2618e840c4f08e5e678b446e0a87f72dd540b94b3db874d2c3c7d682fd8fb7b03e24ebf58e29994c780d943800b7ed534d3ddd189e21ecc1490952c989916f#npm:1.0.1"],\
+          ["@radix-ui/react-use-layout-effect", "virtual:c55d525b710302b5198abfa19e0a527976955e279605c7da3984d1ce7169e0f9755410f30a2bc6e786859346a0eb900e66cee7168f336219f0735ed4549928e6#npm:1.0.1"],\
           ["@types/react", "npm:18.3.3"],\
           ["react", "npm:18.3.1"]\
         ],\
@@ -995,21 +1091,21 @@ const RAW_RUNTIME_STATE =
           ["@radix-ui/react-menu", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:2.0.6"],\
           ["@babel/runtime", "npm:7.24.6"],\
           ["@radix-ui/primitive", "npm:1.0.1"],\
-          ["@radix-ui/react-collection", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.3"],\
-          ["@radix-ui/react-compose-refs", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
-          ["@radix-ui/react-context", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
-          ["@radix-ui/react-direction", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1"],\
+          ["@radix-ui/react-collection", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
+          ["@radix-ui/react-compose-refs", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-context", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-direction", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
           ["@radix-ui/react-dismissable-layer", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.5"],\
           ["@radix-ui/react-focus-guards", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1"],\
           ["@radix-ui/react-focus-scope", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.4"],\
-          ["@radix-ui/react-id", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
+          ["@radix-ui/react-id", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
           ["@radix-ui/react-popper", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.1.3"],\
           ["@radix-ui/react-portal", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.4"],\
-          ["@radix-ui/react-presence", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1"],\
-          ["@radix-ui/react-primitive", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.3"],\
+          ["@radix-ui/react-presence", "virtual:c55d525b710302b5198abfa19e0a527976955e279605c7da3984d1ce7169e0f9755410f30a2bc6e786859346a0eb900e66cee7168f336219f0735ed4549928e6#npm:1.0.1"],\
+          ["@radix-ui/react-primitive", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
           ["@radix-ui/react-roving-focus", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.4"],\
-          ["@radix-ui/react-slot", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.2"],\
-          ["@radix-ui/react-use-callback-ref", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1"],\
+          ["@radix-ui/react-slot", "virtual:2ab2fa223f31908973e4b3a48b1181356e7a8b85bf1b8706d892f9fa3899fe808cff510644861b8226f1f8a96695520dde2d1c1262a0071567c70ab0b71fa399#npm:1.0.2"],\
+          ["@radix-ui/react-use-callback-ref", "virtual:ba528d9e9db70d694b64efb95692926fb440a8eb62c62547fa742d3de5f9d415e5b351ad13106ec2d0df00004a4f40e77dcf340530bd2d9805814a6fc0e940ab#npm:1.0.1"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["aria-hidden", "npm:1.2.4"],\
@@ -1041,11 +1137,11 @@ const RAW_RUNTIME_STATE =
           ["@babel/runtime", "npm:7.24.6"],\
           ["@floating-ui/react-dom", "virtual:11e35d491cce9816a22df2ebb607ce24ce7e4917b4a6a86426a9b8f4d1631dbee8b60729ca3126eba2530326a93d7e184830e64bdbe8be8e3a736395592bdf31#npm:2.1.0"],\
           ["@radix-ui/react-arrow", "virtual:11e35d491cce9816a22df2ebb607ce24ce7e4917b4a6a86426a9b8f4d1631dbee8b60729ca3126eba2530326a93d7e184830e64bdbe8be8e3a736395592bdf31#npm:1.0.3"],\
-          ["@radix-ui/react-compose-refs", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
-          ["@radix-ui/react-context", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
-          ["@radix-ui/react-primitive", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.3"],\
-          ["@radix-ui/react-use-callback-ref", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1"],\
-          ["@radix-ui/react-use-layout-effect", "virtual:ef2618e840c4f08e5e678b446e0a87f72dd540b94b3db874d2c3c7d682fd8fb7b03e24ebf58e29994c780d943800b7ed534d3ddd189e21ecc1490952c989916f#npm:1.0.1"],\
+          ["@radix-ui/react-compose-refs", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-context", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-primitive", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
+          ["@radix-ui/react-use-callback-ref", "virtual:ba528d9e9db70d694b64efb95692926fb440a8eb62c62547fa742d3de5f9d415e5b351ad13106ec2d0df00004a4f40e77dcf340530bd2d9805814a6fc0e940ab#npm:1.0.1"],\
+          ["@radix-ui/react-use-layout-effect", "virtual:c55d525b710302b5198abfa19e0a527976955e279605c7da3984d1ce7169e0f9755410f30a2bc6e786859346a0eb900e66cee7168f336219f0735ed4549928e6#npm:1.0.1"],\
           ["@radix-ui/react-use-rect", "virtual:11e35d491cce9816a22df2ebb607ce24ce7e4917b4a6a86426a9b8f4d1631dbee8b60729ca3126eba2530326a93d7e184830e64bdbe8be8e3a736395592bdf31#npm:1.0.1"],\
           ["@radix-ui/react-use-size", "virtual:11e35d491cce9816a22df2ebb607ce24ce7e4917b4a6a86426a9b8f4d1631dbee8b60729ca3126eba2530326a93d7e184830e64bdbe8be8e3a736395592bdf31#npm:1.0.1"],\
           ["@radix-ui/rect", "npm:1.0.1"],\
@@ -1076,7 +1172,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@radix-ui/react-portal", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.4"],\
           ["@babel/runtime", "npm:7.24.6"],\
-          ["@radix-ui/react-primitive", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.3"],\
+          ["@radix-ui/react-primitive", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["react", "npm:18.3.1"],\
@@ -1099,13 +1195,13 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1", {\
-        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-presence-virtual-4d8786fdff/3/.yarn/berry/cache/@radix-ui-react-presence-npm-1.0.1-2057bd46b4-10c0.zip/node_modules/@radix-ui/react-presence/",\
+      ["virtual:c55d525b710302b5198abfa19e0a527976955e279605c7da3984d1ce7169e0f9755410f30a2bc6e786859346a0eb900e66cee7168f336219f0735ed4549928e6#npm:1.0.1", {\
+        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-presence-virtual-98183827e7/3/.yarn/berry/cache/@radix-ui-react-presence-npm-1.0.1-2057bd46b4-10c0.zip/node_modules/@radix-ui/react-presence/",\
         "packageDependencies": [\
-          ["@radix-ui/react-presence", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1"],\
+          ["@radix-ui/react-presence", "virtual:c55d525b710302b5198abfa19e0a527976955e279605c7da3984d1ce7169e0f9755410f30a2bc6e786859346a0eb900e66cee7168f336219f0735ed4549928e6#npm:1.0.1"],\
           ["@babel/runtime", "npm:7.24.6"],\
-          ["@radix-ui/react-compose-refs", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
-          ["@radix-ui/react-use-layout-effect", "virtual:ef2618e840c4f08e5e678b446e0a87f72dd540b94b3db874d2c3c7d682fd8fb7b03e24ebf58e29994c780d943800b7ed534d3ddd189e21ecc1490952c989916f#npm:1.0.1"],\
+          ["@radix-ui/react-compose-refs", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-use-layout-effect", "virtual:c55d525b710302b5198abfa19e0a527976955e279605c7da3984d1ce7169e0f9755410f30a2bc6e786859346a0eb900e66cee7168f336219f0735ed4549928e6#npm:1.0.1"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["react", "npm:18.3.1"],\
@@ -1128,12 +1224,12 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.3", {\
-        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-primitive-virtual-d4b1115006/3/.yarn/berry/cache/@radix-ui-react-primitive-npm-1.0.3-1983a5adc0-10c0.zip/node_modules/@radix-ui/react-primitive/",\
+      ["virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3", {\
+        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-primitive-virtual-7615bcd189/3/.yarn/berry/cache/@radix-ui-react-primitive-npm-1.0.3-1983a5adc0-10c0.zip/node_modules/@radix-ui/react-primitive/",\
         "packageDependencies": [\
-          ["@radix-ui/react-primitive", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.3"],\
+          ["@radix-ui/react-primitive", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
           ["@babel/runtime", "npm:7.24.6"],\
-          ["@radix-ui/react-slot", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.2"],\
+          ["@radix-ui/react-slot", "virtual:2ab2fa223f31908973e4b3a48b1181356e7a8b85bf1b8706d892f9fa3899fe808cff510644861b8226f1f8a96695520dde2d1c1262a0071567c70ab0b71fa399#npm:1.0.2"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["react", "npm:18.3.1"],\
@@ -1162,14 +1258,14 @@ const RAW_RUNTIME_STATE =
           ["@radix-ui/react-roving-focus", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.4"],\
           ["@babel/runtime", "npm:7.24.6"],\
           ["@radix-ui/primitive", "npm:1.0.1"],\
-          ["@radix-ui/react-collection", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.3"],\
-          ["@radix-ui/react-compose-refs", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
-          ["@radix-ui/react-context", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
-          ["@radix-ui/react-direction", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1"],\
-          ["@radix-ui/react-id", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
-          ["@radix-ui/react-primitive", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.3"],\
-          ["@radix-ui/react-use-callback-ref", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1"],\
-          ["@radix-ui/react-use-controllable-state", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
+          ["@radix-ui/react-collection", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
+          ["@radix-ui/react-compose-refs", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-context", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-direction", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-id", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-primitive", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
+          ["@radix-ui/react-use-callback-ref", "virtual:ba528d9e9db70d694b64efb95692926fb440a8eb62c62547fa742d3de5f9d415e5b351ad13106ec2d0df00004a4f40e77dcf340530bd2d9805814a6fc0e940ab#npm:1.0.1"],\
+          ["@radix-ui/react-use-controllable-state", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["react", "npm:18.3.1"],\
@@ -1197,7 +1293,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@radix-ui/react-separator", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.0.3"],\
           ["@babel/runtime", "npm:7.24.6"],\
-          ["@radix-ui/react-primitive", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.3"],\
+          ["@radix-ui/react-primitive", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["react", "npm:18.3.1"],\
@@ -1220,12 +1316,12 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.2", {\
-        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-slot-virtual-12d47c68f2/3/.yarn/berry/cache/@radix-ui-react-slot-npm-1.0.2-b9078e9a0b-10c0.zip/node_modules/@radix-ui/react-slot/",\
+      ["virtual:2ab2fa223f31908973e4b3a48b1181356e7a8b85bf1b8706d892f9fa3899fe808cff510644861b8226f1f8a96695520dde2d1c1262a0071567c70ab0b71fa399#npm:1.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-slot-virtual-09aa9f545f/3/.yarn/berry/cache/@radix-ui-react-slot-npm-1.0.2-b9078e9a0b-10c0.zip/node_modules/@radix-ui/react-slot/",\
         "packageDependencies": [\
-          ["@radix-ui/react-slot", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.2"],\
+          ["@radix-ui/react-slot", "virtual:2ab2fa223f31908973e4b3a48b1181356e7a8b85bf1b8706d892f9fa3899fe808cff510644861b8226f1f8a96695520dde2d1c1262a0071567c70ab0b71fa399#npm:1.0.2"],\
           ["@babel/runtime", "npm:7.24.6"],\
-          ["@radix-ui/react-compose-refs", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
+          ["@radix-ui/react-compose-refs", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
           ["@types/react", "npm:18.3.3"],\
           ["react", "npm:18.3.1"]\
         ],\
@@ -1250,8 +1346,8 @@ const RAW_RUNTIME_STATE =
           ["@radix-ui/react-toggle", "virtual:74ba912b8c4184d2fe5085566a152c01a33955e19671d79e6f7909b7d0c71bae2ae88f187b819d350309a91a13d6b0b2becf64d5e8c60b0cd2865c082e998320#npm:1.0.3"],\
           ["@babel/runtime", "npm:7.24.6"],\
           ["@radix-ui/primitive", "npm:1.0.1"],\
-          ["@radix-ui/react-primitive", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.3"],\
-          ["@radix-ui/react-use-controllable-state", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
+          ["@radix-ui/react-primitive", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
+          ["@radix-ui/react-use-controllable-state", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["react", "npm:18.3.1"],\
@@ -1280,12 +1376,12 @@ const RAW_RUNTIME_STATE =
           ["@radix-ui/react-toggle-group", "virtual:026cea7060f046046859a459046ac68bd73f25a709b4611a468a41ee68dea731f054878731faafdcc572a949c0d7bcbe20ea8610dc1f455cbb5e50f0d32712f3#npm:1.0.4"],\
           ["@babel/runtime", "npm:7.24.6"],\
           ["@radix-ui/primitive", "npm:1.0.1"],\
-          ["@radix-ui/react-context", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
-          ["@radix-ui/react-direction", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1"],\
-          ["@radix-ui/react-primitive", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.3"],\
+          ["@radix-ui/react-context", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-direction", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-primitive", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
           ["@radix-ui/react-roving-focus", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.4"],\
           ["@radix-ui/react-toggle", "virtual:74ba912b8c4184d2fe5085566a152c01a33955e19671d79e6f7909b7d0c71bae2ae88f187b819d350309a91a13d6b0b2becf64d5e8c60b0cd2865c082e998320#npm:1.0.3"],\
-          ["@radix-ui/react-use-controllable-state", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
+          ["@radix-ui/react-use-controllable-state", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["react", "npm:18.3.1"],\
@@ -1314,9 +1410,9 @@ const RAW_RUNTIME_STATE =
           ["@radix-ui/react-toolbar", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.0.4"],\
           ["@babel/runtime", "npm:7.24.6"],\
           ["@radix-ui/primitive", "npm:1.0.1"],\
-          ["@radix-ui/react-context", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
-          ["@radix-ui/react-direction", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1"],\
-          ["@radix-ui/react-primitive", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.3"],\
+          ["@radix-ui/react-context", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-direction", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-primitive", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
           ["@radix-ui/react-roving-focus", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.4"],\
           ["@radix-ui/react-separator", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.0.3"],\
           ["@radix-ui/react-toggle-group", "virtual:026cea7060f046046859a459046ac68bd73f25a709b4611a468a41ee68dea731f054878731faafdcc572a949c0d7bcbe20ea8610dc1f455cbb5e50f0d32712f3#npm:1.0.4"],\
@@ -1348,16 +1444,16 @@ const RAW_RUNTIME_STATE =
           ["@radix-ui/react-tooltip", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.0.7"],\
           ["@babel/runtime", "npm:7.24.6"],\
           ["@radix-ui/primitive", "npm:1.0.1"],\
-          ["@radix-ui/react-compose-refs", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
-          ["@radix-ui/react-context", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
+          ["@radix-ui/react-compose-refs", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
+          ["@radix-ui/react-context", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
           ["@radix-ui/react-dismissable-layer", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.5"],\
-          ["@radix-ui/react-id", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
+          ["@radix-ui/react-id", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
           ["@radix-ui/react-popper", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.1.3"],\
           ["@radix-ui/react-portal", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.4"],\
-          ["@radix-ui/react-presence", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1"],\
-          ["@radix-ui/react-primitive", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.3"],\
-          ["@radix-ui/react-slot", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.2"],\
-          ["@radix-ui/react-use-controllable-state", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
+          ["@radix-ui/react-presence", "virtual:c55d525b710302b5198abfa19e0a527976955e279605c7da3984d1ce7169e0f9755410f30a2bc6e786859346a0eb900e66cee7168f336219f0735ed4549928e6#npm:1.0.1"],\
+          ["@radix-ui/react-primitive", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
+          ["@radix-ui/react-slot", "virtual:2ab2fa223f31908973e4b3a48b1181356e7a8b85bf1b8706d892f9fa3899fe808cff510644861b8226f1f8a96695520dde2d1c1262a0071567c70ab0b71fa399#npm:1.0.2"],\
+          ["@radix-ui/react-use-controllable-state", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
           ["@radix-ui/react-visually-hidden", "virtual:3c5c0e70a044d759be5d09914f1c25e4054e1b53f15932121f086aa6b137d375bbb8381d9d50b31836c2e35e8618c9019dc256b2bc513f87683591b34db7a672#npm:1.0.3"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
@@ -1381,10 +1477,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1", {\
-        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-use-callback-ref-virtual-dab97d696d/3/.yarn/berry/cache/@radix-ui-react-use-callback-ref-npm-1.0.1-e521cb00a3-10c0.zip/node_modules/@radix-ui/react-use-callback-ref/",\
+      ["virtual:ba528d9e9db70d694b64efb95692926fb440a8eb62c62547fa742d3de5f9d415e5b351ad13106ec2d0df00004a4f40e77dcf340530bd2d9805814a6fc0e940ab#npm:1.0.1", {\
+        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-use-callback-ref-virtual-257839b072/3/.yarn/berry/cache/@radix-ui-react-use-callback-ref-npm-1.0.1-e521cb00a3-10c0.zip/node_modules/@radix-ui/react-use-callback-ref/",\
         "packageDependencies": [\
-          ["@radix-ui/react-use-callback-ref", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1"],\
+          ["@radix-ui/react-use-callback-ref", "virtual:ba528d9e9db70d694b64efb95692926fb440a8eb62c62547fa742d3de5f9d415e5b351ad13106ec2d0df00004a4f40e77dcf340530bd2d9805814a6fc0e940ab#npm:1.0.1"],\
           ["@babel/runtime", "npm:7.24.6"],\
           ["@types/react", "npm:18.3.3"],\
           ["react", "npm:18.3.1"]\
@@ -1404,12 +1500,12 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1", {\
-        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-use-controllable-state-virtual-14a30bf5df/3/.yarn/berry/cache/@radix-ui-react-use-controllable-state-npm-1.0.1-cbe6fcf1d7-10c0.zip/node_modules/@radix-ui/react-use-controllable-state/",\
+      ["virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1", {\
+        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-use-controllable-state-virtual-ba528d9e9d/3/.yarn/berry/cache/@radix-ui-react-use-controllable-state-npm-1.0.1-cbe6fcf1d7-10c0.zip/node_modules/@radix-ui/react-use-controllable-state/",\
         "packageDependencies": [\
-          ["@radix-ui/react-use-controllable-state", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.1"],\
+          ["@radix-ui/react-use-controllable-state", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.1"],\
           ["@babel/runtime", "npm:7.24.6"],\
-          ["@radix-ui/react-use-callback-ref", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1"],\
+          ["@radix-ui/react-use-callback-ref", "virtual:ba528d9e9db70d694b64efb95692926fb440a8eb62c62547fa742d3de5f9d415e5b351ad13106ec2d0df00004a4f40e77dcf340530bd2d9805814a6fc0e940ab#npm:1.0.1"],\
           ["@types/react", "npm:18.3.3"],\
           ["react", "npm:18.3.1"]\
         ],\
@@ -1433,7 +1529,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@radix-ui/react-use-escape-keydown", "virtual:3c63a02b1fc2e5064ffd2f264f37076d77a492c3b6c08208fa31b04dc3df948cd314dad101720cd0b0620fb206c000828aeb56c2bc26e2d2481ea05aeff51ff9#npm:1.0.3"],\
           ["@babel/runtime", "npm:7.24.6"],\
-          ["@radix-ui/react-use-callback-ref", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.1"],\
+          ["@radix-ui/react-use-callback-ref", "virtual:ba528d9e9db70d694b64efb95692926fb440a8eb62c62547fa742d3de5f9d415e5b351ad13106ec2d0df00004a4f40e77dcf340530bd2d9805814a6fc0e940ab#npm:1.0.1"],\
           ["@types/react", "npm:18.3.3"],\
           ["react", "npm:18.3.1"]\
         ],\
@@ -1452,10 +1548,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:ef2618e840c4f08e5e678b446e0a87f72dd540b94b3db874d2c3c7d682fd8fb7b03e24ebf58e29994c780d943800b7ed534d3ddd189e21ecc1490952c989916f#npm:1.0.1", {\
-        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-use-layout-effect-virtual-990c40776a/3/.yarn/berry/cache/@radix-ui-react-use-layout-effect-npm-1.0.1-fa00f2498d-10c0.zip/node_modules/@radix-ui/react-use-layout-effect/",\
+      ["virtual:c55d525b710302b5198abfa19e0a527976955e279605c7da3984d1ce7169e0f9755410f30a2bc6e786859346a0eb900e66cee7168f336219f0735ed4549928e6#npm:1.0.1", {\
+        "packageLocation": "./.yarn/__virtual__/@radix-ui-react-use-layout-effect-virtual-691c32973d/3/.yarn/berry/cache/@radix-ui-react-use-layout-effect-npm-1.0.1-fa00f2498d-10c0.zip/node_modules/@radix-ui/react-use-layout-effect/",\
         "packageDependencies": [\
-          ["@radix-ui/react-use-layout-effect", "virtual:ef2618e840c4f08e5e678b446e0a87f72dd540b94b3db874d2c3c7d682fd8fb7b03e24ebf58e29994c780d943800b7ed534d3ddd189e21ecc1490952c989916f#npm:1.0.1"],\
+          ["@radix-ui/react-use-layout-effect", "virtual:c55d525b710302b5198abfa19e0a527976955e279605c7da3984d1ce7169e0f9755410f30a2bc6e786859346a0eb900e66cee7168f336219f0735ed4549928e6#npm:1.0.1"],\
           ["@babel/runtime", "npm:7.24.6"],\
           ["@types/react", "npm:18.3.3"],\
           ["react", "npm:18.3.1"]\
@@ -1504,7 +1600,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@radix-ui/react-use-size", "virtual:11e35d491cce9816a22df2ebb607ce24ce7e4917b4a6a86426a9b8f4d1631dbee8b60729ca3126eba2530326a93d7e184830e64bdbe8be8e3a736395592bdf31#npm:1.0.1"],\
           ["@babel/runtime", "npm:7.24.6"],\
-          ["@radix-ui/react-use-layout-effect", "virtual:ef2618e840c4f08e5e678b446e0a87f72dd540b94b3db874d2c3c7d682fd8fb7b03e24ebf58e29994c780d943800b7ed534d3ddd189e21ecc1490952c989916f#npm:1.0.1"],\
+          ["@radix-ui/react-use-layout-effect", "virtual:c55d525b710302b5198abfa19e0a527976955e279605c7da3984d1ce7169e0f9755410f30a2bc6e786859346a0eb900e66cee7168f336219f0735ed4549928e6#npm:1.0.1"],\
           ["@types/react", "npm:18.3.3"],\
           ["react", "npm:18.3.1"]\
         ],\
@@ -1528,7 +1624,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@radix-ui/react-visually-hidden", "virtual:3c5c0e70a044d759be5d09914f1c25e4054e1b53f15932121f086aa6b137d375bbb8381d9d50b31836c2e35e8618c9019dc256b2bc513f87683591b34db7a672#npm:1.0.3"],\
           ["@babel/runtime", "npm:7.24.6"],\
-          ["@radix-ui/react-primitive", "virtual:b22646b7afa51dc238195b0bfa76d4af7ade76193d0216fb98b9f39f5ed8ab9045d4558f91c5a9af6c1c0c2fb67b75f7af527435d850953d285c229315413b65#npm:1.0.3"],\
+          ["@radix-ui/react-primitive", "virtual:271438657ec78a2c059ba728ad4950036eb60a7fe323f994382768df881acae0505ed9fd48cb2efc90f5fcc41fd553199b21e83311d8311e722695cfe4147965#npm:1.0.3"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["react", "npm:18.3.1"],\
@@ -1684,10 +1780,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@types/node", [\
-      ["npm:20.12.12", {\
-        "packageLocation": "../../.yarn/berry/cache/@types-node-npm-20.12.12-3a45001f1f-10c0.zip/node_modules/@types/node/",\
+      ["npm:20.12.13", {\
+        "packageLocation": "../../.yarn/berry/cache/@types-node-npm-20.12.13-2b5576f45f-10c0.zip/node_modules/@types/node/",\
         "packageDependencies": [\
-          ["@types/node", "npm:20.12.12"],\
+          ["@types/node", "npm:20.12.13"],\
           ["undici-types", "npm:5.26.5"]\
         ],\
         "linkType": "HARD"\
@@ -1878,63 +1974,63 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@udecode/plate", [\
-      ["npm:33.0.6", {\
-        "packageLocation": "../../.yarn/berry/cache/@udecode-plate-npm-33.0.6-7792a2511b-10c0.zip/node_modules/@udecode/plate/",\
+      ["npm:33.0.7", {\
+        "packageLocation": "../../.yarn/berry/cache/@udecode-plate-npm-33.0.7-a43a79b246-10c0.zip/node_modules/@udecode/plate/",\
         "packageDependencies": [\
-          ["@udecode/plate", "npm:33.0.6"]\
+          ["@udecode/plate", "npm:33.0.7"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.6", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-virtual-3833b947b8/3/.yarn/berry/cache/@udecode-plate-npm-33.0.6-7792a2511b-10c0.zip/node_modules/@udecode/plate/",\
+      ["virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.7", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-virtual-9c5a95b00c/3/.yarn/berry/cache/@udecode-plate-npm-33.0.7-a43a79b246-10c0.zip/node_modules/@udecode/plate/",\
         "packageDependencies": [\
-          ["@udecode/plate", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.6"],\
+          ["@udecode/plate", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.7"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
           ["@types/slate-history", null],\
           ["@types/slate-hyperscript", null],\
           ["@types/slate-react", null],\
-          ["@udecode/plate-alignment", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.6"],\
-          ["@udecode/plate-autoformat", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
-          ["@udecode/plate-basic-elements", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.3"],\
+          ["@udecode/plate-alignment", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.6"],\
+          ["@udecode/plate-autoformat", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
+          ["@udecode/plate-basic-elements", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.3"],\
           ["@udecode/plate-basic-marks", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.3"],\
           ["@udecode/plate-block-quote", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.0"],\
-          ["@udecode/plate-break", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
-          ["@udecode/plate-code-block", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
-          ["@udecode/plate-combobox", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
-          ["@udecode/plate-comments", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
+          ["@udecode/plate-break", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
+          ["@udecode/plate-code-block", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
+          ["@udecode/plate-combobox", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
+          ["@udecode/plate-comments", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
           ["@udecode/plate-common", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.4"],\
-          ["@udecode/plate-diff", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
-          ["@udecode/plate-find-replace", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-diff", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
+          ["@udecode/plate-find-replace", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@udecode/plate-floating", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.0"],\
-          ["@udecode/plate-font", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-font", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@udecode/plate-heading", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.3"],\
-          ["@udecode/plate-highlight", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
-          ["@udecode/plate-horizontal-rule", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
-          ["@udecode/plate-indent", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
-          ["@udecode/plate-indent-list", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.3"],\
-          ["@udecode/plate-kbd", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
-          ["@udecode/plate-line-height", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
-          ["@udecode/plate-link", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.5"],\
-          ["@udecode/plate-list", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.3"],\
-          ["@udecode/plate-media", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
-          ["@udecode/plate-mention", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
-          ["@udecode/plate-node-id", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
-          ["@udecode/plate-normalizers", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.3"],\
+          ["@udecode/plate-highlight", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
+          ["@udecode/plate-horizontal-rule", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
+          ["@udecode/plate-indent", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
+          ["@udecode/plate-indent-list", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.3"],\
+          ["@udecode/plate-kbd", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
+          ["@udecode/plate-line-height", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
+          ["@udecode/plate-link", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.5"],\
+          ["@udecode/plate-list", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.3"],\
+          ["@udecode/plate-media", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
+          ["@udecode/plate-mention", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
+          ["@udecode/plate-node-id", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
+          ["@udecode/plate-normalizers", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.3"],\
           ["@udecode/plate-paragraph", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.0"],\
-          ["@udecode/plate-reset-node", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
-          ["@udecode/plate-resizable", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
-          ["@udecode/plate-select", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
-          ["@udecode/plate-serializer-csv", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
-          ["@udecode/plate-serializer-docx", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.3"],\
-          ["@udecode/plate-serializer-html", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
-          ["@udecode/plate-serializer-md", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
-          ["@udecode/plate-suggestion", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
-          ["@udecode/plate-tabbable", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
-          ["@udecode/plate-table", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
-          ["@udecode/plate-toggle", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
-          ["@udecode/plate-trailing-block", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-reset-node", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
+          ["@udecode/plate-resizable", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
+          ["@udecode/plate-select", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
+          ["@udecode/plate-serializer-csv", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.7"],\
+          ["@udecode/plate-serializer-docx", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.7"],\
+          ["@udecode/plate-serializer-html", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
+          ["@udecode/plate-serializer-md", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
+          ["@udecode/plate-suggestion", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
+          ["@udecode/plate-tabbable", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
+          ["@udecode/plate-table", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.7"],\
+          ["@udecode/plate-toggle", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
+          ["@udecode/plate-trailing-block", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.7"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:18.3.1"],\
           ["slate", "npm:0.103.0"],\
@@ -1967,10 +2063,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.6", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-alignment-virtual-77541755a0/3/.yarn/berry/cache/@udecode-plate-alignment-npm-33.0.6-0689cd17d9-10c0.zip/node_modules/@udecode/plate-alignment/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.6", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-alignment-virtual-6d29a55b4b/3/.yarn/berry/cache/@udecode-plate-alignment-npm-33.0.6-0689cd17d9-10c0.zip/node_modules/@udecode/plate-alignment/",\
         "packageDependencies": [\
-          ["@udecode/plate-alignment", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.6"],\
+          ["@udecode/plate-alignment", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.6"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -2013,10 +2109,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-autoformat-virtual-6be2b2c63e/3/.yarn/berry/cache/@udecode-plate-autoformat-npm-33.0.0-2220b33051-10c0.zip/node_modules/@udecode/plate-autoformat/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-autoformat-virtual-134604836d/3/.yarn/berry/cache/@udecode-plate-autoformat-npm-33.0.0-2220b33051-10c0.zip/node_modules/@udecode/plate-autoformat/",\
         "packageDependencies": [\
-          ["@udecode/plate-autoformat", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-autoformat", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -2060,10 +2156,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.3", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-basic-elements-virtual-3549469912/3/.yarn/berry/cache/@udecode-plate-basic-elements-npm-33.0.3-f0881bfc81-10c0.zip/node_modules/@udecode/plate-basic-elements/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.3", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-basic-elements-virtual-b98357a8f7/3/.yarn/berry/cache/@udecode-plate-basic-elements-npm-33.0.3-f0881bfc81-10c0.zip/node_modules/@udecode/plate-basic-elements/",\
         "packageDependencies": [\
-          ["@udecode/plate-basic-elements", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.3"],\
+          ["@udecode/plate-basic-elements", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.3"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -2072,7 +2168,7 @@ const RAW_RUNTIME_STATE =
           ["@types/slate-react", null],\
           ["@types/udecode__plate-common", null],\
           ["@udecode/plate-block-quote", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.0"],\
-          ["@udecode/plate-code-block", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
+          ["@udecode/plate-code-block", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
           ["@udecode/plate-common", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.4"],\
           ["@udecode/plate-heading", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.3"],\
           ["@udecode/plate-paragraph", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.0"],\
@@ -2202,10 +2298,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-break-virtual-d67a7ff75f/3/.yarn/berry/cache/@udecode-plate-break-npm-33.0.0-f982a3e841-10c0.zip/node_modules/@udecode/plate-break/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-break-virtual-d13fbb3975/3/.yarn/berry/cache/@udecode-plate-break-npm-33.0.0-f982a3e841-10c0.zip/node_modules/@udecode/plate-break/",\
         "packageDependencies": [\
-          ["@udecode/plate-break", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-break", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -2248,10 +2344,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-code-block-virtual-a79c1f87ab/3/.yarn/berry/cache/@udecode-plate-code-block-npm-33.0.2-4443b3be2f-10c0.zip/node_modules/@udecode/plate-code-block/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-code-block-virtual-677c5e220b/3/.yarn/berry/cache/@udecode-plate-code-block-npm-33.0.2-4443b3be2f-10c0.zip/node_modules/@udecode/plate-code-block/",\
         "packageDependencies": [\
-          ["@udecode/plate-code-block", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
+          ["@udecode/plate-code-block", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -2295,10 +2391,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-combobox-virtual-b64e85700b/3/.yarn/berry/cache/@udecode-plate-combobox-npm-33.0.0-af359358ae-10c0.zip/node_modules/@udecode/plate-combobox/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-combobox-virtual-27a24e254e/3/.yarn/berry/cache/@udecode-plate-combobox-npm-33.0.0-af359358ae-10c0.zip/node_modules/@udecode/plate-combobox/",\
         "packageDependencies": [\
-          ["@udecode/plate-combobox", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-combobox", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -2307,7 +2403,7 @@ const RAW_RUNTIME_STATE =
           ["@types/slate-react", null],\
           ["@types/udecode__plate-common", null],\
           ["@udecode/plate-common", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.4"],\
-          ["downshift", "virtual:b64e85700b3437e4b774fc9f9f2f3d6bb2fe78e1cc38bfe83ae30d33bd70c57907085f0b4da867e5646c5622126fe1e0035be6f019a00b0a689d89d99abdc6e9#npm:6.1.12"],\
+          ["downshift", "virtual:27a24e254e19e405a24dda986917729e3ab2387f939ec138b791807c498c09c213b9e442355f85c188ef227c958b766c258ae194d8a32c7d18ab64d7bdb38bd0#npm:6.1.12"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:18.3.1"],\
           ["slate", "npm:0.103.0"],\
@@ -2342,10 +2438,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-comments-virtual-3bbf4ed744/3/.yarn/berry/cache/@udecode-plate-comments-npm-33.0.2-93aec17a82-10c0.zip/node_modules/@udecode/plate-comments/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-comments-virtual-ae4e0c8468/3/.yarn/berry/cache/@udecode-plate-comments-npm-33.0.2-93aec17a82-10c0.zip/node_modules/@udecode/plate-comments/",\
         "packageDependencies": [\
-          ["@udecode/plate-comments", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
+          ["@udecode/plate-comments", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -2454,7 +2550,7 @@ const RAW_RUNTIME_STATE =
           ["@udecode/utils", "npm:31.0.0"],\
           ["clsx", "npm:1.2.1"],\
           ["is-hotkey", "npm:0.2.0"],\
-          ["jotai", "virtual:ebbbb21c75c1fe267857b6ac2a8e7d35038c74c2029db3e6a2dd210afb638e68d5aba3c0f3036b6ef4597cf47812229974ca928506e1937127f089b2a97065a3#npm:2.8.1"],\
+          ["jotai", "virtual:ebbbb21c75c1fe267857b6ac2a8e7d35038c74c2029db3e6a2dd210afb638e68d5aba3c0f3036b6ef4597cf47812229974ca928506e1937127f089b2a97065a3#npm:2.8.2"],\
           ["jotai-optics", "virtual:ebbbb21c75c1fe267857b6ac2a8e7d35038c74c2029db3e6a2dd210afb638e68d5aba3c0f3036b6ef4597cf47812229974ca928506e1937127f089b2a97065a3#npm:0.3.2"],\
           ["jotai-x", "virtual:ebbbb21c75c1fe267857b6ac2a8e7d35038c74c2029db3e6a2dd210afb638e68d5aba3c0f3036b6ef4597cf47812229974ca928506e1937127f089b2a97065a3#npm:1.2.3"],\
           ["lodash", "npm:4.17.21"],\
@@ -2496,10 +2592,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-diff-virtual-8b079abfdc/3/.yarn/berry/cache/@udecode-plate-diff-npm-33.0.2-11441a5d24-10c0.zip/node_modules/@udecode/plate-diff/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-diff-virtual-e97d2dfde7/3/.yarn/berry/cache/@udecode-plate-diff-npm-33.0.2-11441a5d24-10c0.zip/node_modules/@udecode/plate-diff/",\
         "packageDependencies": [\
-          ["@udecode/plate-diff", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
+          ["@udecode/plate-diff", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -2543,10 +2639,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-find-replace-virtual-72b8a62f8e/3/.yarn/berry/cache/@udecode-plate-find-replace-npm-33.0.0-4601b93133-10c0.zip/node_modules/@udecode/plate-find-replace/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-find-replace-virtual-919b9f9d10/3/.yarn/berry/cache/@udecode-plate-find-replace-npm-33.0.0-4601b93133-10c0.zip/node_modules/@udecode/plate-find-replace/",\
         "packageDependencies": [\
-          ["@udecode/plate-find-replace", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-find-replace", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -2637,10 +2733,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-font-virtual-00193b8f07/3/.yarn/berry/cache/@udecode-plate-font-npm-33.0.0-616a177f70-10c0.zip/node_modules/@udecode/plate-font/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-font-virtual-7b32551583/3/.yarn/berry/cache/@udecode-plate-font-npm-33.0.0-616a177f70-10c0.zip/node_modules/@udecode/plate-font/",\
         "packageDependencies": [\
-          ["@udecode/plate-font", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-font", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -2730,10 +2826,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-highlight-virtual-7ddecc3775/3/.yarn/berry/cache/@udecode-plate-highlight-npm-33.0.0-f03b89ff50-10c0.zip/node_modules/@udecode/plate-highlight/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-highlight-virtual-03c66b92a7/3/.yarn/berry/cache/@udecode-plate-highlight-npm-33.0.0-f03b89ff50-10c0.zip/node_modules/@udecode/plate-highlight/",\
         "packageDependencies": [\
-          ["@udecode/plate-highlight", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-highlight", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -2776,10 +2872,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-horizontal-rule-virtual-bb60356ebb/3/.yarn/berry/cache/@udecode-plate-horizontal-rule-npm-33.0.0-a42f2be2b9-10c0.zip/node_modules/@udecode/plate-horizontal-rule/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-horizontal-rule-virtual-0292f4c592/3/.yarn/berry/cache/@udecode-plate-horizontal-rule-npm-33.0.0-a42f2be2b9-10c0.zip/node_modules/@udecode/plate-horizontal-rule/",\
         "packageDependencies": [\
-          ["@udecode/plate-horizontal-rule", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-horizontal-rule", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -2822,10 +2918,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-indent-virtual-22e48b393b/3/.yarn/berry/cache/@udecode-plate-indent-npm-33.0.2-219f0cc6fb-10c0.zip/node_modules/@udecode/plate-indent/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-indent-virtual-7380d244b5/3/.yarn/berry/cache/@udecode-plate-indent-npm-33.0.2-219f0cc6fb-10c0.zip/node_modules/@udecode/plate-indent/",\
         "packageDependencies": [\
-          ["@udecode/plate-indent", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
+          ["@udecode/plate-indent", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -2868,10 +2964,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.3", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-indent-list-virtual-ce38da3ef7/3/.yarn/berry/cache/@udecode-plate-indent-list-npm-33.0.3-6ca46bcffc-10c0.zip/node_modules/@udecode/plate-indent-list/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.3", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-indent-list-virtual-e273a8879a/3/.yarn/berry/cache/@udecode-plate-indent-list-npm-33.0.3-6ca46bcffc-10c0.zip/node_modules/@udecode/plate-indent-list/",\
         "packageDependencies": [\
-          ["@udecode/plate-indent-list", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.3"],\
+          ["@udecode/plate-indent-list", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.3"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -2880,8 +2976,8 @@ const RAW_RUNTIME_STATE =
           ["@types/slate-react", null],\
           ["@types/udecode__plate-common", null],\
           ["@udecode/plate-common", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.4"],\
-          ["@udecode/plate-indent", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
-          ["@udecode/plate-list", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.3"],\
+          ["@udecode/plate-indent", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
+          ["@udecode/plate-list", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.3"],\
           ["clsx", "npm:1.2.1"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:18.3.1"],\
@@ -2917,10 +3013,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-kbd-virtual-37318fca99/3/.yarn/berry/cache/@udecode-plate-kbd-npm-33.0.0-163a3b0642-10c0.zip/node_modules/@udecode/plate-kbd/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-kbd-virtual-693b48cfb7/3/.yarn/berry/cache/@udecode-plate-kbd-npm-33.0.0-163a3b0642-10c0.zip/node_modules/@udecode/plate-kbd/",\
         "packageDependencies": [\
-          ["@udecode/plate-kbd", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-kbd", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -2963,10 +3059,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-line-height-virtual-9ed643ea02/3/.yarn/berry/cache/@udecode-plate-line-height-npm-33.0.0-fc34dccd9d-10c0.zip/node_modules/@udecode/plate-line-height/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-line-height-virtual-cc75b9f327/3/.yarn/berry/cache/@udecode-plate-line-height-npm-33.0.0-fc34dccd9d-10c0.zip/node_modules/@udecode/plate-line-height/",\
         "packageDependencies": [\
-          ["@udecode/plate-line-height", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-line-height", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3009,10 +3105,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.5", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-link-virtual-a2ef4dc630/3/.yarn/berry/cache/@udecode-plate-link-npm-33.0.5-c2db57a51c-10c0.zip/node_modules/@udecode/plate-link/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.5", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-link-virtual-2f0ca84d87/3/.yarn/berry/cache/@udecode-plate-link-npm-33.0.5-c2db57a51c-10c0.zip/node_modules/@udecode/plate-link/",\
         "packageDependencies": [\
-          ["@udecode/plate-link", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.5"],\
+          ["@udecode/plate-link", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.5"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3022,7 +3118,7 @@ const RAW_RUNTIME_STATE =
           ["@types/udecode__plate-common", null],\
           ["@udecode/plate-common", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.4"],\
           ["@udecode/plate-floating", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.0"],\
-          ["@udecode/plate-normalizers", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.3"],\
+          ["@udecode/plate-normalizers", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.3"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:18.3.1"],\
           ["slate", "npm:0.103.0"],\
@@ -3057,10 +3153,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.3", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-list-virtual-cd115edd54/3/.yarn/berry/cache/@udecode-plate-list-npm-33.0.3-94d3766ea4-10c0.zip/node_modules/@udecode/plate-list/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.3", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-list-virtual-be92d435aa/3/.yarn/berry/cache/@udecode-plate-list-npm-33.0.3-94d3766ea4-10c0.zip/node_modules/@udecode/plate-list/",\
         "packageDependencies": [\
-          ["@udecode/plate-list", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.3"],\
+          ["@udecode/plate-list", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.3"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3069,7 +3165,7 @@ const RAW_RUNTIME_STATE =
           ["@types/slate-react", null],\
           ["@types/udecode__plate-common", null],\
           ["@udecode/plate-common", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.4"],\
-          ["@udecode/plate-reset-node", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-reset-node", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["lodash", "npm:4.17.21"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:18.3.1"],\
@@ -3105,10 +3201,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-media-virtual-60ac73d59c/3/.yarn/berry/cache/@udecode-plate-media-npm-33.0.2-11fde45bff-10c0.zip/node_modules/@udecode/plate-media/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-media-virtual-462c848b4f/3/.yarn/berry/cache/@udecode-plate-media-npm-33.0.2-11fde45bff-10c0.zip/node_modules/@udecode/plate-media/",\
         "packageDependencies": [\
-          ["@udecode/plate-media", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
+          ["@udecode/plate-media", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3152,10 +3248,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-mention-virtual-8a315354b1/3/.yarn/berry/cache/@udecode-plate-mention-npm-33.0.0-c8fb060c02-10c0.zip/node_modules/@udecode/plate-mention/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-mention-virtual-f331fbd919/3/.yarn/berry/cache/@udecode-plate-mention-npm-33.0.0-c8fb060c02-10c0.zip/node_modules/@udecode/plate-mention/",\
         "packageDependencies": [\
-          ["@udecode/plate-mention", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-mention", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3163,7 +3259,7 @@ const RAW_RUNTIME_STATE =
           ["@types/slate-hyperscript", null],\
           ["@types/slate-react", null],\
           ["@types/udecode__plate-common", null],\
-          ["@udecode/plate-combobox", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-combobox", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@udecode/plate-common", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.4"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:18.3.1"],\
@@ -3199,10 +3295,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-node-id-virtual-b3c7607141/3/.yarn/berry/cache/@udecode-plate-node-id-npm-33.0.0-ba2bf8887a-10c0.zip/node_modules/@udecode/plate-node-id/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-node-id-virtual-02270092e9/3/.yarn/berry/cache/@udecode-plate-node-id-npm-33.0.0-ba2bf8887a-10c0.zip/node_modules/@udecode/plate-node-id/",\
         "packageDependencies": [\
-          ["@udecode/plate-node-id", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-node-id", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3246,10 +3342,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.3", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-normalizers-virtual-5e7f9508f7/3/.yarn/berry/cache/@udecode-plate-normalizers-npm-33.0.3-6375f33656-10c0.zip/node_modules/@udecode/plate-normalizers/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.3", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-normalizers-virtual-6cd8d390ae/3/.yarn/berry/cache/@udecode-plate-normalizers-npm-33.0.3-6375f33656-10c0.zip/node_modules/@udecode/plate-normalizers/",\
         "packageDependencies": [\
-          ["@udecode/plate-normalizers", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.3"],\
+          ["@udecode/plate-normalizers", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.3"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3339,10 +3435,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-reset-node-virtual-29645796e2/3/.yarn/berry/cache/@udecode-plate-reset-node-npm-33.0.0-ffdfafef2d-10c0.zip/node_modules/@udecode/plate-reset-node/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-reset-node-virtual-fdbcb33b03/3/.yarn/berry/cache/@udecode-plate-reset-node-npm-33.0.0-ffdfafef2d-10c0.zip/node_modules/@udecode/plate-reset-node/",\
         "packageDependencies": [\
-          ["@udecode/plate-reset-node", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-reset-node", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3385,10 +3481,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:22148f633f480afded0c31c66438101e2a6a55b2a3599d13c50796f6d178f3024111f660a9c2c69e08b3902f0d7a20e61b3e31037fca984fe0b2b2cddaffc37d#npm:33.0.2", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-resizable-virtual-0f93b27ea2/3/.yarn/berry/cache/@udecode-plate-resizable-npm-33.0.2-55fcf18319-10c0.zip/node_modules/@udecode/plate-resizable/",\
+      ["virtual:851f93d7eb2167916253046c3b28361603b6e74acccef2b7b07baa409fc0aca6031d14791482302fead2db6bb3009ca4c6fe9b3a343af2cf5b924358f53f0473#npm:33.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-resizable-virtual-b3a8f412c3/3/.yarn/berry/cache/@udecode-plate-resizable-npm-33.0.2-55fcf18319-10c0.zip/node_modules/@udecode/plate-resizable/",\
         "packageDependencies": [\
-          ["@udecode/plate-resizable", "virtual:22148f633f480afded0c31c66438101e2a6a55b2a3599d13c50796f6d178f3024111f660a9c2c69e08b3902f0d7a20e61b3e31037fca984fe0b2b2cddaffc37d#npm:33.0.2"],\
+          ["@udecode/plate-resizable", "virtual:851f93d7eb2167916253046c3b28361603b6e74acccef2b7b07baa409fc0aca6031d14791482302fead2db6bb3009ca4c6fe9b3a343af2cf5b924358f53f0473#npm:33.0.2"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3422,10 +3518,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-resizable-virtual-5d9f26a727/3/.yarn/berry/cache/@udecode-plate-resizable-npm-33.0.2-55fcf18319-10c0.zip/node_modules/@udecode/plate-resizable/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-resizable-virtual-bec2fc2ac3/3/.yarn/berry/cache/@udecode-plate-resizable-npm-33.0.2-55fcf18319-10c0.zip/node_modules/@udecode/plate-resizable/",\
         "packageDependencies": [\
-          ["@udecode/plate-resizable", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
+          ["@udecode/plate-resizable", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3468,10 +3564,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-select-virtual-54234f758c/3/.yarn/berry/cache/@udecode-plate-select-npm-33.0.0-95c62b1019-10c0.zip/node_modules/@udecode/plate-select/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-select-virtual-ceb6d94e55/3/.yarn/berry/cache/@udecode-plate-select-npm-33.0.0-95c62b1019-10c0.zip/node_modules/@udecode/plate-select/",\
         "packageDependencies": [\
-          ["@udecode/plate-select", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-select", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3507,17 +3603,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@udecode/plate-serializer-csv", [\
-      ["npm:33.0.2", {\
-        "packageLocation": "../../.yarn/berry/cache/@udecode-plate-serializer-csv-npm-33.0.2-53eb7de5e6-10c0.zip/node_modules/@udecode/plate-serializer-csv/",\
+      ["npm:33.0.7", {\
+        "packageLocation": "../../.yarn/berry/cache/@udecode-plate-serializer-csv-npm-33.0.7-8ed3bb5359-10c0.zip/node_modules/@udecode/plate-serializer-csv/",\
         "packageDependencies": [\
-          ["@udecode/plate-serializer-csv", "npm:33.0.2"]\
+          ["@udecode/plate-serializer-csv", "npm:33.0.7"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-serializer-csv-virtual-c7d59d85d3/3/.yarn/berry/cache/@udecode-plate-serializer-csv-npm-33.0.2-53eb7de5e6-10c0.zip/node_modules/@udecode/plate-serializer-csv/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.7", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-serializer-csv-virtual-f1de794106/3/.yarn/berry/cache/@udecode-plate-serializer-csv-npm-33.0.7-8ed3bb5359-10c0.zip/node_modules/@udecode/plate-serializer-csv/",\
         "packageDependencies": [\
-          ["@udecode/plate-serializer-csv", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
+          ["@udecode/plate-serializer-csv", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.7"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3526,7 +3622,7 @@ const RAW_RUNTIME_STATE =
           ["@types/slate-react", null],\
           ["@types/udecode__plate-common", null],\
           ["@udecode/plate-common", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.4"],\
-          ["@udecode/plate-table", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
+          ["@udecode/plate-table", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.7"],\
           ["papaparse", "npm:5.4.1"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:18.3.1"],\
@@ -3555,17 +3651,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@udecode/plate-serializer-docx", [\
-      ["npm:33.0.3", {\
-        "packageLocation": "../../.yarn/berry/cache/@udecode-plate-serializer-docx-npm-33.0.3-6ed13ee24f-10c0.zip/node_modules/@udecode/plate-serializer-docx/",\
+      ["npm:33.0.7", {\
+        "packageLocation": "../../.yarn/berry/cache/@udecode-plate-serializer-docx-npm-33.0.7-ad20d8a5c3-10c0.zip/node_modules/@udecode/plate-serializer-docx/",\
         "packageDependencies": [\
-          ["@udecode/plate-serializer-docx", "npm:33.0.3"]\
+          ["@udecode/plate-serializer-docx", "npm:33.0.7"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.3", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-serializer-docx-virtual-8bff21d9d9/3/.yarn/berry/cache/@udecode-plate-serializer-docx-npm-33.0.3-6ed13ee24f-10c0.zip/node_modules/@udecode/plate-serializer-docx/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.7", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-serializer-docx-virtual-f9af1db330/3/.yarn/berry/cache/@udecode-plate-serializer-docx-npm-33.0.7-ad20d8a5c3-10c0.zip/node_modules/@udecode/plate-serializer-docx/",\
         "packageDependencies": [\
-          ["@udecode/plate-serializer-docx", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.3"],\
+          ["@udecode/plate-serializer-docx", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.7"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3575,11 +3671,11 @@ const RAW_RUNTIME_STATE =
           ["@types/udecode__plate-common", null],\
           ["@udecode/plate-common", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.4"],\
           ["@udecode/plate-heading", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.3"],\
-          ["@udecode/plate-indent", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
-          ["@udecode/plate-indent-list", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.3"],\
-          ["@udecode/plate-media", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
+          ["@udecode/plate-indent", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
+          ["@udecode/plate-indent-list", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.3"],\
+          ["@udecode/plate-media", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
           ["@udecode/plate-paragraph", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.0"],\
-          ["@udecode/plate-table", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
+          ["@udecode/plate-table", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.7"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:18.3.1"],\
           ["slate", "npm:0.103.0"],\
@@ -3615,10 +3711,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-serializer-html-virtual-bad4586fde/3/.yarn/berry/cache/@udecode-plate-serializer-html-npm-33.0.0-c2609e69f2-10c0.zip/node_modules/@udecode/plate-serializer-html/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-serializer-html-virtual-810720d44b/3/.yarn/berry/cache/@udecode-plate-serializer-html-npm-33.0.0-c2609e69f2-10c0.zip/node_modules/@udecode/plate-serializer-html/",\
         "packageDependencies": [\
-          ["@udecode/plate-serializer-html", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-serializer-html", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3662,10 +3758,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-serializer-md-virtual-823bf7e431/3/.yarn/berry/cache/@udecode-plate-serializer-md-npm-33.0.0-99352abb37-10c0.zip/node_modules/@udecode/plate-serializer-md/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-serializer-md-virtual-bd4f629058/3/.yarn/berry/cache/@udecode-plate-serializer-md-npm-33.0.0-99352abb37-10c0.zip/node_modules/@udecode/plate-serializer-md/",\
         "packageDependencies": [\
-          ["@udecode/plate-serializer-md", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-serializer-md", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3711,10 +3807,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-suggestion-virtual-31638a3564/3/.yarn/berry/cache/@udecode-plate-suggestion-npm-33.0.2-36cc2c669e-10c0.zip/node_modules/@udecode/plate-suggestion/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-suggestion-virtual-2a96cdc689/3/.yarn/berry/cache/@udecode-plate-suggestion-npm-33.0.2-36cc2c669e-10c0.zip/node_modules/@udecode/plate-suggestion/",\
         "packageDependencies": [\
-          ["@udecode/plate-suggestion", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
+          ["@udecode/plate-suggestion", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3723,7 +3819,7 @@ const RAW_RUNTIME_STATE =
           ["@types/slate-react", null],\
           ["@types/udecode__plate-common", null],\
           ["@udecode/plate-common", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.4"],\
-          ["@udecode/plate-diff", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
+          ["@udecode/plate-diff", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
           ["lodash", "npm:4.17.21"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:18.3.1"],\
@@ -3759,10 +3855,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-tabbable-virtual-1bd02c7685/3/.yarn/berry/cache/@udecode-plate-tabbable-npm-33.0.0-1e508779cf-10c0.zip/node_modules/@udecode/plate-tabbable/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-tabbable-virtual-d32da1ef71/3/.yarn/berry/cache/@udecode-plate-tabbable-npm-33.0.0-1e508779cf-10c0.zip/node_modules/@udecode/plate-tabbable/",\
         "packageDependencies": [\
-          ["@udecode/plate-tabbable", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-tabbable", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3799,17 +3895,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@udecode/plate-table", [\
-      ["npm:33.0.2", {\
-        "packageLocation": "../../.yarn/berry/cache/@udecode-plate-table-npm-33.0.2-caf2e1a949-10c0.zip/node_modules/@udecode/plate-table/",\
+      ["npm:33.0.7", {\
+        "packageLocation": "../../.yarn/berry/cache/@udecode-plate-table-npm-33.0.7-72234cd242-10c0.zip/node_modules/@udecode/plate-table/",\
         "packageDependencies": [\
-          ["@udecode/plate-table", "npm:33.0.2"]\
+          ["@udecode/plate-table", "npm:33.0.7"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-table-virtual-22148f633f/3/.yarn/berry/cache/@udecode-plate-table-npm-33.0.2-caf2e1a949-10c0.zip/node_modules/@udecode/plate-table/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.7", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-table-virtual-851f93d7eb/3/.yarn/berry/cache/@udecode-plate-table-npm-33.0.7-72234cd242-10c0.zip/node_modules/@udecode/plate-table/",\
         "packageDependencies": [\
-          ["@udecode/plate-table", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
+          ["@udecode/plate-table", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.7"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3817,7 +3913,7 @@ const RAW_RUNTIME_STATE =
           ["@types/slate-react", null],\
           ["@types/udecode__plate-common", null],\
           ["@udecode/plate-common", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.4"],\
-          ["@udecode/plate-resizable", "virtual:22148f633f480afded0c31c66438101e2a6a55b2a3599d13c50796f6d178f3024111f660a9c2c69e08b3902f0d7a20e61b3e31037fca984fe0b2b2cddaffc37d#npm:33.0.2"],\
+          ["@udecode/plate-resizable", "virtual:851f93d7eb2167916253046c3b28361603b6e74acccef2b7b07baa409fc0aca6031d14791482302fead2db6bb3009ca4c6fe9b3a343af2cf5b924358f53f0473#npm:33.0.2"],\
           ["lodash", "npm:4.17.21"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:18.3.1"],\
@@ -3850,10 +3946,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-toggle-virtual-fa5710421b/3/.yarn/berry/cache/@udecode-plate-toggle-npm-33.0.2-27775fe960-10c0.zip/node_modules/@udecode/plate-toggle/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-toggle-virtual-b51fb2f7f1/3/.yarn/berry/cache/@udecode-plate-toggle-npm-33.0.2-27775fe960-10c0.zip/node_modules/@udecode/plate-toggle/",\
         "packageDependencies": [\
-          ["@udecode/plate-toggle", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
+          ["@udecode/plate-toggle", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3862,8 +3958,8 @@ const RAW_RUNTIME_STATE =
           ["@types/slate-react", null],\
           ["@types/udecode__plate-common", null],\
           ["@udecode/plate-common", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.4"],\
-          ["@udecode/plate-indent", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.2"],\
-          ["@udecode/plate-node-id", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-indent", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.2"],\
+          ["@udecode/plate-node-id", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.0"],\
           ["lodash", "npm:4.17.21"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:18.3.1"],\
@@ -3892,17 +3988,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@udecode/plate-trailing-block", [\
-      ["npm:33.0.0", {\
-        "packageLocation": "../../.yarn/berry/cache/@udecode-plate-trailing-block-npm-33.0.0-9be901f411-10c0.zip/node_modules/@udecode/plate-trailing-block/",\
+      ["npm:33.0.7", {\
+        "packageLocation": "../../.yarn/berry/cache/@udecode-plate-trailing-block-npm-33.0.7-2f7d169877-10c0.zip/node_modules/@udecode/plate-trailing-block/",\
         "packageDependencies": [\
-          ["@udecode/plate-trailing-block", "npm:33.0.0"]\
+          ["@udecode/plate-trailing-block", "npm:33.0.7"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0", {\
-        "packageLocation": "./.yarn/__virtual__/@udecode-plate-trailing-block-virtual-6c7fd466b1/3/.yarn/berry/cache/@udecode-plate-trailing-block-npm-33.0.0-9be901f411-10c0.zip/node_modules/@udecode/plate-trailing-block/",\
+      ["virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.7", {\
+        "packageLocation": "./.yarn/__virtual__/@udecode-plate-trailing-block-virtual-726097655b/3/.yarn/berry/cache/@udecode-plate-trailing-block-npm-33.0.7-2f7d169877-10c0.zip/node_modules/@udecode/plate-trailing-block/",\
         "packageDependencies": [\
-          ["@udecode/plate-trailing-block", "virtual:3833b947b8e6032167ca605111260a1f0d01bce0417f1a52aea1445fcff823ffee5f0e28bc11c98337334a856f63dd7dc4604b2f8dc57bcdaf328dc82656ebb3#npm:33.0.0"],\
+          ["@udecode/plate-trailing-block", "virtual:9c5a95b00cf172ba194297c01d3c9f97bd721fd3dd90f42630b275076b60737d97eb9c3176ee54393395706e2e90bf37970e4dcdf1f7f994a7f9c64e5caf1ab2#npm:33.0.7"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/slate", null],\
@@ -3999,7 +4095,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/__virtual__/@udecode-react-utils-virtual-ad943f2ab6/3/.yarn/berry/cache/@udecode-react-utils-npm-33.0.0-0f5e260647-10c0.zip/node_modules/@udecode/react-utils/",\
         "packageDependencies": [\
           ["@udecode/react-utils", "virtual:3dfe50eec70ae9338723de52ca41e78df3e55ba0e00c26436c8651deb368b1eebe13ca5f611422ba116f1a25e55129e6ed909546eda5f1b252ff68173c608b3e#npm:33.0.0"],\
-          ["@radix-ui/react-slot", "virtual:05c183ab6b72e6f073601dd9ee1faca0a0e263ca27e6220fbee257da315d1e9a834e8527691fc778a2bf3f68054d703f725369b969cc04cb7aff21c32d84307c#npm:1.0.2"],\
+          ["@radix-ui/react-slot", "virtual:2ab2fa223f31908973e4b3a48b1181356e7a8b85bf1b8706d892f9fa3899fe808cff510644861b8226f1f8a96695520dde2d1c1262a0071567c70ab0b71fa399#npm:1.0.2"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@udecode/utils", "npm:31.0.0"],\
@@ -4597,10 +4693,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["caniuse-lite", [\
-      ["npm:1.0.30001621", {\
-        "packageLocation": "../../.yarn/berry/cache/caniuse-lite-npm-1.0.30001621-114bc352f6-10c0.zip/node_modules/caniuse-lite/",\
+      ["npm:1.0.30001625", {\
+        "packageLocation": "../../.yarn/berry/cache/caniuse-lite-npm-1.0.30001625-21a1f307d0-10c0.zip/node_modules/caniuse-lite/",\
         "packageDependencies": [\
-          ["caniuse-lite", "npm:1.0.30001621"]\
+          ["caniuse-lite", "npm:1.0.30001625"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4719,6 +4815,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/clsx-npm-2.0.0-afafbbe44a-10c0.zip/node_modules/clsx/",\
         "packageDependencies": [\
           ["clsx", "npm:2.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:2.1.1", {\
+        "packageLocation": "../../.yarn/berry/cache/clsx-npm-2.1.1-96125b98be-10c0.zip/node_modules/clsx/",\
+        "packageDependencies": [\
+          ["clsx", "npm:2.1.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -5024,10 +5127,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:b64e85700b3437e4b774fc9f9f2f3d6bb2fe78e1cc38bfe83ae30d33bd70c57907085f0b4da867e5646c5622126fe1e0035be6f019a00b0a689d89d99abdc6e9#npm:6.1.12", {\
-        "packageLocation": "./.yarn/__virtual__/downshift-virtual-3afa039c4b/3/.yarn/berry/cache/downshift-npm-6.1.12-dc5496d399-10c0.zip/node_modules/downshift/",\
+      ["virtual:27a24e254e19e405a24dda986917729e3ab2387f939ec138b791807c498c09c213b9e442355f85c188ef227c958b766c258ae194d8a32c7d18ab64d7bdb38bd0#npm:6.1.12", {\
+        "packageLocation": "./.yarn/__virtual__/downshift-virtual-6b884aa80f/3/.yarn/berry/cache/downshift-npm-6.1.12-dc5496d399-10c0.zip/node_modules/downshift/",\
         "packageDependencies": [\
-          ["downshift", "virtual:b64e85700b3437e4b774fc9f9f2f3d6bb2fe78e1cc38bfe83ae30d33bd70c57907085f0b4da867e5646c5622126fe1e0035be6f019a00b0a689d89d99abdc6e9#npm:6.1.12"],\
+          ["downshift", "virtual:27a24e254e19e405a24dda986917729e3ab2387f939ec138b791807c498c09c213b9e442355f85c188ef227c958b766c258ae194d8a32c7d18ab64d7bdb38bd0#npm:6.1.12"],\
           ["@babel/runtime", "npm:7.24.6"],\
           ["@types/react", "npm:18.3.3"],\
           ["compute-scroll-into-view", "npm:1.0.20"],\
@@ -5333,7 +5436,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-import-resolver-typescript", "virtual:a9c283eb1ea5b90c534cb809b305e66ec055d738ddf88e7bfd255ee2f24a590f9b1f5053e296655a5bf98d7b5c47f5941996ae87e4a178dc24ca7b36374b9bf3#npm:3.6.1"],\
           ["eslint-plugin-import", "virtual:a9c283eb1ea5b90c534cb809b305e66ec055d738ddf88e7bfd255ee2f24a590f9b1f5053e296655a5bf98d7b5c47f5941996ae87e4a178dc24ca7b36374b9bf3#npm:2.29.1"],\
           ["eslint-plugin-jsx-a11y", "virtual:a9c283eb1ea5b90c534cb809b305e66ec055d738ddf88e7bfd255ee2f24a590f9b1f5053e296655a5bf98d7b5c47f5941996ae87e4a178dc24ca7b36374b9bf3#npm:6.8.0"],\
-          ["eslint-plugin-react", "virtual:a9c283eb1ea5b90c534cb809b305e66ec055d738ddf88e7bfd255ee2f24a590f9b1f5053e296655a5bf98d7b5c47f5941996ae87e4a178dc24ca7b36374b9bf3#npm:7.34.1"],\
+          ["eslint-plugin-react", "virtual:a9c283eb1ea5b90c534cb809b305e66ec055d738ddf88e7bfd255ee2f24a590f9b1f5053e296655a5bf98d7b5c47f5941996ae87e4a178dc24ca7b36374b9bf3#npm:7.34.2"],\
           ["eslint-plugin-react-hooks", "virtual:a9c283eb1ea5b90c534cb809b305e66ec055d738ddf88e7bfd255ee2f24a590f9b1f5053e296655a5bf98d7b5c47f5941996ae87e4a178dc24ca7b36374b9bf3#npm:5.0.0-canary-7118f5dd7-20230705"],\
           ["typescript", "patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c"]\
         ],\
@@ -5542,17 +5645,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["eslint-plugin-react", [\
-      ["npm:7.34.1", {\
-        "packageLocation": "../../.yarn/berry/cache/eslint-plugin-react-npm-7.34.1-93be695b40-10c0.zip/node_modules/eslint-plugin-react/",\
+      ["npm:7.34.2", {\
+        "packageLocation": "../../.yarn/berry/cache/eslint-plugin-react-npm-7.34.2-51c08a36f1-10c0.zip/node_modules/eslint-plugin-react/",\
         "packageDependencies": [\
-          ["eslint-plugin-react", "npm:7.34.1"]\
+          ["eslint-plugin-react", "npm:7.34.2"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:a9c283eb1ea5b90c534cb809b305e66ec055d738ddf88e7bfd255ee2f24a590f9b1f5053e296655a5bf98d7b5c47f5941996ae87e4a178dc24ca7b36374b9bf3#npm:7.34.1", {\
-        "packageLocation": "./.yarn/__virtual__/eslint-plugin-react-virtual-85220d8be9/3/.yarn/berry/cache/eslint-plugin-react-npm-7.34.1-93be695b40-10c0.zip/node_modules/eslint-plugin-react/",\
+      ["virtual:a9c283eb1ea5b90c534cb809b305e66ec055d738ddf88e7bfd255ee2f24a590f9b1f5053e296655a5bf98d7b5c47f5941996ae87e4a178dc24ca7b36374b9bf3#npm:7.34.2", {\
+        "packageLocation": "./.yarn/__virtual__/eslint-plugin-react-virtual-d0959d5014/3/.yarn/berry/cache/eslint-plugin-react-npm-7.34.2-51c08a36f1-10c0.zip/node_modules/eslint-plugin-react/",\
         "packageDependencies": [\
-          ["eslint-plugin-react", "virtual:a9c283eb1ea5b90c534cb809b305e66ec055d738ddf88e7bfd255ee2f24a590f9b1f5053e296655a5bf98d7b5c47f5941996ae87e4a178dc24ca7b36374b9bf3#npm:7.34.1"],\
+          ["eslint-plugin-react", "virtual:a9c283eb1ea5b90c534cb809b305e66ec055d738ddf88e7bfd255ee2f24a590f9b1f5053e296655a5bf98d7b5c47f5941996ae87e4a178dc24ca7b36374b9bf3#npm:7.34.2"],\
           ["@types/eslint", null],\
           ["array-includes", "npm:3.1.8"],\
           ["array.prototype.findlast", "npm:1.2.5"],\
@@ -6715,17 +6818,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["jotai", [\
-      ["npm:2.8.1", {\
-        "packageLocation": "../../.yarn/berry/cache/jotai-npm-2.8.1-a08f7c832e-10c0.zip/node_modules/jotai/",\
+      ["npm:2.8.2", {\
+        "packageLocation": "../../.yarn/berry/cache/jotai-npm-2.8.2-0574dda136-10c0.zip/node_modules/jotai/",\
         "packageDependencies": [\
-          ["jotai", "npm:2.8.1"]\
+          ["jotai", "npm:2.8.2"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:ebbbb21c75c1fe267857b6ac2a8e7d35038c74c2029db3e6a2dd210afb638e68d5aba3c0f3036b6ef4597cf47812229974ca928506e1937127f089b2a97065a3#npm:2.8.1", {\
-        "packageLocation": "./.yarn/__virtual__/jotai-virtual-34e27c2d6b/3/.yarn/berry/cache/jotai-npm-2.8.1-a08f7c832e-10c0.zip/node_modules/jotai/",\
+      ["virtual:ebbbb21c75c1fe267857b6ac2a8e7d35038c74c2029db3e6a2dd210afb638e68d5aba3c0f3036b6ef4597cf47812229974ca928506e1937127f089b2a97065a3#npm:2.8.2", {\
+        "packageLocation": "./.yarn/__virtual__/jotai-virtual-da3e470caf/3/.yarn/berry/cache/jotai-npm-2.8.2-0574dda136-10c0.zip/node_modules/jotai/",\
         "packageDependencies": [\
-          ["jotai", "virtual:ebbbb21c75c1fe267857b6ac2a8e7d35038c74c2029db3e6a2dd210afb638e68d5aba3c0f3036b6ef4597cf47812229974ca928506e1937127f089b2a97065a3#npm:2.8.1"],\
+          ["jotai", "virtual:ebbbb21c75c1fe267857b6ac2a8e7d35038c74c2029db3e6a2dd210afb638e68d5aba3c0f3036b6ef4597cf47812229974ca928506e1937127f089b2a97065a3#npm:2.8.2"],\
           ["@types/react", "npm:18.3.3"],\
           ["react", "npm:18.3.1"]\
         ],\
@@ -6750,7 +6853,7 @@ const RAW_RUNTIME_STATE =
           ["jotai-optics", "virtual:ebbbb21c75c1fe267857b6ac2a8e7d35038c74c2029db3e6a2dd210afb638e68d5aba3c0f3036b6ef4597cf47812229974ca928506e1937127f089b2a97065a3#npm:0.3.2"],\
           ["@types/jotai", null],\
           ["@types/optics-ts", null],\
-          ["jotai", "virtual:ebbbb21c75c1fe267857b6ac2a8e7d35038c74c2029db3e6a2dd210afb638e68d5aba3c0f3036b6ef4597cf47812229974ca928506e1937127f089b2a97065a3#npm:2.8.1"],\
+          ["jotai", "virtual:ebbbb21c75c1fe267857b6ac2a8e7d35038c74c2029db3e6a2dd210afb638e68d5aba3c0f3036b6ef4597cf47812229974ca928506e1937127f089b2a97065a3#npm:2.8.2"],\
           ["optics-ts", "npm:2.4.1"]\
         ],\
         "packagePeers": [\
@@ -6776,7 +6879,7 @@ const RAW_RUNTIME_STATE =
           ["jotai-x", "virtual:ebbbb21c75c1fe267857b6ac2a8e7d35038c74c2029db3e6a2dd210afb638e68d5aba3c0f3036b6ef4597cf47812229974ca928506e1937127f089b2a97065a3#npm:1.2.3"],\
           ["@types/jotai", null],\
           ["@types/react", "npm:18.3.3"],\
-          ["jotai", "virtual:ebbbb21c75c1fe267857b6ac2a8e7d35038c74c2029db3e6a2dd210afb638e68d5aba3c0f3036b6ef4597cf47812229974ca928506e1937127f089b2a97065a3#npm:2.8.1"],\
+          ["jotai", "virtual:ebbbb21c75c1fe267857b6ac2a8e7d35038c74c2029db3e6a2dd210afb638e68d5aba3c0f3036b6ef4597cf47812229974ca928506e1937127f089b2a97065a3#npm:2.8.2"],\
           ["react", "npm:18.3.1"]\
         ],\
         "packagePeers": [\
@@ -7298,7 +7401,7 @@ const RAW_RUNTIME_STATE =
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/sass", null],\
           ["busboy", "npm:1.6.0"],\
-          ["caniuse-lite", "npm:1.0.30001621"],\
+          ["caniuse-lite", "npm:1.0.30001625"],\
           ["graceful-fs", "npm:4.2.11"],\
           ["postcss", "npm:8.4.31"],\
           ["react", "npm:18.3.1"],\
@@ -7857,19 +7960,21 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["project-script", "workspace:."],\
+          ["@radix-ui/react-accordion", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.1.2"],\
           ["@radix-ui/react-dropdown-menu", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:2.0.6"],\
+          ["@radix-ui/react-icons", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.3.0"],\
           ["@radix-ui/react-separator", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.0.3"],\
           ["@radix-ui/react-toolbar", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.0.4"],\
           ["@radix-ui/react-tooltip", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.0.7"],\
           ["@tabler/icons-react", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:3.5.0"],\
           ["@trivago/prettier-plugin-sort-imports", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:4.3.0"],\
-          ["@types/node", "npm:20.12.12"],\
+          ["@types/node", "npm:20.12.13"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
           ["@types/scheduler", "npm:0.23.0"],\
           ["@types/typo-js", "npm:1.2.2"],\
           ["@udecode/cn", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.0"],\
-          ["@udecode/plate", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.6"],\
+          ["@udecode/plate", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.7"],\
           ["@udecode/plate-basic-marks", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.3"],\
           ["@udecode/plate-block-quote", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.0"],\
           ["@udecode/plate-common", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.4"],\
@@ -7877,6 +7982,7 @@ const RAW_RUNTIME_STATE =
           ["@udecode/plate-heading", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.3"],\
           ["@udecode/plate-paragraph", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.0"],\
           ["class-variance-authority", "npm:0.7.0"],\
+          ["clsx", "npm:2.1.1"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-config-next", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:14.2.3"],\
           ["next", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:14.2.3"],\
