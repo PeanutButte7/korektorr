@@ -21,11 +21,11 @@ const defaultInitialValue = [
   },
 ];
 
-const TextEditor = ({ dictionary }: { dictionary: Typo }) => {
+const TextEditor = () => {
   const [debugValue, setDebugValue] = useState<Value>([]);
   const initialLocalStorageValue = localStorage.getItem("editorValue");
 
-  const spellCheckPlugin = useSpellCheckPlugin(dictionary);
+  const spellCheckPlugin = useSpellCheckPlugin();
   const plugins = createPlugins([spellCheckPlugin, createBasicMarksPlugin()]);
 
   return (
@@ -41,7 +41,7 @@ const TextEditor = ({ dictionary }: { dictionary: Typo }) => {
       <p>{JSON.stringify(debugValue)}</p>
       <FloatingToolbar>
         <FloatingToolbarButtons />
-        <FloatingToolbarSuggestions dictionary={dictionary} />
+        <FloatingToolbarSuggestions />
       </FloatingToolbar>
     </Plate>
   );

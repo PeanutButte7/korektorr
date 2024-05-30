@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import TextEditor from "@/components/text-editor/text-editor";
 import Typo from "typo-js";
+import { useWorker } from "@/app/worker-context";
 
 type TypoDictionary = Typo | null;
 
@@ -18,18 +19,13 @@ const loadDictionary = async () => {
 };
 
 const HomePage = () => {
-  const [dictionary, setDictionary] = useState<TypoDictionary>(null);
-
-  useEffect(() => {
-    loadDictionary().then((value) => {
-      setDictionary(value);
-    });
-  }, []);
+  const { dictionaryReady } = useWorker();
 
   return (
     <main className="container mt-20 mx-auto gap-4 flex flex-col">
       <h1 className="text-center text-4xl font-bold">Korektorr</h1>
-      {dictionary ? <TextEditor dictionary={dictionary} /> : <p>Loading dictionary...</p>}
+      <p>{dictionaryReady ? "Dictionary is ready" : "Loading dictionary..."}</p>
+      <TextEditor />
     </main>
   );
 };

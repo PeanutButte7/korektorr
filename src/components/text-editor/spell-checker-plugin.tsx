@@ -1,11 +1,23 @@
 import { ENode, ENodeEntry, TNode, Value } from "@udecode/plate-common";
 import { BaseText, Editor, Node, Path, Text, Transforms } from "slate";
 import { createPluginFactory } from "@udecode/plate";
-import Typo from "typo-js";
+import { useWorker } from "@/app/worker-context";
 
-const checkSpelling = (editor: Editor, entry: ENodeEntry<Value>, dictionary: Typo): void => {
+const checkWord = async (word: string, worker: Worker): Promise<boolean> => {
+  return new Promise((resolve) => {
+    worker.postMessage({ type: "check_word", word });
+
+    worker.onmessage = (event) => {
+      const message = event.data;
+      if (message.type === "word_checked") {
+        resolve(message.isCorrect);
+      }
+    };
+  });
+};
+
+const checkSpelling = async (editor: Editor, entry: ENodeEntry<Value>, worker: Worker) => {
   const [node, path] = entry;
-  console.log("checkSpelling", node, path);
 
   if (!Node.string(node)) {
     return;
@@ -19,7 +31,7 @@ const checkSpelling = (editor: Editor, entry: ENodeEntry<Value>, dictionary: Typ
     return;
   }
 
-  words.forEach((word) => {
+  for (const word of words) {
     console.log("Checking word: ", word);
     const wordStart = text.indexOf(word);
     const wordEnd = wordStart + word.length;
@@ -28,7 +40,9 @@ const checkSpelling = (editor: Editor, entry: ENodeEntry<Value>, dictionary: Typ
       focus: { path, offset: wordEnd },
     };
 
-    if (!dictionary.check(word)) {
+    const isCorrect = await checkWord(word, worker);
+
+    if (!isCorrect && !node.spellError) {
       console.log("Word is incorrect: ", word);
 
       Transforms.setNodes(editor, { spellError: true } as Partial<BaseText>, {
@@ -36,21 +50,18 @@ const checkSpelling = (editor: Editor, entry: ENodeEntry<Value>, dictionary: Typ
         match: Text.isText,
         split: true,
       });
-    } else {
-      // If node is already in that state do nothing
-      if (node.spellError === false) return;
-
+    } else if (isCorrect && node.spellError) {
       // Remove the spell error mark
       Transforms.setNodes(editor, { spellError: false } as Partial<BaseText>, {
         at: range,
         match: Text.isText,
       });
     }
-  });
+  }
 };
 
-const debouncedCheckSpelling = debounce((editor: Editor, [node, path]: [ENode<Value>, Path], dictionary: any) => {
-  checkSpelling(editor, [node, path], dictionary);
+const debouncedCheckSpelling = debounce((editor: Editor, [node, path]: [ENode<Value>, Path], worker: Worker) => {
+  checkSpelling(editor, [node, path], worker);
 }, 500);
 
 function debounce(func: (...args: any[]) => void, wait: number) {
@@ -61,7 +72,9 @@ function debounce(func: (...args: any[]) => void, wait: number) {
   };
 }
 
-const useSpellCheckPlugin = (dictionary: Typo) => {
+const useSpellCheckPlugin = () => {
+  const { worker } = useWorker();
+
   return createPluginFactory({
     key: "spellCheck",
     withOverrides: (editor) => {
@@ -72,7 +85,7 @@ const useSpellCheckPlugin = (dictionary: Typo) => {
 
       editor.normalizeNode = ([node, path]: [Node, Path]) => {
         if (Text.isText(node)) {
-          debouncedCheckSpelling(editor, [node, path], dictionary);
+          debouncedCheckSpelling(editor, [node, path], worker);
         }
 
         normalizeNode([node as TNode, path]);

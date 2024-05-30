@@ -5,6 +5,7 @@ import { PlateContent } from "@udecode/plate-common";
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 import { cn } from "@udecode/cn";
+import { useWorker } from "@/app/worker-context";
 
 const editorVariants = cva(
   cn(
@@ -42,12 +43,14 @@ export type EditorProps = PlateContentProps & VariantProps<typeof editorVariants
 
 const Editor = React.forwardRef<HTMLDivElement, EditorProps>(
   ({ className, disabled, focused, readOnly, size, variant, ...props }, ref) => {
+    const { dictionaryReady } = useWorker();
+
     return (
       <div className="relative w-full" ref={ref}>
         <PlateContent
           spellCheck={false}
           renderLeaf={({ attributes, children, leaf }) => {
-            const spellError = !!leaf.spellError;
+            const spellError = dictionaryReady && !!leaf.spellError;
             const bold = !!leaf.bold;
             const italic = !!leaf.italic;
             const underline = !!leaf.underline;
