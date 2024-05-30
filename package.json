@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev && yarn watch:workers",
-    "build": "next build",
+    "build": "next build && yarn build:workers",
     "start": "next start",
     "lint": "next lint",
     "watch:workers": "tsc -p tsconfig.worker.json -watch",
