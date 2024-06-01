@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
+import { checkSpellingNormalize } from "@/components/text-editor/spell-checker-plugin";
 
 interface WorkerContextType {
   worker: Worker;

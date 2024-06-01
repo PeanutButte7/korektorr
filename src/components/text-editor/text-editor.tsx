@@ -1,21 +1,23 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createBasicMarksPlugin, createPlugins } from "@udecode/plate";
-import { Plate, Value } from "@udecode/plate-common";
-import { Editor } from "@/components/plate-ui/editor";
+import { Plate, useEditorMounted, useEditorState, Value } from "@udecode/plate-common";
+import { Editor as PlateEditor } from "@/components/plate-ui/editor";
 import { FloatingToolbar } from "@/components/plate-ui/floating-toolbar";
 import { FixedToolbarButtons } from "@/components/plate-ui/fixed-toolbar-buttons";
 import FloatingToolbarSuggestions from "@/components/plate-ui/floating-toolbar-suggestions";
-import useSpellCheckPlugin from "@/components/text-editor/spell-checker-plugin";
 import { FixedToolbar } from "@/components/plate-ui/fixed-toolbar";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { checkSpellingNormalize, useSpellCheckNormalizePlugin } from "@/components/text-editor/spell-checker-plugin";
+import { useWorker } from "@/app/worker-context";
+import { Editor as SlateEditor } from "slate";
 
 const defaultInitialValue = [
   {
     children: [
       {
-        text: "Vítejte v českém editoru s automatickou kontrolou chyb! Text se ukládá do vašeho prohlížeče, takže se neztratí pokud opustíte stránku.",
+        text: "Vítejte v českém editoru s automatickou kontrolou chib! Text se ukládá do vašeho prohlížeče, takže se neztratí pokud opustíte stránku.",
       },
     ],
     type: "p",
@@ -23,11 +25,21 @@ const defaultInitialValue = [
 ];
 
 const TextEditor = () => {
+  const { worker, dictionaryReady } = useWorker();
+  const editor = useEditorState();
+
   const [debugValue, setDebugValue] = useState<Value>([]);
   const initialLocalStorageValue = localStorage.getItem("editorValue");
 
-  const spellCheckPlugin = useSpellCheckPlugin();
-  const plugins = createPlugins([spellCheckPlugin, createBasicMarksPlugin()]);
+  const plugins = createPlugins([useSpellCheckNormalizePlugin(), createBasicMarksPlugin()]);
+
+  useEffect(() => {
+    if (!dictionaryReady) return;
+
+    console.log("Dictionary mounted");
+    if (!SlateEditor.isEditor(editor)) return;
+    checkSpellingNormalize(editor, worker);
+  }, [dictionaryReady]);
 
   return (
     <div className="bg-background rounded-lg border">
@@ -45,7 +57,7 @@ const TextEditor = () => {
         <FloatingToolbar>
           <FloatingToolbarSuggestions />
         </FloatingToolbar>
-        <Editor placeholder="Začněte psát..." />
+        <PlateEditor placeholder="Začněte psát..." />
         <Accordion type="single" collapsible className="px-4">
           <AccordionItem value="item-1" className="border-none">
             <AccordionTrigger>Open debug info</AccordionTrigger>

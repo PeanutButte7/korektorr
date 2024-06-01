@@ -1,69 +1,61 @@
-import { ENode, ENodeEntry, TNode, Value } from "@udecode/plate-common";
-import { BaseText, Editor, Node, Path, Text, Transforms } from "slate";
+import { Editor } from "slate";
 import { createPluginFactory } from "@udecode/plate";
 import { useWorker } from "@/app/worker-context";
+import { checkNodeSpelling } from "@/components/text-editor/utils/check-node-spelling";
+import { normalizeTextNode } from "@/components/text-editor/utils/normalize-text-node";
 
-const checkWord = async (word: string, worker: Worker): Promise<boolean> => {
-  return new Promise((resolve) => {
-    worker.postMessage({ type: "check_word", word });
+const checkSpellingNormalize = async (editor: Editor, worker: Worker) => {
+  let currentEditor = editor;
+  let blockIndex = 0;
 
-    worker.onmessage = (event) => {
-      const message = event.data;
-      if (message.type === "word_checked") {
-        resolve(message.isCorrect);
-      }
-    };
-  });
-};
+  // TODO: Do this recursively
+  // It's important to fetch from the current editor, because the editor is being mutated
 
-const checkSpelling = async (editor: Editor, entry: ENodeEntry<Value>, worker: Worker) => {
-  const [node, path] = entry;
+  // Check spelling
+  // Go through blocks in the editor
+  while (blockIndex < editor.children.length) {
+    let nodeIndex = 0;
 
-  if (!Node.string(node)) {
-    return;
-  }
+    // Go through nodes in the block
+    // @ts-ignore
+    while (nodeIndex < currentEditor.children[blockIndex].children.length) {
+      // @ts-ignore
+      const node = currentEditor.children[blockIndex].children[nodeIndex];
 
-  const text = Node.string(node);
-  const wordRegex = /(\p{L}+)/gu;
-  const words = text.match(wordRegex);
-
-  if (!words) {
-    return;
-  }
-  console.log("words", words);
-
-  for (const word of words) {
-    console.log("Checking word: ", word);
-    const wordStart = text.indexOf(word);
-    const wordEnd = wordStart + word.length;
-    const range = {
-      anchor: { path, offset: wordStart },
-      focus: { path, offset: wordEnd },
-    };
-
-    const isCorrect = await checkWord(word, worker);
-
-    if (!isCorrect && !node.spellError) {
-      console.log("Word is incorrect: ", word);
-
-      Transforms.setNodes(editor, { spellError: true } as Partial<BaseText>, {
-        at: range,
-        match: Text.isText,
-        split: true,
-      });
-    } else if (isCorrect && node.spellError) {
-      // Remove the spell error mark
-      Transforms.setNodes(editor, { spellError: false } as Partial<BaseText>, {
-        at: range,
-        match: Text.isText,
-      });
+      // Update the editor with the changed editor
+      currentEditor = await checkNodeSpelling(currentEditor, node, [blockIndex, nodeIndex], worker);
+      nodeIndex++;
     }
+
+    blockIndex++;
+  }
+
+  // Normalize text nodes
+  // Reset block index
+  blockIndex = 0;
+  // Go through blocks in the editor
+  while (blockIndex < editor.children.length) {
+    let nodeIndex = 0;
+
+    // Go through nodes in the block
+    // @ts-ignore
+
+    while (nodeIndex < currentEditor.children[blockIndex].children.length) {
+      // @ts-ignore
+      const node = currentEditor.children[blockIndex].children[nodeIndex];
+
+      // Update the editor with the changed editor
+      currentEditor = normalizeTextNode(currentEditor, node, [blockIndex, nodeIndex]);
+      nodeIndex++;
+    }
+
+    blockIndex++;
   }
 };
 
-const debouncedCheckSpelling = debounce((editor: Editor, [node, path]: [ENode<Value>, Path], worker: Worker) => {
-  checkSpelling(editor, [node, path], worker);
-}, 500);
+const debouncedCheckSpellingNormalize = debounce(async (editor: Editor, worker: Worker) => {
+  await checkSpellingNormalize(editor, worker);
+}, 300);
 
 function debounce(func: (...args: any[]) => void, wait: number) {
   let timeout: ReturnType<typeof setTimeout>;
@@ -73,28 +65,34 @@ function debounce(func: (...args: any[]) => void, wait: number) {
   };
 }
 
-const useSpellCheckPlugin = () => {
+const useSpellCheckNormalizePlugin = () => {
   const { worker } = useWorker();
 
   return createPluginFactory({
     key: "spellCheck",
-    withOverrides: (editor) => {
-      const { normalizeNode } = editor;
-      if (!Editor.isEditor(editor)) {
-        throw new Error("useSpellCheckPlugin must be used with a Slate editor");
-      }
-
-      editor.normalizeNode = ([node, path]: [Node, Path]) => {
-        if (Text.isText(node)) {
-          debouncedCheckSpelling(editor, [node, path], worker);
+    handlers: {
+      onKeyDown: (editor) => (value) => {
+        if (!Editor.isEditor(editor)) {
+          throw new Error("useSpellCheckPlugin must be used with a Slate editor");
         }
 
-        normalizeNode([node as TNode, path]);
-      };
+        console.log("Typed");
+        Editor.withoutNormalizing(editor, () => {
+          debouncedCheckSpellingNormalize(editor, worker);
+        });
+      },
+      onPaste: (editor) => (event) => {
+        if (!Editor.isEditor(editor)) {
+          throw new Error("useSpellCheckPlugin must be used with a Slate editor");
+        }
 
-      return editor;
+        console.log("Pasted");
+        Editor.withoutNormalizing(editor, () => {
+          debouncedCheckSpellingNormalize(editor, worker);
+        });
+      },
     },
   })();
 };
 
-export default useSpellCheckPlugin;
+export { useSpellCheckNormalizePlugin, checkSpellingNormalize, debouncedCheckSpellingNormalize };
