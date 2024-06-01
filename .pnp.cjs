@@ -47,6 +47,7 @@ const RAW_RUNTIME_STATE =
           ["@udecode/plate-floating", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.0"],\
           ["@udecode/plate-heading", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.3"],\
           ["@udecode/plate-paragraph", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.0"],\
+          ["@vercel/analytics", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.3.1"],\
           ["class-variance-authority", "npm:0.7.0"],\
           ["clsx", "npm:2.1.1"],\
           ["eslint", "npm:8.57.0"],\
@@ -4227,6 +4228,33 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@vercel/analytics", [\
+      ["npm:1.3.1", {\
+        "packageLocation": "../../.yarn/berry/cache/@vercel-analytics-npm-1.3.1-fdf1f71ba5-10c0.zip/node_modules/@vercel/analytics/",\
+        "packageDependencies": [\
+          ["@vercel/analytics", "npm:1.3.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.3.1", {\
+        "packageLocation": "./.yarn/__virtual__/@vercel-analytics-virtual-428b95cde6/3/.yarn/berry/cache/@vercel-analytics-npm-1.3.1-fdf1f71ba5-10c0.zip/node_modules/@vercel/analytics/",\
+        "packageDependencies": [\
+          ["@vercel/analytics", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.3.1"],\
+          ["@types/next", null],\
+          ["@types/react", "npm:18.3.3"],\
+          ["next", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:14.2.3"],\
+          ["react", "npm:18.3.1"],\
+          ["server-only", "npm:0.0.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/next",\
+          "@types/react",\
+          "next",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["abbrev", [\
       ["npm:2.0.0", {\
         "packageLocation": "../../.yarn/berry/cache/abbrev-npm-2.0.0-0eb38a17e5-10c0.zip/node_modules/abbrev/",\
@@ -7981,6 +8009,7 @@ const RAW_RUNTIME_STATE =
           ["@udecode/plate-floating", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.0"],\
           ["@udecode/plate-heading", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.3"],\
           ["@udecode/plate-paragraph", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:33.0.0"],\
+          ["@vercel/analytics", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:1.3.1"],\
           ["class-variance-authority", "npm:0.7.0"],\
           ["clsx", "npm:2.1.1"],\
           ["eslint", "npm:8.57.0"],\
@@ -8454,6 +8483,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/semver-npm-7.6.2-0fec6944bb-10c0.zip/node_modules/semver/",\
         "packageDependencies": [\
           ["semver", "npm:7.6.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["server-only", [\
+      ["npm:0.0.1", {\
+        "packageLocation": "../../.yarn/berry/cache/server-only-npm-0.0.1-24bf42bde2-10c0.zip/node_modules/server-only/",\
+        "packageDependencies": [\
+          ["server-only", "npm:0.0.1"]\
         ],\
         "linkType": "HARD"\
       }]\
