@@ -60,7 +60,7 @@ const TextEditor = () => {
         <PlateEditor placeholder="Začněte psát..." />
         <Accordion type="single" collapsible className="px-4">
           <AccordionItem value="item-1" className="border-none">
-            <AccordionTrigger>Open debug info</AccordionTrigger>
+            <AccordionTrigger>Otevřít vývojářské informace</AccordionTrigger>
             <AccordionContent>
               <p>{JSON.stringify(debugValue)}</p>
             </AccordionContent>

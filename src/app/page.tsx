@@ -12,9 +12,20 @@ const HomePage = () => {
   return (
     <main className="container mt-20 mx-auto gap-2 xl:px-48 lg:px-20 flex flex-col ">
       <h1 className="text-center text-4xl mb-4 font-bold text-muted-foreground">Korektorr</h1>
-      <div className="flex gap-2 bg-background rounded-lg border py-1 px-4 self-start items-center">
-        {dictionaryReady ?  <IconDiscountCheckFilled size={24} className="text-teal-400" /> : <div className="w-6 h-6 flex items-center justify-center"><LoadingSpinner size={16} /></div>}
-        <p className="text-sm leading-6">{dictionaryReady ? "Korektor slov je aktivní!" : "Korektor slov se načítá..."}</p>
+      <div className="flex gap-2 text-sm leading-6">
+        <div className="flex gap-2 bg-background rounded-lg border py-1 px-4 self-start items-center">
+          {dictionaryReady ? (
+            <IconDiscountCheckFilled size={24} className="text-teal-400" />
+          ) : (
+            <div className="w-6 h-6 flex items-center justify-center">
+              <LoadingSpinner size={16} />
+            </div>
+          )}
+          <p>{dictionaryReady ? "Korektor slov je aktivní!" : "Korektor slov se načítá..."}</p>
+        </div>
+        <div className="flex gap-2 bg-background rounded-lg border py-1 px-4 self-start items-center">
+          <p>🚧 Tato stránka je vývoji. Aktuálně používate testovací verzi.</p>
+        </div>
       </div>
       <TextEditor />
     </main>
