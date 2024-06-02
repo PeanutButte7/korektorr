@@ -1,4 +1,9 @@
 import { BaseText, Editor, Node, Path, Text, Transforms } from "slate";
+import {
+  KorektorrEditor,
+  KorektorrParagraphElement,
+  KorektorrRichText,
+} from "@/components/korektorr-editor/korektorr-editor";
 
 const checkWord = async (word: string, worker: Worker): Promise<boolean> => {
   return new Promise((resolve) => {
@@ -12,10 +17,19 @@ const checkWord = async (word: string, worker: Worker): Promise<boolean> => {
     };
   });
 };
-export const checkNodeSpelling = async (editor: Editor, node: BaseText, path: Path, worker: Worker) => {
+export const checkNodeSpelling = async (
+  editor: KorektorrEditor,
+  node: KorektorrRichText,
+  path: Path,
+  worker: Worker
+) => {
   const text = Node.string(node);
   const wordRegex = /(\p{L}+)/gu;
   const words = text.match(wordRegex);
+
+  if (!Editor.isEditor(editor)) {
+    return editor;
+  }
 
   if (!words) {
     return editor;
@@ -30,7 +44,6 @@ export const checkNodeSpelling = async (editor: Editor, node: BaseText, path: Pa
     };
     const isCorrect = await checkWord(word, worker);
 
-    // @ts-ignore
     if (!isCorrect && !node.spellError) {
       Transforms.setNodes(editor, { spellError: true } as Partial<BaseText>, {
         at: range,
@@ -39,9 +52,7 @@ export const checkNodeSpelling = async (editor: Editor, node: BaseText, path: Pa
       });
 
       return editor;
-    }
-    // @ts-ignore
-    else if (isCorrect && node.spellError) {
+    } else if (isCorrect && node.spellError) {
       // Remove the spell error mark
       Transforms.setNodes(editor, { spellError: false } as Partial<BaseText>, {
         at: range,

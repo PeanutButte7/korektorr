@@ -1,34 +1,53 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { createBasicMarksPlugin, createPlugins } from "@udecode/plate";
-import { Plate, useEditorMounted, useEditorState, Value } from "@udecode/plate-common";
-import { Editor as PlateEditor } from "@/components/plate-ui/editor";
+import { createBasicMarksPlugin, createPlugins, ELEMENT_PARAGRAPH } from "@udecode/plate";
+import { Plate, PlateEditor, TDescendant, TElement, useEditorState } from "@udecode/plate-common";
+import { Editor as PlateEditorComponent } from "@/components/plate-ui/editor";
 import { FloatingToolbar } from "@/components/plate-ui/floating-toolbar";
 import { FixedToolbarButtons } from "@/components/plate-ui/fixed-toolbar-buttons";
 import FloatingToolbarSuggestions from "@/components/plate-ui/floating-toolbar-suggestions";
 import { FixedToolbar } from "@/components/plate-ui/fixed-toolbar";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { checkSpellingNormalize, useSpellCheckNormalizePlugin } from "@/components/text-editor/spell-checker-plugin";
+import {
+  checkSpellingNormalize,
+  useSpellCheckNormalizePlugin,
+} from "@/components/korektorr-editor/spell-checker-plugin";
 import { useWorker } from "@/app/worker-context";
-import { Editor as SlateEditor } from "slate";
+import { BaseText, Editor as SlateEditor } from "slate";
 
-const defaultInitialValue = [
+export type KorektorrRichText = TDescendant & {
+  text: string;
+  spellError?: boolean;
+};
+
+export interface KorektorrParagraphElement extends TElement {
+  children: KorektorrRichText[];
+  type: typeof ELEMENT_PARAGRAPH;
+}
+
+export type KorektorrRootBlock = KorektorrParagraphElement;
+
+export type KorektorrValue = KorektorrRootBlock[];
+
+export type KorektorrEditor = PlateEditor<KorektorrValue>;
+
+const defaultInitialValue: KorektorrValue = [
   {
+    type: "p",
     children: [
       {
         text: "Vítejte v českém editoru s automatickou kontrolou chib! Text se ukládá do vašeho prohlížeče, takže se neztratí pokud opustíte stránku.",
       },
     ],
-    type: "p",
   },
 ];
 
-const TextEditor = () => {
+const KorektorrEditor = () => {
   const { worker, dictionaryReady } = useWorker();
-  const editor = useEditorState();
+  const editor = useEditorState<KorektorrValue, KorektorrEditor>();
 
-  const [debugValue, setDebugValue] = useState<Value>([]);
+  const [debugValue, setDebugValue] = useState<KorektorrValue>([]);
   const initialLocalStorageValue = localStorage.getItem("editorValue");
 
   const plugins = createPlugins([useSpellCheckNormalizePlugin(), createBasicMarksPlugin()]);
@@ -57,7 +76,7 @@ const TextEditor = () => {
         <FloatingToolbar>
           <FloatingToolbarSuggestions />
         </FloatingToolbar>
-        <PlateEditor placeholder="Začněte psát..." />
+        <PlateEditorComponent placeholder="Začněte psát..." />
         <Accordion type="single" collapsible className="px-4">
           <AccordionItem value="item-1" className="border-none">
             <AccordionTrigger>Otevřít vývojářské informace</AccordionTrigger>
@@ -71,4 +90,4 @@ const TextEditor = () => {
   );
 };
 
-export default TextEditor;
+export default KorektorrEditor;

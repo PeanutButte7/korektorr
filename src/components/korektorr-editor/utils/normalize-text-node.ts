@@ -1,9 +1,10 @@
 import { BaseText, Editor, Path, Text, Transforms } from "slate";
 import { isText } from "@udecode/plate-common";
+import { KorektorrEditor, KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor";
 
-export const normalizeTextNode = (editor: Editor, node: BaseText, path: Path) => {
+export const normalizeTextNode = (editor: KorektorrEditor, node: KorektorrRichText, path: Path) => {
   // console.log("Normalize text node", node, editor, path);
-  if (!node.text || !editor.children || !editor.children.length) return editor;
+  if (!node.text || !editor.children || !editor.children.length || !Editor.isEditor(editor)) return editor;
 
   // Try to merge with next node
   const lastChar = node.text.slice(-1);

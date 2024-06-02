@@ -1,10 +1,12 @@
 import { Editor } from "slate";
 import { createPluginFactory } from "@udecode/plate";
 import { useWorker } from "@/app/worker-context";
-import { checkNodeSpelling } from "@/components/text-editor/utils/check-node-spelling";
-import { normalizeTextNode } from "@/components/text-editor/utils/normalize-text-node";
+import { checkNodeSpelling } from "@/components/korektorr-editor/utils/check-node-spelling";
+import { normalizeTextNode } from "@/components/korektorr-editor/utils/normalize-text-node";
+import { KorektorrEditor } from "@/components/korektorr-editor/korektorr-editor";
+import { isInline, isText } from "@udecode/plate-common";
 
-const checkSpellingNormalize = async (editor: Editor, worker: Worker) => {
+const checkSpellingNormalize = async (editor: KorektorrEditor, worker: Worker) => {
   let currentEditor = editor;
   let blockIndex = 0;
 
@@ -53,7 +55,7 @@ const checkSpellingNormalize = async (editor: Editor, worker: Worker) => {
   }
 };
 
-const debouncedCheckSpellingNormalize = debounce(async (editor: Editor, worker: Worker) => {
+const debouncedCheckSpellingNormalize = debounce(async (editor: KorektorrEditor, worker: Worker) => {
   await checkSpellingNormalize(editor, worker);
 }, 300);
 

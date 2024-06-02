@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import TextEditor from "@/components/text-editor/text-editor";
+import KorektorrEditor from "@/components/korektorr-editor/korektorr-editor";
 import { useWorker } from "@/app/worker-context";
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import { IconDiscountCheckFilled } from "@tabler/icons-react";
@@ -28,7 +28,7 @@ const HomePage = () => {
           <p>Tato stránka je ve vývoji. Aktuálně používate testovací verzi.</p>
         </div>
       </div>
-      <TextEditor />
+      <KorektorrEditor />
     </main>
   );
 };
