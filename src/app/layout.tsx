@@ -4,6 +4,7 @@ import "./globals.css";
 import Providers from "@/app/providers";
 import { ReactNode } from "react";
 import { cn } from "@udecode/cn";
+import Navbar from "@/components/navbar/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, "relative flex min-h-screen flex-col bg-slate-100")}>
-        <Providers>{children}</Providers>
+      <body className={cn(inter.className, "relative flex min-h-screen flex-col bg-slate-100 ")}>
+        <Providers>
+          <Navbar />
+          <main className="container mx-auto gap-2 xl:px-48 lg:px-20 flex flex-col">{children}</main>
+        </Providers>
       </body>
     </html>
   );
