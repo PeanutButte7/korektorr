@@ -36,7 +36,7 @@ const LoginPage = () => {
               <SubmitButton />
               {state.message && <p className="text-sm text-destructive self-start">{state.message}</p>}
               <p className="text-sm text-muted-foreground">
-                If you don't have an account, a new one will be created for you.
+                If you do not have an account, a new one will be created for you.
               </p>
             </CardFooter>
           </>
