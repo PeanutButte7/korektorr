@@ -3,7 +3,7 @@ import { createPluginFactory } from "@udecode/plate";
 import { useWorker } from "@/app/worker-context";
 import { checkNodeSpelling } from "@/components/korektorr-editor/utils/check-node-spelling";
 import { normalizeTextNode } from "@/components/korektorr-editor/utils/normalize-text-node";
-import { KorektorrEditor } from "@/components/korektorr-editor/korektorr-editor";
+import { KorektorrEditor } from "@/components/korektorr-editor/korektorr-editor-component";
 import { isInline, isText } from "@udecode/plate-common";
 
 const checkSpellingNormalize = async (editor: KorektorrEditor, worker: Worker) => {

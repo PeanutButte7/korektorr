@@ -17,6 +17,7 @@ const Editor = React.forwardRef<HTMLDivElement, PlateContentProps>(
           spellCheck={false}
           renderLeaf={({ attributes, children, leaf }) => {
             const spellError = dictionaryReady && !!leaf.spellError;
+            const punctuationError = !!leaf.punctuationError;
             const bold = !!leaf.bold;
             const italic = !!leaf.italic;
             const underline = !!leaf.underline;
@@ -26,7 +27,8 @@ const Editor = React.forwardRef<HTMLDivElement, PlateContentProps>(
               <span
                 {...attributes}
                 className={cn(
-                  spellError && "bg-red-200",
+                  spellError && "underline decoration-2 decoration-red-500",
+                  punctuationError && "underline decoration-2 decoration-amber-400",
                   bold && "font-bold",
                   italic && "italic",
                   underline && "underline",
@@ -38,7 +40,8 @@ const Editor = React.forwardRef<HTMLDivElement, PlateContentProps>(
             );
           }}
           aria-disabled={disabled}
-          className={cn("relative overflow-x-auto whitespace-pre-wrap break-words",
+          className={cn(
+            "relative overflow-x-auto whitespace-pre-wrap break-words",
             "min-h-[80px] h-[50vh] w-full rounded-md bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none",
             "[&_[data-slate-placeholder]]:text-muted-foreground [&_[data-slate-placeholder]]:!opacity-100",
             "[&_[data-slate-placeholder]]:top-[auto_!important]",

@@ -1,6 +1,6 @@
 import { BaseText, Editor, Path, Text, Transforms } from "slate";
 import { isText } from "@udecode/plate-common";
-import { KorektorrEditor, KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor";
+import { KorektorrEditor, KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor-component";
 
 export const normalizeTextNode = (editor: KorektorrEditor, node: KorektorrRichText, path: Path) => {
   // console.log("Normalize text node", node, editor, path);

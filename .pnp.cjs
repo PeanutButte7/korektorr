@@ -38,6 +38,7 @@ const RAW_RUNTIME_STATE =
           ["@supabase/ssr", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:0.3.0"],\
           ["@supabase/supabase-js", "npm:2.43.4"],\
           ["@tabler/icons-react", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:3.5.0"],\
+          ["@tanstack/react-query", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:5.40.0"],\
           ["@trivago/prettier-plugin-sort-imports", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:4.3.0"],\
           ["@types/node", "npm:20.12.13"],\
           ["@types/react", "npm:18.3.3"],\
@@ -1869,6 +1870,38 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@tabler/icons-react", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:3.5.0"],\
           ["@tabler/icons", "npm:3.5.0"],\
+          ["@types/react", "npm:18.3.3"],\
+          ["react", "npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@tanstack/query-core", [\
+      ["npm:5.40.0", {\
+        "packageLocation": "../../.yarn/berry/cache/@tanstack-query-core-npm-5.40.0-aadc5438e3-10c0.zip/node_modules/@tanstack/query-core/",\
+        "packageDependencies": [\
+          ["@tanstack/query-core", "npm:5.40.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@tanstack/react-query", [\
+      ["npm:5.40.0", {\
+        "packageLocation": "../../.yarn/berry/cache/@tanstack-react-query-npm-5.40.0-448d8967c1-10c0.zip/node_modules/@tanstack/react-query/",\
+        "packageDependencies": [\
+          ["@tanstack/react-query", "npm:5.40.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:5.40.0", {\
+        "packageLocation": "./.yarn/__virtual__/@tanstack-react-query-virtual-5e84437d4e/3/.yarn/berry/cache/@tanstack-react-query-npm-5.40.0-448d8967c1-10c0.zip/node_modules/@tanstack/react-query/",\
+        "packageDependencies": [\
+          ["@tanstack/react-query", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:5.40.0"],\
+          ["@tanstack/query-core", "npm:5.40.0"],\
           ["@types/react", "npm:18.3.3"],\
           ["react", "npm:18.3.1"]\
         ],\
@@ -8432,6 +8465,7 @@ const RAW_RUNTIME_STATE =
           ["@supabase/ssr", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:0.3.0"],\
           ["@supabase/supabase-js", "npm:2.43.4"],\
           ["@tabler/icons-react", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:3.5.0"],\
+          ["@tanstack/react-query", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:5.40.0"],\
           ["@trivago/prettier-plugin-sort-imports", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:4.3.0"],\
           ["@types/node", "npm:20.12.13"],\
           ["@types/react", "npm:18.3.3"],\

@@ -47,6 +47,15 @@ const FloatingToolbarSuggestions = () => {
     getSuggestions();
   }, [dictionaryReady, editor, worker]);
 
+  const selection = editor.selection;
+  if (!selection) return;
+
+  const node = Node.get(editor, selection.anchor.path);
+  if (!isText(node)) throw new Error("Node is not a text node");
+
+  const punctuationSuggestion: string = node.punctuationSuggestion as string;
+
+  // Replace text with suggestion
   const fixError = (suggestion: string) => {
     if (!Editor.isEditor(editor)) return;
 
@@ -61,6 +70,20 @@ const FloatingToolbarSuggestions = () => {
     });
   };
 
+  const fixPunctuationError = (suggestion: string) => {
+    if (!Editor.isEditor(editor)) return;
+
+    // Set new text
+    Transforms.insertText(editor, suggestion, {
+      at: editor.selection?.anchor.path,
+    });
+
+    // Remove punctuation error mark
+    Transforms.setNodes(editor, { punctuationError: null, punctuationSuggestion: null } as Partial<BaseText>, {
+      at: editor.selection?.anchor.path,
+    });
+  };
+
   return (
     <div className="flex bg-slate-100">
       {suggestions.map((suggestion, index) => (
@@ -68,6 +91,11 @@ const FloatingToolbarSuggestions = () => {
           {suggestion}
         </ToolbarButton>
       ))}
+      {punctuationSuggestion && (
+        <ToolbarButton onClick={() => fixPunctuationError(punctuationSuggestion)}>
+          {punctuationSuggestion}
+        </ToolbarButton>
+      )}
     </div>
   );
 };

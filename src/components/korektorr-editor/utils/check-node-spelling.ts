@@ -3,7 +3,7 @@ import {
   KorektorrEditor,
   KorektorrParagraphElement,
   KorektorrRichText,
-} from "@/components/korektorr-editor/korektorr-editor";
+} from "@/components/korektorr-editor/korektorr-editor-component";
 
 const checkWord = async (word: string, worker: Worker): Promise<boolean> => {
   return new Promise((resolve) => {
