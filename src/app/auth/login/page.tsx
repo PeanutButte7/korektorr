@@ -8,7 +8,6 @@ import { Label } from "@/components/ui/label";
 import { useFormStatus, useFormState } from "react-dom";
 import SubmitButton from "@/app/auth/login/submit-button";
 import { IconMailShare } from "@tabler/icons-react";
-import { useRouter } from "next/navigation";
 
 const initialState = {
   message: "",
@@ -16,11 +15,7 @@ const initialState = {
   email: "",
 };
 
-interface LoginPageProps {
-  message?: string;
-}
-
-const LoginPage = ({ message }: LoginPageProps) => {
+const LoginPage = () => {
   const [state, formAction] = useFormState(loginWithEmail, initialState);
   const { pending } = useFormStatus();
 
@@ -31,7 +26,7 @@ const LoginPage = ({ message }: LoginPageProps) => {
           <>
             <CardHeader>
               <CardTitle className="text-2xl font-black text-primary">Přihlásit se</CardTitle>
-              {message && <CardDescription>{message}</CardDescription>}
+              <CardDescription>Přihlašte se snadno a bezpečně pouze pomocí emailu.</CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4">
               <div className="grid gap-2">

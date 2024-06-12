@@ -34,10 +34,10 @@ const TopBar = ({ sideBarOpen, setSideBarOpen }: TopBarProps) => {
       </div>
       {!sideBarOpen && (
         <div className="flex gap-2">
-          <Button onClick={smartCorrect} size="sm" variant="fancy">
-            <IconSparkles />
-            Chytrá kontrola
-          </Button>
+          {/*<Button onClick={smartCorrect} size="sm" variant="fancy">*/}
+          {/*  <IconSparkles />*/}
+          {/*  Chytrá kontrola*/}
+          {/*</Button>*/}
           <Button onClick={() => setSideBarOpen(true)} size="icon-sm" variant="outline">
             <IconLayoutSidebarRightExpandFilled />
           </Button>
