@@ -16,7 +16,14 @@ onmessage = (event) => {
 
       // @ts-ignore
       const isCorrect = typo.check(message.word);
-      postMessage({ type: "word_checked", word: message.word, isCorrect });
+      let spellSuggestions: string[] = [];
+
+      if (!isCorrect) {
+        // @ts-ignore
+        spellSuggestions = typo.suggest(message.word);
+      }
+
+      postMessage({ type: "word_checked", word: message.word, isCorrect, spellSuggestions });
       break;
     case "suggest_word":
       if (!typo) {

@@ -48,7 +48,12 @@ onmessage = function (event) {
             }
             // @ts-ignore
             var isCorrect = typo.check(message.word);
-            postMessage({ type: "word_checked", word: message.word, isCorrect: isCorrect });
+            var spellSuggestions = [];
+            if (!isCorrect) {
+                // @ts-ignore
+                spellSuggestions = typo.suggest(message.word);
+            }
+            postMessage({ type: "word_checked", word: message.word, isCorrect: isCorrect, spellSuggestions: spellSuggestions });
             break;
         case "suggest_word":
             if (!typo) {

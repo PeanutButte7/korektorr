@@ -41,8 +41,8 @@ const Editor = React.forwardRef<HTMLDivElement, PlateContentProps>(
           }}
           aria-disabled={disabled}
           className={cn(
-            "relative overflow-x-auto whitespace-pre-wrap break-words",
-            "min-h-[80px] h-[50vh] w-full rounded-md bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none",
+            " relative overflow-x-auto whitespace-pre-wrap break-words",
+            "min-h-[80px] h-[50vh] w-full rounded-md bg-card px-3 py-2 font-paragraph text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none",
             "[&_[data-slate-placeholder]]:text-muted-foreground [&_[data-slate-placeholder]]:!opacity-100",
             "[&_[data-slate-placeholder]]:top-[auto_!important]",
             "[&_strong]:font-bold"
@@ -55,6 +55,7 @@ const Editor = React.forwardRef<HTMLDivElement, PlateContentProps>(
     );
   }
 );
+
 Editor.displayName = "Editor";
 
 export { Editor };

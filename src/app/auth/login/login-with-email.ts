@@ -10,12 +10,15 @@ export async function loginWithEmail(prevState: any, formData: FormData) {
   if (!formData.get("email")) {
     return {
       success: false,
-      message: "Email is required",
+      message: "Je nutné zadat email",
+      email: "",
     };
   }
 
+  const email = formData.get("email") as string;
+
   const { data, error } = await supabase.auth.signInWithOtp({
-    email: formData.get("email") as string,
+    email,
     options: {
       shouldCreateUser: true,
       emailRedirectTo: "https://korektorr.cz/",
@@ -26,11 +29,13 @@ export async function loginWithEmail(prevState: any, formData: FormData) {
     return {
       success: false,
       message: error.message,
+      email,
     };
   }
 
   revalidatePath("/", "layout");
   return {
     success: true,
+    email,
   };
 }

@@ -7,13 +7,20 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useFormStatus, useFormState } from "react-dom";
 import SubmitButton from "@/app/auth/login/submit-button";
+import { IconMailShare } from "@tabler/icons-react";
+import { useRouter } from "next/navigation";
 
 const initialState = {
   message: "",
   success: false,
+  email: "",
 };
 
-const LoginPage = () => {
+interface LoginPageProps {
+  message?: string;
+}
+
+const LoginPage = ({ message }: LoginPageProps) => {
   const [state, formAction] = useFormState(loginWithEmail, initialState);
   const { pending } = useFormStatus();
 
@@ -23,29 +30,39 @@ const LoginPage = () => {
         {!state.success ? (
           <>
             <CardHeader>
-              <CardTitle className="text-2xl">Login</CardTitle>
-              <CardDescription>Enter your email below to login to your account.</CardDescription>
+              <CardTitle className="text-2xl font-black text-primary">Přihlásit se</CardTitle>
+              {message && <CardDescription>{message}</CardDescription>}
             </CardHeader>
             <CardContent className="grid gap-4">
               <div className="grid gap-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" name="email" type="email" placeholder="email@example.com" required />
+                <Input id="email" name="email" type="email" placeholder="kevin.bacon@email.com" required />
+                <p className="text-sm text-muted-foreground">Pokud nemáte založený účet, bude vytvořen.</p>
               </div>
             </CardContent>
-            <CardFooter className="flex flex-col gap-2">
+            <CardFooter className="flex flex-col gap-2 mt-8">
               <SubmitButton />
               {state.message && <p className="text-sm text-destructive self-start">{state.message}</p>}
-              <p className="text-sm text-muted-foreground">
-                If you do not have an account, a new one will be created for you.
-              </p>
             </CardFooter>
           </>
         ) : (
           <>
             <CardHeader>
-              <CardTitle className="text-2xl">Email sent!</CardTitle>
-              <CardDescription>Check your inbox to login.</CardDescription>
+              <IconMailShare size={32} className="text-primary" />
+              <CardTitle className="text-2xl font-black text-primary">Zkontrolujte váš email!</CardTitle>
+              <CardDescription>
+                <p className="text-sm text-muted-foreground">Poslali jsme vám email na adresu:</p>
+                <p className="text-sm text-muted-foreground font-extrabold">{state.email}</p>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Pro přihlášení nebo vytvoření účtu stačí kliknout na odkaz v emailu.
+                </p>
+              </CardDescription>
             </CardHeader>
+            <CardFooter className="mt-8">
+              <Button onClick={() => location.reload()} type="reset" variant="outline" className="w-full">
+                Přihlásit se jiným emailem
+              </Button>
+            </CardFooter>
           </>
         )}
       </Card>

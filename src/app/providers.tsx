@@ -7,6 +7,7 @@ import { PlateController } from "@udecode/plate-common";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { KorektorrProvider } from "@/app/korektorr-context";
 
 function makeQueryClient() {
   return new QueryClient({
@@ -47,9 +48,11 @@ const Providers = ({ children }: { children: ReactNode }) => {
     <QueryClientProvider client={queryClient}>
       <WorkerProvider>
         <PlateController>
-          <TooltipProvider disableHoverableContent delayDuration={500} skipDelayDuration={0}>
-            {children}
-          </TooltipProvider>
+          <KorektorrProvider>
+            <TooltipProvider disableHoverableContent delayDuration={500} skipDelayDuration={0}>
+              {children}
+            </TooltipProvider>
+          </KorektorrProvider>
         </PlateController>
       </WorkerProvider>
       <SpeedInsights />

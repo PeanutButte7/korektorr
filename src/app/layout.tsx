@@ -12,8 +12,8 @@ const inter = Inter({ subsets: ["latin"] });
 const grotesk = localFont({
   src: [
     { path: "fonts/CabinetGrotesk-Medium.otf", weight: "500", style: "medium" },
-    { path: "fonts/CabinetGrotesk-Bold.otf", weight: "600", style: "bold" },
-    { path: "fonts/CabinetGrotesk-Black.otf", weight: "800", style: "black" },
+    { path: "fonts/CabinetGrotesk-Extrabold.otf", weight: "800", style: "extrabold" },
+    { path: "fonts/CabinetGrotesk-Black.otf", weight: "900", style: "black" },
   ],
 });
 
@@ -31,7 +31,7 @@ export default function RootLayout({
       <body className={cn(inter.className, grotesk.className, "relative flex min-h-screen flex-col bg-main")}>
         <Providers>
           <Navbar />
-          <main className="container mx-auto gap-2 xl:px-48 lg:px-20 flex flex-col">{children}</main>
+          <main className="container mx-auto gap-2 xl:px-48 lg:px-20 flex flex-col mt-24">{children}</main>
         </Providers>
       </body>
     </html>

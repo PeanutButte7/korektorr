@@ -2,27 +2,26 @@
 
 import React, { useEffect, useState } from "react";
 import { createBasicMarksPlugin, createPlugins, ELEMENT_PARAGRAPH } from "@udecode/plate";
-import { Plate, PlateEditor, TDescendant, TElement, useEditorState } from "@udecode/plate-common";
+import { Plate, PlateEditor, TDescendant, TElement, useEditorRef, useEditorState } from "@udecode/plate-common";
 import { Editor as PlateEditorComponent } from "@/components/plate-ui/editor";
 import { FloatingToolbar } from "@/components/plate-ui/floating-toolbar";
-import { FixedToolbarButtons } from "@/components/plate-ui/fixed-toolbar-buttons";
 import FloatingToolbarSuggestions from "@/components/plate-ui/floating-toolbar-suggestions";
-import { FixedToolbar } from "@/components/plate-ui/fixed-toolbar";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import {
   checkSpellingNormalize,
   useSpellCheckNormalizePlugin,
 } from "@/components/korektorr-editor/spell-checker-plugin";
 import { useWorker } from "@/app/worker-context";
-import { BaseText, Editor as SlateEditor } from "slate";
-import { Button } from "@/components/ui/button";
-import { useMutation } from "@tanstack/react-query";
-import { Suggestions, setPunctuationErrors } from "@/components/korektorr-editor/utils/setPuctuationErrors";
+import { Editor as SlateEditor, Path } from "slate";
 import { useGetPunctuationErrors } from "@/components/korektorr-editor/utils/useGetPunctuationErrors";
+import { useKorektorr } from "@/app/korektorr-context";
+import { useNormalizationPlugin } from "@/components/korektorr-editor/normalization-plugin";
 
 export type KorektorrRichText = TDescendant & {
   text: string;
+  path?: Path;
   spellError?: boolean;
+  spellSuggestions?: string[];
   punctuationError?: boolean;
   punctuationSuggestion?: string;
 };
@@ -50,13 +49,14 @@ const defaultInitialValue: KorektorrValue = [
 ];
 
 const KorektorrEditorComponent = () => {
+  const { setErrorLeafs } = useKorektorr();
   const { worker, dictionaryReady } = useWorker();
-  const editor = useEditorState<KorektorrValue, KorektorrEditor>();
+  const editor = useEditorRef<KorektorrValue, KorektorrEditor>();
 
   const [debugValue, setDebugValue] = useState<KorektorrValue>([]);
   const initialLocalStorageValue = localStorage.getItem("editorValue");
 
-  const plugins = createPlugins([useSpellCheckNormalizePlugin(), createBasicMarksPlugin()]);
+  const plugins = createPlugins([useSpellCheckNormalizePlugin(), useNormalizationPlugin(), createBasicMarksPlugin()]);
   const getPunctuationErrors = useGetPunctuationErrors(editor);
 
   useEffect(() => {
@@ -64,47 +64,46 @@ const KorektorrEditorComponent = () => {
 
     console.log("Dictionary mounted");
     if (!SlateEditor.isEditor(editor)) return;
-    checkSpellingNormalize(editor, worker);
+    checkSpellingNormalize(editor, worker, setErrorLeafs);
   }, [dictionaryReady]);
 
   return (
-    <>
-      <Button
-        onClick={() => {
-          getPunctuationErrors.mutate(editor.children);
-          // setPunctuationErrors(editor, []);
+    <div className="bg-background rounded-lg border shadow-pop">
+      {/*<Button*/}
+      {/*  onClick={() => {*/}
+      {/*    getPunctuationErrors.mutate(editor.children);*/}
+      {/*    // setPunctuationErrors(editor, []);*/}
+      {/*  }}*/}
+      {/*  className="self-start"*/}
+      {/*>*/}
+      {/*  {getPunctuationErrors.isPending ? "Analyzing..." : "Analyze sentences"}*/}
+      {/*</Button>*/}
+      <Plate
+        normalizeInitialValue
+        initialValue={initialLocalStorageValue ? JSON.parse(initialLocalStorageValue) : defaultInitialValue}
+        onChange={(newValue) => {
+          setDebugValue(newValue);
+          localStorage.setItem("editorValue", JSON.stringify(newValue));
         }}
-        className="self-start"
+        plugins={plugins}
       >
-        {getPunctuationErrors.isPending ? "Analyzing..." : "Analyze sentences"}
-      </Button>
-      <div className="bg-background rounded-lg border">
-        <Plate
-          initialValue={initialLocalStorageValue ? JSON.parse(initialLocalStorageValue) : defaultInitialValue}
-          onChange={(newValue) => {
-            setDebugValue(newValue);
-            localStorage.setItem("editorValue", JSON.stringify(newValue));
-          }}
-          plugins={plugins}
-        >
-          <FixedToolbar>
-            <FixedToolbarButtons />
-          </FixedToolbar>
-          <FloatingToolbar>
-            <FloatingToolbarSuggestions />
-          </FloatingToolbar>
-          <PlateEditorComponent placeholder="Začněte psát..." />
-          <Accordion type="single" collapsible className="px-4">
-            <AccordionItem value="item-1" className="border-none">
-              <AccordionTrigger>Otevřít vývojářské informace</AccordionTrigger>
-              <AccordionContent>
-                <p>{JSON.stringify(debugValue)}</p>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </Plate>
-      </div>
-    </>
+        {/*<FixedToolbar>*/}
+        {/*  <FixedToolbarButtons />*/}
+        {/*</FixedToolbar>*/}
+        <FloatingToolbar>
+          <FloatingToolbarSuggestions />
+        </FloatingToolbar>
+        <PlateEditorComponent placeholder="Začněte psát..." />
+        <Accordion type="single" collapsible>
+          <AccordionItem value="item-1" className="border-none bg-white px-4 rounded-b-lg">
+            <AccordionTrigger>Otevřít vývojářské informace</AccordionTrigger>
+            <AccordionContent>
+              <p>{JSON.stringify(debugValue)}</p>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </Plate>
+    </div>
   );
 };
 

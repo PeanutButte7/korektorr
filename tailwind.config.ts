@@ -30,13 +30,26 @@ const config = {
         foreground: colors.gray[900],
         primary: {
           DEFAULT: colors.blue[600],
-          foreground: colors.gray[50],
+          foreground: colors.blue[50],
+        },
+        destructive: {
+          DEFAULT: colors.pink[600],
+          foreground: colors.pink[50],
+        },
+        muted: {
+          DEFAULT: colors.gray[100],
+          foreground: colors.gray[500],
         },
         card: {
           DEFAULT: colors.white,
           foreground: colors.gray[900],
+          hover: colors.gray[50],
         },
         main: "#FAFAF9",
+        error: {
+          spell: colors.pink[500],
+          punctuation: colors.amber[500],
+        },
       },
       boxShadow: {
         "inner-soft": "inset 0px -1px 4px 0px rgba(0,0,0,0.05)",

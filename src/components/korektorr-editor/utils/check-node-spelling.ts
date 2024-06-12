@@ -5,14 +5,20 @@ import {
   KorektorrRichText,
 } from "@/components/korektorr-editor/korektorr-editor-component";
 
-const checkWord = async (word: string, worker: Worker): Promise<boolean> => {
+const checkWord = async (
+  word: string,
+  worker: Worker
+): Promise<{
+  isCorrect: boolean;
+  spellSuggestions?: string[];
+}> => {
   return new Promise((resolve) => {
     worker.postMessage({ type: "check_word", word });
 
     worker.onmessage = (event) => {
       const message = event.data;
       if (message.type === "word_checked") {
-        resolve(message.isCorrect);
+        resolve({ isCorrect: message.isCorrect, spellSuggestions: message.spellSuggestions });
       }
     };
   });
@@ -42,10 +48,10 @@ export const checkNodeSpelling = async (
       anchor: { path, offset: wordStart },
       focus: { path, offset: wordEnd },
     };
-    const isCorrect = await checkWord(word, worker);
+    const { isCorrect, spellSuggestions } = await checkWord(word, worker);
 
-    if (!isCorrect && !node.spellError) {
-      Transforms.setNodes(editor, { spellError: true } as Partial<BaseText>, {
+    if (!isCorrect) {
+      Transforms.setNodes(editor, { spellError: true, spellSuggestions } as Partial<KorektorrRichText>, {
         at: range,
         match: Text.isText,
         split: true,
@@ -54,7 +60,7 @@ export const checkNodeSpelling = async (
       return editor;
     } else if (isCorrect && node.spellError) {
       // Remove the spell error mark
-      Transforms.setNodes(editor, { spellError: false } as Partial<BaseText>, {
+      Transforms.setNodes(editor, { spellError: false, spellSuggestions: undefined } as Partial<KorektorrRichText>, {
         at: range,
         match: Text.isText,
       });

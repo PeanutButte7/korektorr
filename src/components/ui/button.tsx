@@ -5,20 +5,23 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground shadow-pop border-white/70 border-y hover:bg-blue-700",
-        secondary: "bg-white text-foreground shadow-pop border-white/70 border-y hover:bg-background/90",
-        outline: "border bg-white hover:bg-background hover:text-accent-foreground",
+        // secondary: "bg-white text-foreground shadow-pop border-white/70 border-y hover:bg-background/90",
+        outline: "border bg-white hover:bg-background text-foreground hover:text-foreground/80",
+        fancy:
+          "bg-gradient-to-b from-blue-500 to-blue-700 text-primary-foreground shadow-pop border-white/70 border-y hover:bg-blue-700",
         ghost: "hover:bg-background hover:text-foreground/90",
-        link: "text-primary underline-offset-4 hover:underline",
+        link: "text-foreground underline-offset-4 underline hover:no-underline",
       },
       size: {
-        default: "h-9 px-4 py-2",
-        sm: "h-8 px-3",
+        default: "h-9 px-4 [&>svg]:h-4 [&>svg]:w-4",
+        sm: "h-8 px-3 [&>svg]:h-4 [&>svg]:w-4",
         icon: "h-9 w-9",
+        "icon-sm": "h-8 w-8",
       },
     },
     defaultVariants: {

@@ -11,12 +11,14 @@ const Navbar = async () => {
   return (
     <div className="flex items-center justify-center h-12 border-b border-gray-200">
       <div className="container flex items-center justify-between gap-2 xl:px-48 lg:px-20 ">
-        <h1 className="font-black text-3xl text-primary">Korektorr</h1>
+        <Link href="/" className="font-black text-3xl text-primary">
+          Korektorr
+        </Link>
         {data.user ? (
           <AvatarDropdown email={data.user?.email} />
         ) : (
-          <Link href={"/auth/login"} className={buttonVariants({ variant: "secondary" })}>
-            Login
+          <Link href={"/auth/login"} className={buttonVariants({ variant: "outline" })}>
+            Přihlásit se
           </Link>
         )}
       </div>

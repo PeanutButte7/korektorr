@@ -2,9 +2,16 @@ import { BaseText, Editor, Path, Text, Transforms } from "slate";
 import { isText } from "@udecode/plate-common";
 import { KorektorrEditor, KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor-component";
 
-export const normalizeTextNode = (editor: KorektorrEditor, node: KorektorrRichText, path: Path) => {
+export const normalizeTextNode = (
+  editor: KorektorrEditor,
+  node: KorektorrRichText,
+  path: Path
+): { editor: KorektorrEditor; hasError: boolean } => {
+  const hasError = !!node.spellError || !!node.punctuationError;
+
   // console.log("Normalize text node", node, editor, path);
-  if (!node.text || !editor.children || !editor.children.length || !Editor.isEditor(editor)) return editor;
+  if (!node.text || !editor.children || !editor.children.length || !Editor.isEditor(editor))
+    return { editor, hasError };
 
   // Try to merge with next node
   const lastChar = node.text.slice(-1);
@@ -12,7 +19,7 @@ export const normalizeTextNode = (editor: KorektorrEditor, node: KorektorrRichTe
 
   if (!doesEndWithPS) {
     const nodeDescendant = Editor.next(editor, { at: path });
-    if (!nodeDescendant) return editor;
+    if (!nodeDescendant) return { editor, hasError };
 
     const [nextNode, nextNodePath] = nodeDescendant;
     // console.log("currentNode", node);
@@ -34,5 +41,5 @@ export const normalizeTextNode = (editor: KorektorrEditor, node: KorektorrRichTe
     }
   }
 
-  return editor;
+  return { editor, hasError };
 };

@@ -1,14 +1,31 @@
-import React from "react";
-import KorektorrEditorComponent from "@/components/korektorr-editor/korektorr-editor-component";
-import WorkerIndicator from "@/app/(home-page)/worker-indicator";
+"use client";
 
-const HomePage = async () => {
+import React, { useEffect, useState } from "react";
+import KorektorrEditorComponent from "@/components/korektorr-editor/korektorr-editor-component";
+import TopBar from "@/app/(home-page)/top-bar";
+import SideBar from "@/app/(home-page)/side-bar/side-bar";
+import { config, useTransition, animated, useSpring } from "@react-spring/web";
+
+const getInitialSideBarState = () => {
+  const savedState = localStorage.getItem("sideBarOpen");
+  return savedState ? JSON.parse(savedState) : true;
+};
+
+const HomePage = () => {
+  const [sideBarOpen, setSideBarOpen] = useState(getInitialSideBarState);
+
+  useEffect(() => {
+    localStorage.setItem("sideBarOpen", JSON.stringify(sideBarOpen));
+  }, [sideBarOpen]);
+
   return (
-    <>
-      <h1 className="text-center mt-20 mb-4 text-4xl font-bold text-muted-foreground">Korektorr</h1>
-      <WorkerIndicator />
-      <KorektorrEditorComponent />
-    </>
+    <div className="flex gap-2">
+      <div className="flex flex-col gap-2 flex-grow">
+        <TopBar sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen} />
+        <KorektorrEditorComponent />
+      </div>
+      {sideBarOpen && <SideBar setSideBarOpen={setSideBarOpen} />}
+    </div>
   );
 };
 
