@@ -6,6 +6,7 @@ import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 import { cn } from "@udecode/cn";
 import { useWorker } from "@/app/worker-context";
+import { KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor-component";
 
 const Editor = React.forwardRef<HTMLDivElement, PlateContentProps>(
   ({ className, disabled, readOnly, ...props }, ref) => {
@@ -16,17 +17,21 @@ const Editor = React.forwardRef<HTMLDivElement, PlateContentProps>(
         <PlateContent
           spellCheck={false}
           renderLeaf={({ attributes, children, leaf }) => {
-            const spellError = dictionaryReady && !!leaf.spellError;
-            const punctuationError = !!leaf.punctuationError;
-            const bold = !!leaf.bold;
-            const italic = !!leaf.italic;
-            const underline = !!leaf.underline;
-            const strikethrough = !!leaf.strikethrough;
+            const typedLeaf = leaf as KorektorrRichText;
+
+            const dotError = !!typedLeaf.errors?.dotError;
+            const spellError = !!typedLeaf.errors?.spellError;
+            const punctuationError = !!typedLeaf.errors?.punctuationError;
+            const bold = !!typedLeaf.bold;
+            const italic = !!typedLeaf.italic;
+            const underline = !!typedLeaf.underline;
+            const strikethrough = !!typedLeaf.strikethrough;
 
             return (
               <span
                 {...attributes}
                 className={cn(
+                  dotError && "underline decoration-2 decoration-red-500",
                   spellError && "underline decoration-2 decoration-red-500",
                   punctuationError && "underline decoration-2 decoration-amber-400",
                   bold && "font-bold",

@@ -1,7 +1,7 @@
 import { Editor } from "slate";
 import { createPluginFactory } from "@udecode/plate";
 import { useWorker } from "@/app/worker-context";
-import { checkNodeSpelling } from "@/components/korektorr-editor/utils/check-node-spelling";
+import { checkNodeSpelling } from "@/components/korektorr-editor/utils/spell-checker/check-node-spelling";
 import { normalizeTextNode } from "@/components/korektorr-editor/utils/normalize-text-node";
 import { KorektorrEditor, KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor-component";
 import { SetErrorLeafs, useKorektorr } from "@/app/korektorr-context";
@@ -9,9 +9,6 @@ import { SetErrorLeafs, useKorektorr } from "@/app/korektorr-context";
 const checkSpellingNormalize = async (editor: KorektorrEditor, worker: Worker, setErrorLeafs: SetErrorLeafs) => {
   let currentEditor = editor;
   let blockIndex = 0;
-
-  // TODO: Do this recursively
-  // It's important to fetch from the current editor, because the editor is being mutated
 
   // Check spelling
   // Go through blocks in the editor

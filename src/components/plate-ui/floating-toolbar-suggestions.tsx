@@ -3,6 +3,7 @@ import { BaseText, Editor, Node, Transforms } from "slate";
 import { ToolbarButton } from "@/components/plate-ui/toolbar";
 import { useWorker } from "@/app/worker-context";
 import { useEffect, useState } from "react";
+import { KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor-component";
 
 const suggestWord = async (word: string, worker: Worker): Promise<string[]> => {
   return new Promise((resolve) => {
@@ -35,9 +36,9 @@ const FloatingToolbarSuggestions = () => {
       const selection = editor.selection;
       if (!selection) return;
 
-      const node = Node.get(editor, selection.anchor.path);
+      const node = Node.get(editor, selection.anchor.path) as KorektorrRichText;
       if (!isText(node)) throw new Error("Node is not a text node");
-      if (!node.spellError) return; // Return if there is no spell error
+      if (!node.errors?.spellError) return; // Return if there is no spell error
       if (node.text.length > 20) return; // Return if the text is too long and would cause too long of a load time
 
       const suggestions = await suggestWord(node.text, worker);
@@ -65,7 +66,7 @@ const FloatingToolbarSuggestions = () => {
     });
 
     // Remove spell error mark
-    Transforms.setNodes(editor, { spellError: false } as Partial<BaseText>, {
+    Transforms.setNodes(editor, { errors: { spellError: undefined } } as Partial<KorektorrRichText>, {
       at: editor.selection?.anchor.path,
     });
   };

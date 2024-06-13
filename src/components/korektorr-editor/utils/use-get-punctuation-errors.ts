@@ -1,4 +1,4 @@
-import { Suggestions, setPunctuationErrors } from "@/components/korektorr-editor/utils/setPuctuationErrors";
+import { Suggestions, setPunctuationErrors } from "@/components/korektorr-editor/utils/set-punctuation-errors";
 import { KorektorrEditor, KorektorrValue } from "@/components/korektorr-editor/korektorr-editor-component";
 import { useMutation } from "@tanstack/react-query";
 import { Node } from "slate";

@@ -13,17 +13,23 @@ import {
 } from "@/components/korektorr-editor/spell-checker-plugin";
 import { useWorker } from "@/app/worker-context";
 import { Editor as SlateEditor, Path } from "slate";
-import { useGetPunctuationErrors } from "@/components/korektorr-editor/utils/useGetPunctuationErrors";
+import { useGetPunctuationErrors } from "@/components/korektorr-editor/utils/use-get-punctuation-errors";
 import { useKorektorr } from "@/app/korektorr-context";
 import { useNormalizationPlugin } from "@/components/korektorr-editor/normalization-plugin";
+
+export type ErrorType = "dotError" | "spellError" | "punctuationError"; // Add more error types as needed
+
+export type ErrorDetails = {
+  suggestions?: string[]; // For spell and other suggestions
+  prioritySuggestion?: string;
+};
 
 export type KorektorrRichText = TDescendant & {
   text: string;
   path?: Path;
-  spellError?: boolean;
-  spellSuggestions?: string[];
-  punctuationError?: boolean;
-  punctuationSuggestion?: string;
+  errors?: {
+    [key in ErrorType]?: ErrorDetails;
+  };
 };
 
 export interface KorektorrParagraphElement extends TElement {

@@ -1,13 +1,14 @@
 import { BaseText, Editor, Path, Text, Transforms } from "slate";
 import { isText } from "@udecode/plate-common";
 import { KorektorrEditor, KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor-component";
+import { checkHasError } from "@/utils/check-has-error";
 
 export const normalizeTextNode = (
   editor: KorektorrEditor,
   node: KorektorrRichText,
   path: Path
 ): { editor: KorektorrEditor; hasError: boolean } => {
-  const hasError = !!node.spellError || !!node.punctuationError;
+  const hasError = checkHasError(node);
 
   // console.log("Normalize text node", node, editor, path);
   if (!node.text || !editor.children || !editor.children.length || !Editor.isEditor(editor))
