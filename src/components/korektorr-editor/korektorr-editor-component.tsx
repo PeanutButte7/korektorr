@@ -93,9 +93,6 @@ const KorektorrEditorComponent = () => {
         }}
         plugins={plugins}
       >
-        {/*<FixedToolbar>*/}
-        {/*  <FixedToolbarButtons />*/}
-        {/*</FixedToolbar>*/}
         <FloatingToolbar>
           <FloatingToolbarSuggestions />
         </FloatingToolbar>
@@ -104,7 +101,18 @@ const KorektorrEditorComponent = () => {
           <AccordionItem value="item-1" className="border-none bg-white px-4 rounded-b-lg">
             <AccordionTrigger>Otevřít vývojářské informace</AccordionTrigger>
             <AccordionContent>
-              <p>{JSON.stringify(debugValue)}</p>
+              {debugValue.map((node, index) => (
+                <div>
+                  {JSON.stringify(node)}
+                  <div key={index} className="border-l border-red-400 ml-2 pl-2">
+                    {node.children.map((childNode, childIndex) => (
+                      <p key={childIndex} className="my-1 bg-slate-100">
+                        {JSON.stringify(childNode)}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </AccordionContent>
           </AccordionItem>
         </Accordion>

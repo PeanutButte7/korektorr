@@ -10,6 +10,8 @@ import { useEditorRef } from "@udecode/plate-common";
 import { Editor, Text, Transforms } from "slate";
 import { useKorektorr } from "@/app/korektorr-context";
 import { joinWithPreviousWord } from "@/app/(home-page)/side-bar/join-with-previous-word";
+import { checkSpellingNormalize } from "@/components/korektorr-editor/spell-checker-plugin";
+import { useWorker } from "@/app/worker-context";
 
 interface SideBarCardProps {
   leaf: KorektorrRichText;
@@ -17,6 +19,7 @@ interface SideBarCardProps {
 
 const SideBarCard = ({ leaf }: SideBarCardProps) => {
   const { setErrorLeafs } = useKorektorr();
+  const { worker } = useWorker();
   const editor = useEditorRef<KorektorrValue, KorektorrEditor>();
   let type: "spellError" | "punctuationError" | "dotError" | null = null;
   if (!leaf.path) return null;
@@ -61,13 +64,14 @@ const SideBarCard = ({ leaf }: SideBarCardProps) => {
     setErrorLeafs((prev) => prev.filter(({ path }) => JSON.stringify(path) !== JSON.stringify(leaf.path)));
   };
 
-  const originalJoinedText = joinWithPreviousWord(leaf.text, leaf.path, editor);
+  // const originalJoinedText = joinWithPreviousWord(leaf.text, leaf.path, editor);
+  const originalJoinedText = leaf.text;
 
   let correctedText = prioritySuggestion;
-  if (leaf.errors?.dotError && prioritySuggestion) {
-    // If it is a dot error, add previous word to the corrected text for better readability
-    correctedText = joinWithPreviousWord(prioritySuggestion, leaf.path, editor);
-  }
+  // if (leaf.errors?.dotError && prioritySuggestion) {
+  //   // If it is a dot error, add previous word to the corrected text for better readability
+  //   correctedText = joinWithPreviousWord(prioritySuggestion, leaf.path, editor);
+  // }
 
   return (
     <button
