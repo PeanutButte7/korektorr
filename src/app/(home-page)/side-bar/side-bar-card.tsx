@@ -10,7 +10,7 @@ import { useEditorRef } from "@udecode/plate-common";
 import { Editor, Text, Transforms } from "slate";
 import { useKorektorr } from "@/app/korektorr-context";
 import { joinWithPreviousWord } from "@/app/(home-page)/side-bar/join-with-previous-word";
-import { checkSpellingNormalize } from "@/components/korektorr-editor/spell-checker-plugin";
+import { checkSpellingNormalize } from "@/components/korektorr-editor/plugins/spell-checker-plugin/spell-checker-plugin";
 import { useWorker } from "@/app/worker-context";
 
 interface SideBarCardProps {

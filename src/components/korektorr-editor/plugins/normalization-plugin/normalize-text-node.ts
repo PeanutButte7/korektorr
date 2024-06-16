@@ -36,7 +36,6 @@ export const normalizeTextNode = (
     // If next node and current node don't have errors, merge them
     if (!hasError && !nextHasError) {
       Transforms.mergeNodes(editor, { at: nextNodePath, match: Text.isText });
-      console.log("mergeNodes", editor.children, node, nextNode);
       return { editor, hasError: false };
     }
   }

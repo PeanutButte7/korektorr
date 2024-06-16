@@ -6,7 +6,6 @@ import Link from "next/link";
 const Navbar = async () => {
   const supabase = createServerClient();
   const { data, error } = await supabase.auth.getUser();
-  console.log("Data", data);
 
   return (
     <div className="flex items-center justify-center h-12 border-b border-gray-200">

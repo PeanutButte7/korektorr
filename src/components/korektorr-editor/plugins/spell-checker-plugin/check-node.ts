@@ -4,8 +4,8 @@ import {
   KorektorrParagraphElement,
   KorektorrRichText,
 } from "@/components/korektorr-editor/korektorr-editor-component";
-import { checkWord } from "@/components/korektorr-editor/utils/spell-checker/check-word";
-import { checkDots } from "@/components/korektorr-editor/utils/spell-checker/check-dots";
+import { checkWord } from "@/components/korektorr-editor/plugins/spell-checker-plugin/check-word";
+import { checkDots } from "@/components/korektorr-editor/plugins/spell-checker-plugin/check-dots";
 import { checkHasError } from "@/utils/check-has-error";
 
 export const checkNode = async (editor: KorektorrEditor, node: KorektorrRichText, path: Path, worker: Worker) => {
@@ -32,7 +32,6 @@ export const checkNode = async (editor: KorektorrEditor, node: KorektorrRichText
     // If word is only from dots
     if (/^\.+$/.test(part)) {
       checkDots(part, range, editor);
-      console.log("checkDots", part);
     }
     // If word is made from letters
     else if (/^\p{L}+$/u.test(part)) {

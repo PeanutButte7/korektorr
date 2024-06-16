@@ -10,12 +10,14 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import {
   checkSpellingNormalize,
   useSpellCheckNormalizePlugin,
-} from "@/components/korektorr-editor/spell-checker-plugin";
+} from "@/components/korektorr-editor/plugins/spell-checker-plugin/spell-checker-plugin";
 import { useWorker } from "@/app/worker-context";
 import { Editor as SlateEditor, Path } from "slate";
 import { useGetPunctuationErrors } from "@/components/korektorr-editor/utils/use-get-punctuation-errors";
 import { useKorektorr } from "@/app/korektorr-context";
-import { useNormalizationPlugin } from "@/components/korektorr-editor/normalization-plugin";
+import { useNormalizationPlugin } from "@/components/korektorr-editor/plugins/normalization-plugin/normalization-plugin";
+import { countCharactersWords } from "@/components/korektorr-editor/plugins/document-metrics-plugin/count-characters-words";
+import useDocumentMetricsPlugin from "@/components/korektorr-editor/plugins/document-metrics-plugin/document-metrics-plugin";
 
 export type ErrorType = "dotError" | "spellError" | "punctuationError"; // Add more error types as needed
 
@@ -55,23 +57,28 @@ const defaultInitialValue: KorektorrValue = [
 ];
 
 const KorektorrEditorComponent = () => {
-  const { setErrorLeafs } = useKorektorr();
+  const { setErrorLeafs, setDocumentMetrics } = useKorektorr();
   const { worker, dictionaryReady } = useWorker();
   const editor = useEditorRef<KorektorrValue, KorektorrEditor>();
 
   const [debugValue, setDebugValue] = useState<KorektorrValue>([]);
   const initialLocalStorageValue = localStorage.getItem("editorValue");
 
-  const plugins = createPlugins([useSpellCheckNormalizePlugin(), useNormalizationPlugin(), createBasicMarksPlugin()]);
-  const getPunctuationErrors = useGetPunctuationErrors(editor);
+  const plugins = createPlugins([
+    useSpellCheckNormalizePlugin(),
+    useNormalizationPlugin(),
+    useDocumentMetricsPlugin(),
+    createBasicMarksPlugin(),
+  ]);
+  // const getPunctuationErrors = useGetPunctuationErrors(editor);
 
   useEffect(() => {
-    if (!dictionaryReady) return;
-
-    console.log("Dictionary mounted");
     if (!SlateEditor.isEditor(editor)) return;
+    countCharactersWords(editor, setDocumentMetrics);
+
+    if (!dictionaryReady) return;
     checkSpellingNormalize(editor, worker, setErrorLeafs);
-  }, [dictionaryReady]);
+  }, [dictionaryReady, editor]);
 
   return (
     <div className="bg-background rounded-lg border shadow-pop">

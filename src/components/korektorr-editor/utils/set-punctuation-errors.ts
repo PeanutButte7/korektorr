@@ -67,8 +67,6 @@ export const setPunctuationErrors = (editor: KorektorrEditor, suggestions: Sugge
 
       const charStartIndex = wordIndices[trueWordIndex] - 1; // Includes space
       const charEndIndex = charStartIndex + sanitizedWord.length + 1;
-      console.log("text", text);
-      console.log("wordIndeces", wordIndices);
 
       const location: Range = {
         anchor: {

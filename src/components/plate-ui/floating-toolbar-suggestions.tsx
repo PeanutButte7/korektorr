@@ -7,12 +7,10 @@ import { KorektorrRichText } from "@/components/korektorr-editor/korektorr-edito
 
 const suggestWord = async (word: string, worker: Worker): Promise<string[]> => {
   return new Promise((resolve) => {
-    console.log("Suggesting word: ", word);
     worker.postMessage({ type: "suggest_word", word });
 
     worker.onmessage = (event) => {
       const message = event.data;
-      console.log("Suggestion received: ", message);
       if (message.type === "word_suggested") {
         resolve(message.suggestions);
       }

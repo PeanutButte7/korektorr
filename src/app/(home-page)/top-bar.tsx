@@ -1,10 +1,19 @@
 "use client";
 
 import { useWorker } from "@/app/worker-context";
-import LoadingSpinner from "@/components/ui/LoadingSpinner";
-import { IconDiscountCheckFilled, IconLayoutSidebarRightExpandFilled, IconSparkles } from "@tabler/icons-react";
+import LoadingSpinner from "@/components/ui/loading-spinner";
+import {
+  IconDiscountCheckFilled,
+  IconLayoutSidebarRightExpandFilled,
+  IconSparkles,
+  IconTextScan2,
+} from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
 import { useKorektorr } from "@/app/korektorr-context";
+import { useEditorRef } from "@udecode/plate-common";
+import { KorektorrEditor, KorektorrValue } from "@/components/korektorr-editor/korektorr-editor-component";
+import { ReactNode, useEffect } from "react";
+import { Separator } from "@/components/ui/separator";
 
 interface TopBarProps {
   sideBarOpen: boolean;
@@ -21,7 +30,7 @@ const TopBar = ({ sideBarOpen, setSideBarOpen }: TopBarProps) => {
   return (
     <div className="flex items-center justify-between py-2 px-2 bg-card border rounded-lg ">
       <div className="flex items-center gap-2">
-        <div className="h-8 flex gap-2 bg-background rounded-md border py-1 px-3 items-center">
+        <TopBarPill>
           {dictionaryReady ? (
             <IconDiscountCheckFilled size={18} className="text-emerald-500 flex-shrink-0" />
           ) : (
@@ -30,7 +39,8 @@ const TopBar = ({ sideBarOpen, setSideBarOpen }: TopBarProps) => {
             </div>
           )}
           <p className="text-sm">{dictionaryReady ? "Korektor slov je aktivní!" : "Korektor slov se načítá..."}</p>
-        </div>
+        </TopBarPill>
+        <DocumentMetrics />
       </div>
       {!sideBarOpen && (
         <div className="flex gap-2">
@@ -44,6 +54,34 @@ const TopBar = ({ sideBarOpen, setSideBarOpen }: TopBarProps) => {
         </div>
       )}
     </div>
+  );
+};
+
+const DocumentMetrics = () => {
+  const { documentMetrics } = useKorektorr();
+
+  if (!documentMetrics) return null;
+  const { wordCount, characterCount } = documentMetrics;
+  const wordLabel = ["slov", "slovo", "slova", "slova", "slova"][wordCount] || "slov";
+  const characterLabel = ["znaků", "znak", "znaky", "znaky", "znaky"][characterCount] || "znaků";
+
+  return (
+    <TopBarPill>
+      <IconTextScan2 size={18} />
+      <p>
+        {documentMetrics.wordCount} {wordLabel}
+      </p>
+      <Separator orientation="vertical" />
+      <p>
+        {documentMetrics.characterCount} {characterLabel}
+      </p>
+    </TopBarPill>
+  );
+};
+
+const TopBarPill = ({ children }: { children: ReactNode }) => {
+  return (
+    <div className="h-8 flex gap-2 items-center bg-background rounded-md border py-1 px-3 text-sm">{children}</div>
   );
 };
 

@@ -18,7 +18,6 @@ export const useGetPunctuationErrors = (editor: KorektorrEditor) => {
       if (!data.suggestions) throw new Error("New editor was not created by the AI");
 
       const suggestions: Suggestions = data.suggestions;
-      console.log("Suggestions", suggestions);
       setPunctuationErrors(editor, suggestions);
     },
   });

@@ -1,6 +1,6 @@
 import { useWorker } from "@/app/worker-context";
 import { useKorektorr } from "@/app/korektorr-context";
-import { debouncedCheckSpellingNormalize } from "@/components/korektorr-editor/spell-checker-plugin";
+import { debouncedCheckSpellingNormalize } from "@/components/korektorr-editor/plugins/spell-checker-plugin/spell-checker-plugin";
 import { createPluginFactory } from "@udecode/plate";
 import { Editor, Transforms, Element, Text, Node } from "slate";
 import { isKorektorrRichText } from "@/utils/is-korektorr-rich-text";

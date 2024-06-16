@@ -13,6 +13,5 @@ export const joinWithPreviousWord = (text: string, path: Path, editor: Korektorr
   const trimmedText = prevNode.text.trim();
   const prevLastWord = trimmedText.split(" ").pop();
 
-  console.log("prevLastWord", prevLastWord, "text", prevNode.text);
   return hasTrailingSpace ? prevLastWord + " " + text : prevLastWord + text;
 };

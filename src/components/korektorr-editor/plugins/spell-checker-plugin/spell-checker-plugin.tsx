@@ -1,8 +1,8 @@
 import { Editor } from "slate";
 import { createPluginFactory } from "@udecode/plate";
 import { useWorker } from "@/app/worker-context";
-import { checkNode } from "@/components/korektorr-editor/utils/spell-checker/check-node";
-import { normalizeTextNode } from "@/components/korektorr-editor/utils/normalize-text-node";
+import { checkNode } from "@/components/korektorr-editor/plugins/spell-checker-plugin/check-node";
+import { normalizeTextNode } from "@/components/korektorr-editor/plugins/normalization-plugin/normalize-text-node";
 import { KorektorrEditor, KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor-component";
 import { SetErrorLeafs, useKorektorr } from "@/app/korektorr-context";
 
@@ -88,7 +88,6 @@ const useSpellCheckNormalizePlugin = () => {
           throw new Error("useSpellCheckPlugin must be used with a Slate editor");
         }
 
-        console.log("Typed");
         Editor.withoutNormalizing(editor, () => {
           debouncedCheckSpellingNormalize(editor, worker, setErrorLeafs);
         });
@@ -98,7 +97,6 @@ const useSpellCheckNormalizePlugin = () => {
           throw new Error("useSpellCheckPlugin must be used with a Slate editor");
         }
 
-        console.log("Pasted");
         Editor.withoutNormalizing(editor, () => {
           debouncedCheckSpellingNormalize(editor, worker, setErrorLeafs);
         });

@@ -1,6 +1,6 @@
 import { KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor-component";
 import { Editor, Transforms, Text, Range } from "slate";
-import { findPrioritySuggestion } from "@/components/korektorr-editor/utils/spell-checker/find-priority-suggestion";
+import { findPrioritySuggestion } from "@/components/korektorr-editor/plugins/spell-checker-plugin/find-priority-suggestion";
 
 export const checkWord = async (
   word: string,

@@ -23,8 +23,6 @@ export const fetchOpenAi = async (editorValue: string) => {
     // @ts-ignore
     const suggestions: string = messages.data[0].content[0].text.value;
 
-    console.log(suggestions);
-
     return {
       suggestions,
       usage: currentRun.usage,

@@ -15,7 +15,7 @@ import { useKorektorr } from "@/app/korektorr-context";
 import SideBarCard from "@/app/(home-page)/side-bar/side-bar-card";
 import { useTransition, animated } from "@react-spring/web";
 import { useWorker } from "@/app/worker-context";
-import LoadingSpinner from "@/components/ui/LoadingSpinner";
+import LoadingSpinner from "@/components/ui/loading-spinner";
 
 interface SideBarProps {
   setSideBarOpen: (open: boolean) => void;
