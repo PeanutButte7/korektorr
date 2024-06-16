@@ -102,11 +102,11 @@ const KorektorrEditorComponent = () => {
             <AccordionTrigger>Otevřít vývojářské informace</AccordionTrigger>
             <AccordionContent>
               {debugValue.map((node, index) => (
-                <div>
+                <div key={"parentDebug" + index}>
                   {JSON.stringify(node)}
-                  <div key={index} className="border-l border-red-400 ml-2 pl-2">
+                  <div className="border-l border-red-400 ml-2 pl-2">
                     {node.children.map((childNode, childIndex) => (
-                      <p key={childIndex} className="my-1 bg-slate-100">
+                      <p key={"childDebug" + childIndex} className="my-1 bg-slate-100">
                         {JSON.stringify(childNode)}
                       </p>
                     ))}

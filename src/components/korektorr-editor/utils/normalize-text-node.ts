@@ -12,7 +12,7 @@ export const normalizeTextNode = (
   const hasError = checkHasError(node);
   if (!editor.children || !editor.children.length || !Editor.isEditor(editor)) return { editor, hasError };
 
-  // Delete node if it is empty
+  // Try to delete node if it is empty
   if (!node.text) {
     const blockChildren = Node.children(editor, [path[0]]);
     let numberOfChildren = 0;
@@ -36,6 +36,7 @@ export const normalizeTextNode = (
     // If next node and current node don't have errors, merge them
     if (!hasError && !nextHasError) {
       Transforms.mergeNodes(editor, { at: nextNodePath, match: Text.isText });
+      console.log("mergeNodes", editor.children, node, nextNode);
       return { editor, hasError: false };
     }
   }
@@ -67,19 +68,6 @@ export const normalizeTextNode = (
       }
     }
   }
-
-  // Try to merge nodes without errors adjacent to each other
-  // if (nodeDescendant) {
-  //   const [nextNode, nextNodePath] = nodeDescendant;
-  //   const nextHasError = isKorektorrRichText(nextNode) && checkHasError(nextNode);
-  //
-  //   // If next node and current node don't have errors, merge them
-  //   if (!hasError && !nextHasError) {
-  //     console.log("merging nodes");
-  //     Transforms.mergeNodes(editor, { at: nextNodePath, match: Text.isText });
-  //     return { editor, hasError: false };
-  //   }
-  // }
 
   return { editor, hasError };
 };

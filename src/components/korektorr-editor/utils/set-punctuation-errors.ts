@@ -81,8 +81,6 @@ export const setPunctuationErrors = (editor: KorektorrEditor, suggestions: Sugge
         },
       };
 
-      console.log("checkWord", sanitizedWord, "at", location);
-
       Transforms.setNodes<KorektorrRichText>(
         editor,
         {

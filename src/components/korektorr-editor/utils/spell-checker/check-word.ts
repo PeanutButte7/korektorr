@@ -1,5 +1,6 @@
 import { KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor-component";
 import { Editor, Transforms, Text, Range } from "slate";
+import { findPrioritySuggestion } from "@/components/korektorr-editor/utils/spell-checker/find-priority-suggestion";
 
 export const checkWord = async (
   word: string,
@@ -10,6 +11,8 @@ export const checkWord = async (
 ) => {
   const { isCorrect, spellSuggestions } = await workerCheckSpelling(word, worker);
 
+  const prioritySuggestion = findPrioritySuggestion(word, spellSuggestions);
+
   if (!isCorrect) {
     Transforms.setNodes(
       editor,
@@ -17,7 +20,7 @@ export const checkWord = async (
         errors: {
           spellError: {
             suggestions: spellSuggestions,
-            prioritySuggestion: spellSuggestions ? spellSuggestions[0] : undefined,
+            prioritySuggestion: prioritySuggestion,
           },
         },
       } as Partial<KorektorrRichText>,
@@ -27,8 +30,6 @@ export const checkWord = async (
         split: true,
       }
     );
-
-    return editor;
   } else if (isCorrect && node.errors?.spellError) {
     // Remove the spell error mark
     Transforms.setNodes(editor, { errors: { spellError: undefined } } as Partial<KorektorrRichText>, {
@@ -36,6 +37,8 @@ export const checkWord = async (
       match: Text.isText,
     });
   }
+
+  return editor;
 };
 
 const workerCheckSpelling = async (

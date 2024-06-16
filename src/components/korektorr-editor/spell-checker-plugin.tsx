@@ -1,7 +1,7 @@
 import { Editor } from "slate";
 import { createPluginFactory } from "@udecode/plate";
 import { useWorker } from "@/app/worker-context";
-import { checkNodeSpelling } from "@/components/korektorr-editor/utils/spell-checker/check-node-spelling";
+import { checkNode } from "@/components/korektorr-editor/utils/spell-checker/check-node";
 import { normalizeTextNode } from "@/components/korektorr-editor/utils/normalize-text-node";
 import { KorektorrEditor, KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor-component";
 import { SetErrorLeafs, useKorektorr } from "@/app/korektorr-context";
@@ -22,7 +22,7 @@ const checkSpellingNormalize = async (editor: KorektorrEditor, worker: Worker, s
       const node = currentEditor.children[blockIndex].children[nodeIndex];
 
       // Update the editor with the changed editor
-      currentEditor = await checkNodeSpelling(currentEditor, node, [blockIndex, nodeIndex], worker);
+      currentEditor = await checkNode(currentEditor, node, [blockIndex, nodeIndex], worker);
       nodeIndex++;
     }
 
