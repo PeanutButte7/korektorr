@@ -7791,6 +7791,7 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-email: "npm:2.1.4"
+    resend: "npm:^3.3.0"
     scheduler: "npm:^0.23.2"
     slate: "npm:^0.103.0"
     slate-history: "npm:^0.100.0"
@@ -8129,6 +8130,15 @@ __metadata:
   dependencies:
     mdast-util-from-markdown: "npm:^0.8.0"
   checksum: 10c0/7523b2a2e3c7a80f7530b4d5615e8862890abe321cdc4f6f7b103c70ceb4b3eca14cc71127149f05d5e29ed521b0c7505af9f11b1293921cf7cdf6d794104a21
+  languageName: node
+  linkType: hard
+
+"resend@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "resend@npm:3.3.0"
+  dependencies:
+    "@react-email/render": "npm:0.0.15"
+  checksum: 10c0/f9d12326f6fea361c2c4e79f106684bf1c46a20ad751401f296a98516c68523aa67ae381a62d423a49e0c5a47c83073bb830d5ebc9fe40a91408f7d773ca822d
   languageName: node
   linkType: hard
 

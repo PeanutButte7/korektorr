@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 /* eslint-disable */
-// @ts-nocheck
 "use strict";
 
 const RAW_RUNTIME_STATE =
@@ -69,6 +68,7 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:4de1498d561cec1795d835b35f680e9413e4f1f4772fb6fcf9033ec50b1bc0047a03e90611622078b5e78767da4669f5f000bfe7cc401e7b4adbc246538f161b#npm:18.3.1"],\
           ["react-email", "npm:2.1.4"],\
+          ["resend", "npm:3.3.0"],\
           ["scheduler", "npm:0.23.2"],\
           ["slate", "npm:0.103.0"],\
           ["slate-history", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:0.100.0"],\
@@ -11029,6 +11029,7 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:4de1498d561cec1795d835b35f680e9413e4f1f4772fb6fcf9033ec50b1bc0047a03e90611622078b5e78767da4669f5f000bfe7cc401e7b4adbc246538f161b#npm:18.3.1"],\
           ["react-email", "npm:2.1.4"],\
+          ["resend", "npm:3.3.0"],\
           ["scheduler", "npm:0.23.2"],\
           ["slate", "npm:0.103.0"],\
           ["slate-history", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:0.100.0"],\
@@ -11470,6 +11471,16 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["remark-parse", "npm:9.0.0"],\
           ["mdast-util-from-markdown", "npm:0.8.5"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["resend", [\
+      ["npm:3.3.0", {\
+        "packageLocation": "../../.yarn/berry/cache/resend-npm-3.3.0-d667f27a55-10c0.zip/node_modules/resend/",\
+        "packageDependencies": [\
+          ["resend", "npm:3.3.0"],\
+          ["@react-email/render", "npm:0.0.15"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -14685,12 +14696,6 @@ class ProxiedFS extends FakeFS {
   rmdirSync(p, opts) {
     return this.baseFs.rmdirSync(this.mapToBase(p), opts);
   }
-  async rmPromise(p, opts) {
-    return this.baseFs.rmPromise(this.mapToBase(p), opts);
-  }
-  rmSync(p, opts) {
-    return this.baseFs.rmSync(this.mapToBase(p), opts);
-  }
   async linkPromise(existingP, newP) {
     return this.baseFs.linkPromise(this.mapToBase(existingP), this.mapToBase(newP));
   }
@@ -15071,18 +15076,6 @@ class NodeFS extends BasePortableFakeFS {
   }
   rmdirSync(p, opts) {
     return this.realFs.rmdirSync(npath.fromPortablePath(p), opts);
-  }
-  async rmPromise(p, opts) {
-    return await new Promise((resolve, reject) => {
-      if (opts) {
-        this.realFs.rm(npath.fromPortablePath(p), opts, this.makeCallback(resolve, reject));
-      } else {
-        this.realFs.rm(npath.fromPortablePath(p), this.makeCallback(resolve, reject));
-      }
-    });
-  }
-  rmSync(p, opts) {
-    return this.realFs.rmSync(npath.fromPortablePath(p), opts);
   }
   async linkPromise(existingP, newP) {
     return await new Promise((resolve, reject) => {
@@ -15739,20 +15732,6 @@ class MountFS extends BasePortableFakeFS {
       return mountFs.rmdirSync(subPath, opts);
     });
   }
-  async rmPromise(p, opts) {
-    return await this.makeCallPromise(p, async () => {
-      return await this.baseFs.rmPromise(p, opts);
-    }, async (mountFs, { subPath }) => {
-      return await mountFs.rmPromise(subPath, opts);
-    });
-  }
-  rmSync(p, opts) {
-    return this.makeCallSync(p, () => {
-      return this.baseFs.rmSync(p, opts);
-    }, (mountFs, { subPath }) => {
-      return mountFs.rmSync(subPath, opts);
-    });
-  }
   async linkPromise(existingP, newP) {
     return await this.makeCallPromise(newP, async () => {
       return await this.baseFs.linkPromise(existingP, newP);
@@ -16391,7 +16370,6 @@ const SYNC_IMPLEMENTATIONS = /* @__PURE__ */ new Set([
   `realpathSync`,
   `renameSync`,
   `rmdirSync`,
-  `rmSync`,
   `statSync`,
   `symlinkSync`,
   `truncateSync`,
@@ -16427,7 +16405,6 @@ const ASYNC_IMPLEMENTATIONS = /* @__PURE__ */ new Set([
   `readlinkPromise`,
   `renamePromise`,
   `rmdirPromise`,
-  `rmPromise`,
   `statPromise`,
   `symlinkPromise`,
   `truncatePromise`,
@@ -18451,27 +18428,6 @@ class ZipFS extends BasePortableFakeFS {
     const index = this.entries.get(resolvedP);
     if (typeof index === `undefined`)
       throw EINVAL(`rmdir '${p}'`);
-    this.deleteEntry(p, index);
-  }
-  async rmPromise(p, opts) {
-    return this.rmSync(p, opts);
-  }
-  rmSync(p, { recursive = false } = {}) {
-    if (this.readOnly)
-      throw EROFS(`rm '${p}'`);
-    if (recursive) {
-      this.removeSync(p);
-      return;
-    }
-    const resolvedP = this.resolveFilename(`rm '${p}'`, p);
-    const directoryListing = this.listings.get(resolvedP);
-    if (!directoryListing)
-      throw ENOTDIR(`rm '${p}'`);
-    if (directoryListing.size > 0)
-      throw ENOTEMPTY(`rm '${p}'`);
-    const index = this.entries.get(resolvedP);
-    if (typeof index === `undefined`)
-      throw EINVAL(`rm '${p}'`);
     this.deleteEntry(p, index);
   }
   hydrateDirectory(resolvedP) {
