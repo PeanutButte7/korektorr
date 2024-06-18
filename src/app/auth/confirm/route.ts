@@ -13,6 +13,7 @@ export async function GET(request: NextRequest) {
   redirectTo.pathname = next;
   redirectTo.searchParams.delete("token_hash");
   redirectTo.searchParams.delete("type");
+  redirectTo.searchParams.append("newUser", "true");
 
   if (token_hash && type) {
     const supabase = createServerClient();

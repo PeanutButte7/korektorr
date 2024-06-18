@@ -21,7 +21,7 @@ export async function loginWithEmail(prevState: any, formData: FormData) {
     email,
     options: {
       shouldCreateUser: true,
-      emailRedirectTo: "https://korektorr.cz/",
+      emailRedirectTo: "https://korektorr.cz",
     },
   });
 

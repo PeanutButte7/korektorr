@@ -1,30 +1,20 @@
-"use client";
+import React from "react";
+import EditorSection from "@/app/(home-page)/editor-section";
+import { createServerClient } from "@/utils/supabase/server";
+import LoginPromoBanner from "@/app/(home-page)/login-promo-banner";
+import LoginSuccessBanner from "@/app/(home-page)/login-success-banner";
 
-import React, { useEffect, useState } from "react";
-import KorektorrEditorComponent from "@/components/korektorr-editor/korektorr-editor-component";
-import TopBar from "@/app/(home-page)/top-bar";
-import SideBar from "@/app/(home-page)/side-bar/side-bar";
-import { config, useTransition, animated, useSpring } from "@react-spring/web";
-
-const getInitialSideBarState = () => {
-  const savedState = localStorage.getItem("sideBarOpen");
-  return savedState ? JSON.parse(savedState) : true;
-};
-
-const HomePage = () => {
-  const [sideBarOpen, setSideBarOpen] = useState(getInitialSideBarState);
-
-  useEffect(() => {
-    localStorage.setItem("sideBarOpen", JSON.stringify(sideBarOpen));
-  }, [sideBarOpen]);
+const HomePage = async () => {
+  const supabase = createServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
   return (
-    <div className="flex gap-2">
-      <div className="flex flex-col gap-2 flex-grow">
-        <TopBar sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen} />
-        <KorektorrEditorComponent />
-      </div>
-      {sideBarOpen && <SideBar setSideBarOpen={setSideBarOpen} />}
+    <div className="flex gap-2 flex-col">
+      {!user && <LoginPromoBanner />}
+      {user && <LoginSuccessBanner />}
+      <EditorSection />
     </div>
   );
 };

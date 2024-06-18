@@ -6,7 +6,7 @@ const SubmitButton = () => {
   const { pending } = useFormStatus();
 
   return (
-    <Button disabled={pending} variant="fancy" className="w-full">
+    <Button loading={pending} variant="fancy" className="w-full">
       Přihlásit se
       <IconLogin2 />
     </Button>

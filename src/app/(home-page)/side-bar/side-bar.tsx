@@ -24,7 +24,6 @@ interface SideBarProps {
 const SideBar = ({ setSideBarOpen }: SideBarProps) => {
   const { errorLeafs } = useKorektorr();
   const { dictionaryReady } = useWorker();
-  const [items, setItems] = useState([1, 2, 3]);
 
   const transitions = useTransition(errorLeafs, {
     keys: (item) => JSON.stringify(item.path),

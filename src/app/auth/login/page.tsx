@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useFormStatus, useFormState } from "react-dom";
+import { useFormState } from "react-dom";
 import SubmitButton from "@/app/auth/login/submit-button";
 import { IconMailShare } from "@tabler/icons-react";
 
@@ -17,7 +17,6 @@ const initialState = {
 
 const LoginPage = () => {
   const [state, formAction] = useFormState(loginWithEmail, initialState);
-  const { pending } = useFormStatus();
 
   return (
     <form action={formAction} className="w-full max-w-sm mt-20 self-center">

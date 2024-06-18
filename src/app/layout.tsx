@@ -31,7 +31,7 @@ export default function RootLayout({
       <body className={cn(inter.className, grotesk.className, "relative flex min-h-screen flex-col bg-main")}>
         <Providers>
           <Navbar />
-          <main className="container mx-auto gap-2 xl:px-48 lg:px-20 flex flex-col mt-24">{children}</main>
+          <main className="container mx-auto gap-2 xl:px-44 lg:px-16 flex flex-col mt-4">{children}</main>
         </Providers>
       </body>
     </html>
