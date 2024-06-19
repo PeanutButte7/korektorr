@@ -29,7 +29,7 @@ const LoginSuccessBanner = () => {
   return transitions(
     (style, item) =>
       item && (
-        <animated.div style={style}>
+        <animated.div style={style} className="absolute w-full">
           <div className="flex items-center justify-between py-2 px-3.5 bg-gradient-to-b from-emerald-600 to-emerald-800 border border-emerald-200 shadow-pop rounded-lg">
             <div className="flex gap-2 items-center">
               <h3 className="text-white text-sm mr-1.5">Pokročilé funkce jsou aktivní!</h3>

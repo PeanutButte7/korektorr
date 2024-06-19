@@ -7,7 +7,7 @@ import colors from "tailwindcss/colors";
 
 const LoginPromoBanner = () => {
   return (
-    <div className="flex items-center justify-between py-2 px-3.5 bg-blue-50 border border-blue-200 shadow-pop rounded-lg">
+    <div className="absolute w-full flex items-center justify-between py-2 px-3.5 bg-blue-50 border border-blue-200 shadow-pop rounded-lg">
       <div className="flex gap-2 items-center">
         <h3 className="text-primary text-base font-extrabold mr-1.5">Aktivujte pokročilé funkce!</h3>
         <LoginPromoBannerPill>

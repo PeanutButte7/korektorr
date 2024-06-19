@@ -18,7 +18,7 @@ const EditorSection = () => {
   }, [sideBarOpen]);
 
   return (
-    <div className="flex gap-2 mt-16">
+    <div className="flex gap-2 mt-24">
       <div className="flex flex-col gap-2 flex-grow">
         <TopBar sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen} />
         <KorektorrEditorComponent />
