@@ -1,5 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# idea
+.idea/*
+
 # dependencies
 /node_modules
 /.pnp
@@ -35,4 +38,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 /.yarn/
-.idea/*
+
+# Supabase
+supabase/.branches
+supabase/.temp
+supabase/.env
