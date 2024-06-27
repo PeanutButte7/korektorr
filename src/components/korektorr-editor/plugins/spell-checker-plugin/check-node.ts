@@ -7,8 +7,15 @@ import {
 import { checkWord } from "@/components/korektorr-editor/plugins/spell-checker-plugin/check-word";
 import { checkDots } from "@/components/korektorr-editor/plugins/spell-checker-plugin/check-dots";
 import { checkHasError } from "@/utils/check-has-error";
+import { DictionaryWord } from "@/app/slovnik/queries";
 
-export const checkNode = async (editor: KorektorrEditor, node: KorektorrRichText, path: Path, worker: Worker) => {
+export const checkNode = async (
+  editor: KorektorrEditor,
+  node: KorektorrRichText,
+  path: Path,
+  worker: Worker,
+  dictionary: DictionaryWord[]
+) => {
   if (!Editor.isEditor(editor)) {
     return editor;
   }
@@ -35,7 +42,7 @@ export const checkNode = async (editor: KorektorrEditor, node: KorektorrRichText
     }
     // If word is made from letters
     else if (/^\p{L}+$/u.test(part)) {
-      await checkWord(part, range, node, worker, editor);
+      await checkWord(part, range, node, worker, editor, dictionary);
     }
     // If part is unknown such as a punctuation mark, it should not have an error
     else if (checkHasError(node)) {

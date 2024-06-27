@@ -37,7 +37,7 @@ const AvatarDropdown = ({ email }: AvatarDropdownProps) => {
         )}
         <DropdownMenuSeparator className="my-1 h-px bg-gray-200" />
         <DropdownMenuItem
-          className="flex cursor-pointer items-center rounded-md px-2 py-1 text-sm font-medium text-gray-900 transition-colors hover:bg-gray-100"
+          className="flex cursor-pointer items-center rounded-md px-2 py-1 text-sm font-medium transition-colors"
           onSelect={() => supabase.auth.signOut().then(() => window.location.reload())}
         >
           <IconLogout className="mr-2 h-4 w-4" />

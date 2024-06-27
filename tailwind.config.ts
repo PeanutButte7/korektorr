@@ -47,7 +47,7 @@ const config = {
         card: {
           DEFAULT: colors.white,
           foreground: colors.gray[900],
-          hover: colors.gray[50],
+          hover: colors.gray[100],
         },
         main: "#FAFAF9",
         error: {

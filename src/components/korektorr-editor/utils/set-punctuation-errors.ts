@@ -94,7 +94,6 @@ export const setPunctuationErrors = (editor: KorektorrEditor, suggestions: Sugge
 
       const newChildrenLength = editor.children[0].children.length;
       const diff = newChildrenLength - oldChildrenLength;
-      console.log("diff", diff);
 
       plusIndex += diff;
     });

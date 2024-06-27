@@ -19,7 +19,7 @@ export const ToolbarSeparator = withCn(ToolbarPrimitive.Separator, "my-1 w-px sh
 
 const toolbarButtonVariants = cva(
   cn(
-    "inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+    "inline-flex items-center justify-center gap-1 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
     "[&_svg:not([data-icon])]:size-5"
   ),
   {
@@ -34,8 +34,7 @@ const toolbarButtonVariants = cva(
         sm: "h-9 px-2",
       },
       variant: {
-        default:
-          "bg-transparent hover:bg-muted hover:text-muted-foreground aria-checked:bg-accent aria-checked:text-accent-foreground",
+        default: "bg-transparent hover:bg-card-hover aria-checked:bg-accent aria-checked:text-accent-foreground",
         outline: "border border-input bg-transparent hover:bg-accent hover:text-accent-foreground",
       },
     },

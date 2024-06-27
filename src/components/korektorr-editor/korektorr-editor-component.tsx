@@ -18,6 +18,10 @@ import { useKorektorr } from "@/app/korektorr-context";
 import { useNormalizationPlugin } from "@/components/korektorr-editor/plugins/normalization-plugin/normalization-plugin";
 import { countCharactersWords } from "@/components/korektorr-editor/plugins/document-metrics-plugin/count-characters-words";
 import useDocumentMetricsPlugin from "@/components/korektorr-editor/plugins/document-metrics-plugin/document-metrics-plugin";
+import FloatingToolbarAddToDictionary from "@/components/plate-ui/floating-toolbar-add-to-dictionary";
+import { Separator } from "@/components/ui/separator";
+import { DictionaryWord, useGetUserDictionary } from "@/app/slovnik/queries";
+import { createBrowserClient } from "@/utils/supabase/browser";
 
 export type ErrorType = "dotError" | "spellError" | "punctuationError"; // Add more error types as needed
 
@@ -56,7 +60,7 @@ const defaultInitialValue: KorektorrValue = [
   },
 ];
 
-const KorektorrEditorComponent = () => {
+const KorektorrEditorComponent = ({ dictionary }: { dictionary: DictionaryWord[] }) => {
   const { setErrorLeafs, setDocumentMetrics } = useKorektorr();
   const { worker, dictionaryReady } = useWorker();
   const editor = useEditorRef<KorektorrValue, KorektorrEditor>();
@@ -65,7 +69,7 @@ const KorektorrEditorComponent = () => {
   const initialLocalStorageValue = localStorage.getItem("editorValue");
 
   const plugins = createPlugins([
-    useSpellCheckNormalizePlugin(),
+    useSpellCheckNormalizePlugin(dictionary),
     useNormalizationPlugin(),
     useDocumentMetricsPlugin(),
     createBasicMarksPlugin(),
@@ -77,7 +81,7 @@ const KorektorrEditorComponent = () => {
     countCharactersWords(editor, setDocumentMetrics);
 
     if (!dictionaryReady) return;
-    checkSpellingNormalize(editor, worker, setErrorLeafs);
+    checkSpellingNormalize(editor, worker, setErrorLeafs, dictionary);
   }, [dictionaryReady, editor]);
 
   return (
@@ -100,9 +104,7 @@ const KorektorrEditorComponent = () => {
         }}
         plugins={plugins}
       >
-        <FloatingToolbar>
-          <FloatingToolbarSuggestions />
-        </FloatingToolbar>
+        <FloatingToolbar />
         <PlateEditorComponent placeholder="Začněte psát..." />
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1" className="border-none bg-white px-4 rounded-b-lg">

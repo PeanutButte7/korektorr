@@ -5,8 +5,16 @@ import { checkNode } from "@/components/korektorr-editor/plugins/spell-checker-p
 import { normalizeTextNode } from "@/components/korektorr-editor/plugins/normalization-plugin/normalize-text-node";
 import { KorektorrEditor, KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor-component";
 import { SetErrorLeafs, useKorektorr } from "@/app/korektorr-context";
+import { DictionaryWord, useGetUserDictionary } from "@/app/slovnik/queries";
+import { createBrowserClient } from "@/utils/supabase/browser";
+import { Database } from "../../../../../supabase/types";
 
-const checkSpellingNormalize = async (editor: KorektorrEditor, worker: Worker, setErrorLeafs: SetErrorLeafs) => {
+const checkSpellingNormalize = async (
+  editor: KorektorrEditor,
+  worker: Worker,
+  setErrorLeafs: SetErrorLeafs,
+  dictionary: DictionaryWord[]
+) => {
   let currentEditor = editor;
   let blockIndex = 0;
 
@@ -22,7 +30,7 @@ const checkSpellingNormalize = async (editor: KorektorrEditor, worker: Worker, s
       const node = currentEditor.children[blockIndex].children[nodeIndex];
 
       // Update the editor with the changed editor
-      currentEditor = await checkNode(currentEditor, node, [blockIndex, nodeIndex], worker);
+      currentEditor = await checkNode(currentEditor, node, [blockIndex, nodeIndex], worker, dictionary);
       nodeIndex++;
     }
 
@@ -62,8 +70,8 @@ const checkSpellingNormalize = async (editor: KorektorrEditor, worker: Worker, s
 };
 
 const debouncedCheckSpellingNormalize = debounce(
-  async (editor: KorektorrEditor, worker: Worker, setErrorLeafs: SetErrorLeafs) => {
-    await checkSpellingNormalize(editor, worker, setErrorLeafs);
+  async (editor: KorektorrEditor, worker: Worker, setErrorLeafs: SetErrorLeafs, dictionary: DictionaryWord[]) => {
+    await checkSpellingNormalize(editor, worker, setErrorLeafs, dictionary);
   },
   300
 );
@@ -76,7 +84,7 @@ function debounce(func: (...args: any[]) => void, wait: number) {
   };
 }
 
-const useSpellCheckNormalizePlugin = () => {
+const useSpellCheckNormalizePlugin = (dictionary: DictionaryWord[]) => {
   const { worker } = useWorker();
   const { setErrorLeafs } = useKorektorr();
 
@@ -89,7 +97,7 @@ const useSpellCheckNormalizePlugin = () => {
         }
 
         Editor.withoutNormalizing(editor, () => {
-          debouncedCheckSpellingNormalize(editor, worker, setErrorLeafs);
+          debouncedCheckSpellingNormalize(editor, worker, setErrorLeafs, dictionary);
         });
       },
       onPaste: (editor) => (event) => {
@@ -98,7 +106,7 @@ const useSpellCheckNormalizePlugin = () => {
         }
 
         Editor.withoutNormalizing(editor, () => {
-          debouncedCheckSpellingNormalize(editor, worker, setErrorLeafs);
+          debouncedCheckSpellingNormalize(editor, worker, setErrorLeafs, dictionary);
         });
       },
     },
