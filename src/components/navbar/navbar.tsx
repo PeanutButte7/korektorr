@@ -2,6 +2,7 @@ import { createServerClient } from "@/utils/supabase/server";
 import AvatarDropdown from "@/components/navbar/avatar-dropdown";
 import { Button, buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
+import { IconBook2 } from "@tabler/icons-react";
 
 const Navbar = async () => {
   const supabase = createServerClient();
@@ -14,7 +15,13 @@ const Navbar = async () => {
           Korektorr
         </Link>
         {data.user ? (
-          <AvatarDropdown email={data.user?.email} />
+          <div className="flex gap-2">
+            <Link href="/slovnik" className={buttonVariants({ variant: "outline" })}>
+              Slovník
+              <IconBook2 />
+            </Link>
+            <AvatarDropdown email={data.user?.email} />
+          </div>
         ) : (
           <Link href={"/auth/login"} className={buttonVariants({ variant: "outline" })}>
             Přihlásit se

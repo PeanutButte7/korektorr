@@ -1,6 +1,6 @@
 import { handleErrorResponse } from "@/utils/api/handleErrorResponse";
 import { createServerClient } from "@/utils/supabase/server";
-import { fetchOpenAi } from "@/app/sentence-analysis/fetchOpenAi";
+import { fetchOpenAi } from "@/app/api/sentence-analysis/fetchOpenAi";
 
 export async function POST(request: Request) {
   const supabase = createServerClient();

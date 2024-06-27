@@ -12,7 +12,7 @@ const buttonVariants = cva(
       variant: {
         default: "bg-primary text-primary-foreground shadow-pop border-white/70 border-y hover:bg-blue-700",
         // secondary: "bg-white text-foreground shadow-pop border-white/70 border-y hover:bg-background/90",
-        outline: "border bg-white hover:bg-background text-foreground hover:text-foreground/80",
+        outline: "border bg-white shadow-inner-soft hover:bg-background text-foreground hover:text-foreground/80",
         fancy:
           "bg-gradient-to-b from-blue-500 via-blue-700 to-blue-600 text-primary-foreground shadow-pop border-white/70 border-y hover:shadow-inner-soft !bg-size-200 bg-pos-0 hover:bg-pos-100",
         ghost: "hover:bg-background hover:text-foreground/90",

@@ -21,7 +21,7 @@ const LoginPage = () => {
 
   return (
     <div className="w-full flex flex-wrap justify-center gap-6 mt-20">
-      <form action={formAction}>
+      <form action={formAction} className="w-96">
         <Card>
           {!state.success ? (
             <>
@@ -38,7 +38,11 @@ const LoginPage = () => {
               </CardContent>
               <CardFooter className="flex flex-col gap-2 mt-8">
                 <SubmitButton />
-                {state.message && <p className="text-sm text-destructive self-start">{state.message}</p>}
+                {state.message && (
+                  <p className="text-sm text-destructive self-start">
+                    Příhlášení selhalo. Prosím zkuste to znovu nebo kontaktujte podporu.
+                  </p>
+                )}
               </CardFooter>
             </>
           ) : (
