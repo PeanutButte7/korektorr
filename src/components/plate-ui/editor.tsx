@@ -6,6 +6,7 @@ import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 import { cn } from "@udecode/cn";
 import { useWorker } from "@/app/worker-context";
+import { KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor-component";
 
 const Editor = React.forwardRef<HTMLDivElement, PlateContentProps>(
   ({ className, disabled, readOnly, ...props }, ref) => {
@@ -16,17 +17,23 @@ const Editor = React.forwardRef<HTMLDivElement, PlateContentProps>(
         <PlateContent
           spellCheck={false}
           renderLeaf={({ attributes, children, leaf }) => {
-            const spellError = dictionaryReady && !!leaf.spellError;
-            const bold = !!leaf.bold;
-            const italic = !!leaf.italic;
-            const underline = !!leaf.underline;
-            const strikethrough = !!leaf.strikethrough;
+            const typedLeaf = leaf as KorektorrRichText;
+
+            const dotError = !!typedLeaf.errors?.dotError;
+            const spellError = !!typedLeaf.errors?.spellError;
+            const quotationError = !!typedLeaf.errors?.quotationError;
+            const bold = !!typedLeaf.bold;
+            const italic = !!typedLeaf.italic;
+            const underline = !!typedLeaf.underline;
+            const strikethrough = !!typedLeaf.strikethrough;
 
             return (
               <span
                 {...attributes}
                 className={cn(
-                  spellError && "bg-red-200",
+                  dotError && "underline decoration-2 decoration-error-dot",
+                  quotationError && "underline decoration-2 decoration-error-quotation",
+                  spellError && "underline decoration-2 decoration-error-spell",
                   bold && "font-bold",
                   italic && "italic",
                   underline && "underline",
@@ -38,8 +45,9 @@ const Editor = React.forwardRef<HTMLDivElement, PlateContentProps>(
             );
           }}
           aria-disabled={disabled}
-          className={cn("relative overflow-x-auto whitespace-pre-wrap break-words",
-            "min-h-[80px] h-[50vh] w-full rounded-md bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none",
+          className={cn(
+            " relative overflow-x-auto whitespace-pre-wrap break-words",
+            "min-h-[80px] h-[50vh] w-full rounded-md bg-card px-3 py-2 font-paragraph text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none",
             "[&_[data-slate-placeholder]]:text-muted-foreground [&_[data-slate-placeholder]]:!opacity-100",
             "[&_[data-slate-placeholder]]:top-[auto_!important]",
             "[&_strong]:font-bold"
@@ -52,6 +60,7 @@ const Editor = React.forwardRef<HTMLDivElement, PlateContentProps>(
     );
   }
 );
+
 Editor.displayName = "Editor";
 
 export { Editor };

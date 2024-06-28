@@ -12,14 +12,17 @@ import {
   useFloatingToolbarState,
 } from "@udecode/plate-floating";
 
-import { Toolbar } from "./toolbar";
+import { Toolbar, ToolbarGroup } from "./toolbar";
+import FloatingToolbarSuggestions from "@/components/plate-ui/floating-toolbar-suggestions";
+import FloatingToolbarAddToDictionary from "@/components/plate-ui/floating-toolbar-add-to-dictionary";
+import { Separator } from "@/components/ui/separator";
 
 export const FloatingToolbar = withRef<
   typeof Toolbar,
   {
     state?: FloatingToolbarState;
   }
->(({ children, state, ...props }, componentRef) => {
+>(({ state, ...props }, componentRef) => {
   const floatingToolbarState = useFloatingToolbarState({
     ...state,
     floatingOptions: {
@@ -30,7 +33,7 @@ export const FloatingToolbar = withRef<
           padding: 12,
         }),
       ],
-      placement: "top",
+      placement: "bottom",
       ...state?.floatingOptions,
     },
   });
@@ -45,13 +48,14 @@ export const FloatingToolbar = withRef<
     <PortalBody>
       <Toolbar
         className={cn(
-          "absolute z-50 flex flex-col items-start whitespace-nowrap border bg-popover opacity-100 shadow-md print:hidden"
+          "absolute z-50 flex flex-col items-start whitespace-nowrap border bg-card opacity-100 shadow-pop rounded-md"
         )}
         ref={ref}
         {...rootProps}
         {...props}
       >
-        {children}
+        <FloatingToolbarSuggestions />
+        <FloatingToolbarAddToDictionary />
       </Toolbar>
     </PortalBody>
   );

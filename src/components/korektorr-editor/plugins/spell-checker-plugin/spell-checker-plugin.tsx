@@ -1,17 +1,22 @@
 import { Editor } from "slate";
 import { createPluginFactory } from "@udecode/plate";
 import { useWorker } from "@/app/worker-context";
-import { checkNodeSpelling } from "@/components/korektorr-editor/utils/check-node-spelling";
-import { normalizeTextNode } from "@/components/korektorr-editor/utils/normalize-text-node";
-import { KorektorrEditor } from "@/components/korektorr-editor/korektorr-editor";
-import { isInline, isText } from "@udecode/plate-common";
+import { checkNode } from "@/components/korektorr-editor/plugins/spell-checker-plugin/check-node";
+import { normalizeTextNode } from "@/components/korektorr-editor/plugins/spell-checker-plugin/normalize-text-node";
+import { KorektorrEditor, KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor-component";
+import { SetErrorLeafs, useKorektorr } from "@/app/korektorr-context";
+import { DictionaryWord, useGetUserDictionary } from "@/app/slovnik/queries";
+import { createBrowserClient } from "@/utils/supabase/browser";
+import { Database } from "../../../../../supabase/types";
 
-const checkSpellingNormalize = async (editor: KorektorrEditor, worker: Worker) => {
+const checkSpellingNormalize = async (
+  editor: KorektorrEditor,
+  worker: Worker,
+  setErrorLeafs: SetErrorLeafs,
+  dictionary: DictionaryWord[]
+) => {
   let currentEditor = editor;
   let blockIndex = 0;
-
-  // TODO: Do this recursively
-  // It's important to fetch from the current editor, because the editor is being mutated
 
   // Check spelling
   // Go through blocks in the editor
@@ -25,7 +30,7 @@ const checkSpellingNormalize = async (editor: KorektorrEditor, worker: Worker) =
       const node = currentEditor.children[blockIndex].children[nodeIndex];
 
       // Update the editor with the changed editor
-      currentEditor = await checkNodeSpelling(currentEditor, node, [blockIndex, nodeIndex], worker);
+      currentEditor = await checkNode(currentEditor, node, [blockIndex, nodeIndex], worker, dictionary);
       nodeIndex++;
     }
 
@@ -33,8 +38,8 @@ const checkSpellingNormalize = async (editor: KorektorrEditor, worker: Worker) =
   }
 
   // Normalize text nodes
-  // Reset block index
-  blockIndex = 0;
+  blockIndex = 0; // Reset block index
+  let errorLeafs: KorektorrRichText[] = [];
   // Go through blocks in the editor
   while (blockIndex < editor.children.length) {
     let nodeIndex = 0;
@@ -47,17 +52,35 @@ const checkSpellingNormalize = async (editor: KorektorrEditor, worker: Worker) =
       const node = currentEditor.children[blockIndex].children[nodeIndex];
 
       // Update the editor with the changed editor
-      currentEditor = normalizeTextNode(currentEditor, node, [blockIndex, nodeIndex]);
-      nodeIndex++;
+      const { editor, hasError, transformedNode } = normalizeTextNode(currentEditor, node, [blockIndex, nodeIndex]);
+      currentEditor = editor;
+
+      // If the node was transformed, start from the beginning of the node and reset errors
+      if (transformedNode) {
+        nodeIndex = 0;
+        errorLeafs = [];
+      } else {
+        if (hasError) {
+          errorLeafs.push(node);
+        }
+
+        nodeIndex++;
+      }
     }
 
     blockIndex++;
   }
+
+  // Set hasError flag if there is any error in the editor
+  setErrorLeafs(errorLeafs);
 };
 
-const debouncedCheckSpellingNormalize = debounce(async (editor: KorektorrEditor, worker: Worker) => {
-  await checkSpellingNormalize(editor, worker);
-}, 300);
+const debouncedCheckSpellingNormalize = debounce(
+  async (editor: KorektorrEditor, worker: Worker, setErrorLeafs: SetErrorLeafs, dictionary: DictionaryWord[]) => {
+    await checkSpellingNormalize(editor, worker, setErrorLeafs, dictionary);
+  },
+  300
+);
 
 function debounce(func: (...args: any[]) => void, wait: number) {
   let timeout: ReturnType<typeof setTimeout>;
@@ -67,8 +90,9 @@ function debounce(func: (...args: any[]) => void, wait: number) {
   };
 }
 
-const useSpellCheckNormalizePlugin = () => {
+const useSpellCheckNormalizePlugin = (dictionary: DictionaryWord[]) => {
   const { worker } = useWorker();
+  const { setErrorLeafs } = useKorektorr();
 
   return createPluginFactory({
     key: "spellCheck",
@@ -78,9 +102,8 @@ const useSpellCheckNormalizePlugin = () => {
           throw new Error("useSpellCheckPlugin must be used with a Slate editor");
         }
 
-        console.log("Typed");
         Editor.withoutNormalizing(editor, () => {
-          debouncedCheckSpellingNormalize(editor, worker);
+          debouncedCheckSpellingNormalize(editor, worker, setErrorLeafs, dictionary);
         });
       },
       onPaste: (editor) => (event) => {
@@ -88,9 +111,8 @@ const useSpellCheckNormalizePlugin = () => {
           throw new Error("useSpellCheckPlugin must be used with a Slate editor");
         }
 
-        console.log("Pasted");
         Editor.withoutNormalizing(editor, () => {
-          debouncedCheckSpellingNormalize(editor, worker);
+          debouncedCheckSpellingNormalize(editor, worker, setErrorLeafs, dictionary);
         });
       },
     },

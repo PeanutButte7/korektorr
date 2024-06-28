@@ -1,13 +1,9 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 const config = {
   darkMode: ["class"],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
     container: {
@@ -17,46 +13,59 @@ const config = {
         "2xl": "1400px",
       },
     },
+    color: {
+      white: colors.white,
+      gray: colors.gray,
+      blue: colors.blue,
+      emerald: colors.emerald,
+    },
     extend: {
+      fontFamily: {
+        sans: ["--font-grotesk", "sans-serif"],
+        paragraph: ["--font-inter", "sans-serif"],
+      },
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        border: colors.gray[200],
+        background: colors.gray[50],
+        foreground: colors.gray[900],
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: colors.blue[600],
+          foreground: colors.blue[50],
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: colors.pink[600],
+          foreground: colors.pink[50],
+        },
+        success: {
+          DEFAULT: colors.emerald[600],
+          foreground: colors.emerald[50],
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: colors.gray[100],
+          foreground: colors.gray[500],
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: colors.white,
+          foreground: colors.gray[900],
+          hover: colors.gray[100],
+        },
+        main: "#FAFAF9",
+        error: {
+          spell: colors.pink[500],
+          dot: colors.emerald[500],
+          quotation: colors.violet[500],
         },
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+      boxShadow: {
+        "inner-soft": "inset 0px -1px 4px 0px rgba(0,0,0,0.05)",
+        pop: "inset 0px -1px 4px 0px rgba(0,0,0,0.05), 0px 1px 2px 0px rgba(0,0,0,0.05), 0px 4px 4px -2px rgba(0,0,0,0.05)",
+      },
+      backgroundSize: {
+        "size-200": "200% 200%",
+      },
+      backgroundPosition: {
+        "pos-0": "0% 0%",
+        "pos-100": "100% 100%",
       },
       keyframes: {
         "accordion-down": {
@@ -75,6 +84,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

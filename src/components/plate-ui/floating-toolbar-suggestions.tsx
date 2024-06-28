@@ -1,73 +1,68 @@
-import { isText, useEditorSelector } from "@udecode/plate-common";
+import { isText, useEditorRef, useEditorSelector } from "@udecode/plate-common";
 import { BaseText, Editor, Node, Transforms } from "slate";
 import { ToolbarButton } from "@/components/plate-ui/toolbar";
 import { useWorker } from "@/app/worker-context";
 import { useEffect, useState } from "react";
-
-const suggestWord = async (word: string, worker: Worker): Promise<string[]> => {
-  return new Promise((resolve) => {
-    console.log("Suggesting word: ", word);
-    worker.postMessage({ type: "suggest_word", word });
-
-    worker.onmessage = (event) => {
-      const message = event.data;
-      console.log("Suggestion received: ", message);
-      if (message.type === "word_suggested") {
-        resolve(message.suggestions);
-      }
-    };
-  });
-};
+import {
+  KorektorrEditor,
+  KorektorrRichText,
+  KorektorrValue,
+} from "@/components/korektorr-editor/korektorr-editor-component";
+import { isKorektorrRichText } from "@/utils/is-korektorr-rich-text";
+import { checkHasError } from "@/utils/check-has-error";
+import { resetNodeError } from "@/utils/reset-node-error";
 
 const FloatingToolbarSuggestions = () => {
-  const { worker, dictionaryReady } = useWorker();
-  const [suggestions, setSuggestions] = useState<string[]>([]);
-  const editor = useEditorSelector((editor) => {
-    return editor;
-  }, []);
+  const editor = useEditorRef<KorektorrValue, KorektorrEditor>();
 
-  // Get suggestions
-  useEffect(() => {
-    const getSuggestions = async () => {
-      if (!dictionaryReady) return;
-      if (!Editor.isEditor(editor)) throw new Error("Editor is not an instance of Editor");
+  const selection = editor.selection;
+  if (!selection) return;
 
-      const selection = editor.selection;
-      if (!selection) return;
+  const node = Node.get(editor, selection.anchor.path);
+  if (!isKorektorrRichText(node)) throw new Error("Node is not a text node");
 
-      const node = Node.get(editor, selection.anchor.path);
-      if (!isText(node)) throw new Error("Node is not a text node");
-      if (!node.spellError) return; // Return if there is no spell error
-      if (node.text.length > 20) return; // Return if the text is too long and would cause too long of a load time
+  const spellSuggestions = node.errors?.spellError?.suggestions ?? [];
+  const quotationSuggestions = node.errors?.quotationError?.suggestions ?? [];
+  const dotSuggestions = node.errors?.dotError?.suggestions ?? [];
 
-      const suggestions = await suggestWord(node.text, worker);
-      setSuggestions(suggestions);
-    };
+  const suggestions = [...spellSuggestions, ...quotationSuggestions, ...dotSuggestions];
 
-    getSuggestions();
-  }, [dictionaryReady, editor, worker]);
-
+  // Replace text with suggestion
   const fixError = (suggestion: string) => {
     if (!Editor.isEditor(editor)) return;
+    if (!editor.selection) throw new Error("No selection");
 
     // Set new text
     Transforms.insertText(editor, suggestion, {
-      at: editor.selection?.anchor.path,
+      at: editor.selection.anchor.path,
     });
 
     // Remove spell error mark
-    Transforms.setNodes(editor, { spellError: false } as Partial<BaseText>, {
-      at: editor.selection?.anchor.path,
-    });
+    Transforms.setNodes(
+      editor,
+      {
+        errors: { spellError: undefined, quotationError: undefined, dotError: undefined },
+      } as Partial<KorektorrRichText>,
+      {
+        at: editor.selection?.anchor.path,
+      }
+    );
   };
 
+  if (!suggestions.length) return;
+
   return (
-    <div className="flex bg-slate-100">
+    <div className="flex m-1">
       {suggestions.map((suggestion, index) => (
         <ToolbarButton key={index} onClick={() => fixError(suggestion)}>
           {suggestion}
         </ToolbarButton>
       ))}
+      {/*{punctuationSuggestion && (*/}
+      {/*  <ToolbarButton onClick={() => fixPunctuationError(punctuationSuggestion)}>*/}
+      {/*    {punctuationSuggestion}*/}
+      {/*  </ToolbarButton>*/}
+      {/*)}*/}
     </div>
   );
 };
