@@ -65,6 +65,7 @@ const RAW_RUNTIME_STATE =
           ["next", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:14.2.4"],\
           ["openai", "npm:4.51.0"],\
           ["postcss", "npm:8.4.38"],\
+          ["posthog-js", "npm:1.142.1"],\
           ["prettier", "npm:3.3.2"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:4de1498d561cec1795d835b35f680e9413e4f1f4772fb6fcf9033ec50b1bc0047a03e90611622078b5e78767da4669f5f000bfe7cc401e7b4adbc246538f161b#npm:18.3.1"],\
@@ -8427,6 +8428,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["fflate", [\
+      ["npm:0.4.8", {\
+        "packageLocation": "../../.yarn/berry/cache/fflate-npm-0.4.8-4dd4e91e29-10c0.zip/node_modules/fflate/",\
+        "packageDependencies": [\
+          ["fflate", "npm:0.4.8"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["file-entry-cache", [\
       ["npm:6.0.1", {\
         "packageLocation": "../../.yarn/berry/cache/file-entry-cache-npm-6.0.1-31965cf0af-10c0.zip/node_modules/file-entry-cache/",\
@@ -11088,6 +11098,27 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["posthog-js", [\
+      ["npm:1.142.1", {\
+        "packageLocation": "../../.yarn/berry/cache/posthog-js-npm-1.142.1-28edb1b4b9-10c0.zip/node_modules/posthog-js/",\
+        "packageDependencies": [\
+          ["posthog-js", "npm:1.142.1"],\
+          ["fflate", "npm:0.4.8"],\
+          ["preact", "npm:10.22.0"],\
+          ["web-vitals", "npm:4.2.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["preact", [\
+      ["npm:10.22.0", {\
+        "packageLocation": "../../.yarn/berry/cache/preact-npm-10.22.0-5d8eaaf0bc-10c0.zip/node_modules/preact/",\
+        "packageDependencies": [\
+          ["preact", "npm:10.22.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["prelude-ls", [\
       ["npm:1.2.1", {\
         "packageLocation": "../../.yarn/berry/cache/prelude-ls-npm-1.2.1-3e4d272a55-10c0.zip/node_modules/prelude-ls/",\
@@ -11199,6 +11230,7 @@ const RAW_RUNTIME_STATE =
           ["next", "virtual:f2e9df53a3e133239bd3d39a66cacdbf00440d4662eb9dabb7b3c75b015230068220a7c04e07648463d69b520779ed160ee4c43ba9460c94db55726807038271#npm:14.2.4"],\
           ["openai", "npm:4.51.0"],\
           ["postcss", "npm:8.4.38"],\
+          ["posthog-js", "npm:1.142.1"],\
           ["prettier", "npm:3.3.2"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:4de1498d561cec1795d835b35f680e9413e4f1f4772fb6fcf9033ec50b1bc0047a03e90611622078b5e78767da4669f5f000bfe7cc401e7b4adbc246538f161b#npm:18.3.1"],\
@@ -13245,6 +13277,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/web-streams-polyfill-npm-4.0.0-beta.3-0dc6d160ed-10c0.zip/node_modules/web-streams-polyfill/",\
         "packageDependencies": [\
           ["web-streams-polyfill", "npm:4.0.0-beta.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["web-vitals", [\
+      ["npm:4.2.0", {\
+        "packageLocation": "../../.yarn/berry/cache/web-vitals-npm-4.2.0-07c3f8f219-10c0.zip/node_modules/web-vitals/",\
+        "packageDependencies": [\
+          ["web-vitals", "npm:4.2.0"]\
         ],\
         "linkType": "HARD"\
       }]\

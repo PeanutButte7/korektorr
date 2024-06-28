@@ -42,6 +42,7 @@
     "clsx": "^2.1.1",
     "next": "^14.2.3",
     "openai": "^4.0.0",
+    "posthog-js": "^1.142.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-email": "2.1.4",

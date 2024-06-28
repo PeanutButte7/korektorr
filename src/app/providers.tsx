@@ -9,6 +9,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { KorektorrProvider } from "@/app/korektorr-context";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import posthog from "posthog-js";
+import { PostHogProvider } from "posthog-js/react";
 
 function makeQueryClient() {
   return new QueryClient({
@@ -38,6 +40,13 @@ function getQueryClient() {
   }
 }
 
+if (typeof window !== "undefined") {
+  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY as string, {
+    api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+    person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
+  });
+}
+
 const Providers = ({ children }: { children: ReactNode }) => {
   // NOTE: Avoid useState when initializing the query client if you don't
   //       have a suspense boundary between this and the code that may
@@ -46,20 +55,22 @@ const Providers = ({ children }: { children: ReactNode }) => {
   const queryClient = getQueryClient();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <WorkerProvider>
-        <PlateController>
-          <KorektorrProvider>
-            <TooltipProvider disableHoverableContent delayDuration={500} skipDelayDuration={0}>
-              {children}
-            </TooltipProvider>
-          </KorektorrProvider>
-        </PlateController>
-      </WorkerProvider>
-      <SpeedInsights />
-      <Analytics />
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
+    <PostHogProvider client={posthog}>
+      <QueryClientProvider client={queryClient}>
+        <WorkerProvider>
+          <PlateController>
+            <KorektorrProvider>
+              <TooltipProvider disableHoverableContent delayDuration={500} skipDelayDuration={0}>
+                {children}
+              </TooltipProvider>
+            </KorektorrProvider>
+          </PlateController>
+        </WorkerProvider>
+        <SpeedInsights />
+        <Analytics />
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </PostHogProvider>
   );
 };
 

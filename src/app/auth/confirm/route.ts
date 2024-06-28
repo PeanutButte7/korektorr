@@ -2,6 +2,7 @@ import { type EmailOtpType } from "@supabase/supabase-js";
 import { type NextRequest, NextResponse } from "next/server";
 
 import { createServerClient } from "@/utils/supabase/server";
+import posthog from "posthog-js";
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
@@ -13,16 +14,16 @@ export async function GET(request: NextRequest) {
   redirectTo.pathname = next;
   redirectTo.searchParams.delete("token_hash");
   redirectTo.searchParams.delete("type");
-  redirectTo.searchParams.append("newUser", "true");
 
   if (token_hash && type) {
     const supabase = createServerClient();
 
-    const { error } = await supabase.auth.verifyOtp({
+    const { data, error } = await supabase.auth.verifyOtp({
       type,
       token_hash,
     });
     if (!error) {
+      redirectTo.searchParams.append("newUser", "true");
       redirectTo.searchParams.delete("next");
       return NextResponse.redirect(redirectTo);
     }
