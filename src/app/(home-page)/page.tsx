@@ -14,7 +14,7 @@ const HomePage = async () => {
     <div className="relative flex gap-2 flex-col">
       {!user && <LoginPromoBanner />}
       {user && <LoginSuccessBanner />}
-      <EditorSection />
+      <EditorSection user={user} />
     </div>
   );
 };

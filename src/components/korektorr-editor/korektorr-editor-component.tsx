@@ -2,10 +2,9 @@
 
 import React, { useEffect, useState } from "react";
 import { createBasicMarksPlugin, createPlugins, ELEMENT_PARAGRAPH } from "@udecode/plate";
-import { Plate, PlateEditor, TDescendant, TElement, useEditorRef, useEditorState } from "@udecode/plate-common";
+import { Plate, PlateEditor, TDescendant, TElement, useEditorRef } from "@udecode/plate-common";
 import { Editor as PlateEditorComponent } from "@/components/plate-ui/editor";
 import { FloatingToolbar } from "@/components/plate-ui/floating-toolbar";
-import FloatingToolbarSuggestions from "@/components/plate-ui/floating-toolbar-suggestions";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import {
   checkSpellingNormalize,
@@ -13,15 +12,11 @@ import {
 } from "@/components/korektorr-editor/plugins/spell-checker-plugin/spell-checker-plugin";
 import { useWorker } from "@/app/worker-context";
 import { Editor as SlateEditor, Path } from "slate";
-import { useGetPunctuationErrors } from "@/components/korektorr-editor/utils/use-get-punctuation-errors";
 import { useKorektorr } from "@/app/korektorr-context";
 import { useNormalizationPlugin } from "@/components/korektorr-editor/plugins/normalization-plugin/normalization-plugin";
 import { countCharactersWords } from "@/components/korektorr-editor/plugins/document-metrics-plugin/count-characters-words";
 import useDocumentMetricsPlugin from "@/components/korektorr-editor/plugins/document-metrics-plugin/document-metrics-plugin";
-import FloatingToolbarAddToDictionary from "@/components/plate-ui/floating-toolbar-add-to-dictionary";
-import { Separator } from "@/components/ui/separator";
-import { DictionaryWord, useGetUserDictionary } from "@/app/slovnik/queries";
-import { createBrowserClient } from "@/utils/supabase/browser";
+import { DictionaryWord } from "@/app/slovnik/queries";
 
 export type ErrorType = "dotError" | "spellError" | "punctuationError"; // Add more error types as needed
 

@@ -21,10 +21,11 @@ const getUserDictionary = async (client: TypedSupabaseClient): Promise<Dictionar
   return data;
 };
 
-export const useGetUserDictionary = (client: TypedSupabaseClient) =>
+export const useGetUserDictionary = (client: TypedSupabaseClient, enabled: boolean) =>
   useQuery({
     queryKey: [dictionaryKey],
     queryFn: () => getUserDictionary(client),
+    enabled,
   });
 
 const insertDictionaryWord = async (client: TypedSupabaseClient, word: string) => {
