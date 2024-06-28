@@ -43,7 +43,7 @@ const LoginSuccessBanner = () => {
               </LoginPromoBannerPill>
               <LoginPromoBannerPill>
                 <IconSparkles />
-                AI chytrá kontrola čárek
+                AI chytrá kontrola čárek (brzy)
               </LoginPromoBannerPill>
             </div>
             <Button

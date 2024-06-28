@@ -52,7 +52,8 @@ const config = {
         main: "#FAFAF9",
         error: {
           spell: colors.pink[500],
-          punctuation: colors.amber[500],
+          dot: colors.emerald[500],
+          quotation: colors.violet[500],
         },
       },
       boxShadow: {

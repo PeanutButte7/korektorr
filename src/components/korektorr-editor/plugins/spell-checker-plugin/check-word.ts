@@ -3,6 +3,8 @@ import { Editor, Transforms, Text, Range } from "slate";
 import { findPrioritySuggestion } from "@/components/korektorr-editor/plugins/spell-checker-plugin/find-priority-suggestion";
 import { DictionaryWord } from "@/app/slovnik/queries";
 import { findInDictionary } from "@/components/korektorr-editor/plugins/spell-checker-plugin/find-in-dictionary";
+import { checkHasError } from "@/utils/check-has-error";
+import { resetNodeError } from "@/utils/reset-node-error";
 
 export const checkWord = async (
   word: string,
@@ -25,6 +27,7 @@ export const checkWord = async (
     return editor;
   }
 
+  // Otherwise check the word against Hunspell dictionary
   const { isCorrect, spellSuggestions } = await workerCheckSpelling(word, worker);
 
   // Add dictionary words to the suggestions and find the best among them
@@ -48,12 +51,8 @@ export const checkWord = async (
         split: true,
       }
     );
-  } else if (isCorrect && node.errors?.spellError) {
-    // Remove the spell error mark
-    Transforms.setNodes(editor, { errors: { spellError: undefined } } as Partial<KorektorrRichText>, {
-      at: range,
-      match: Text.isText,
-    });
+  } else if (isCorrect && checkHasError(node)) {
+    resetNodeError(editor, range);
   }
 
   return editor;

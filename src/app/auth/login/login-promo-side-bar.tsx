@@ -31,7 +31,7 @@ const LoginPromoSideBar = () => {
               </defs>
             </svg>
           }
-          title="AI Chytrá oprava textu"
+          title="AI Chytrá oprava textu (brzy)"
           description="Kontrolujte čárky a další záludné chyby ve slovech pomocí chytré AI opravy textu.*"
         />
         <LoginPromoSideBarCard
@@ -106,7 +106,7 @@ const LoginPromoSideBarCard = ({
   description: string;
 }) => {
   return (
-    <div className="flex flex-col p-6 gap-1.5 bg-card shadow-pop rounded-md border-y border-gray-100">
+    <div className="flex flex-col p-6 gap-1.5 bg-card shadow-pop rounded-lg border-y border-gray-100">
       {icon}
       <h3 className="font-bold text-lg">{title}</h3>
       <p className="font-paragraph text-muted-foreground text-sm">{description}</p>

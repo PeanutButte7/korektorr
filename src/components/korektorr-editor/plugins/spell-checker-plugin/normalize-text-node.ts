@@ -8,9 +8,10 @@ export const normalizeTextNode = (
   editor: KorektorrEditor,
   node: KorektorrRichText,
   path: Path
-): { editor: KorektorrEditor; hasError: boolean } => {
+): { editor: KorektorrEditor; hasError: boolean; transformedNode: boolean } => {
   const hasError = checkHasError(node);
-  if (!editor.children || !editor.children.length || !Editor.isEditor(editor)) return { editor, hasError };
+  if (!editor.children || !editor.children.length || !Editor.isEditor(editor))
+    return { editor, hasError, transformedNode: false };
 
   // Try to delete node if it is empty
   if (!node.text) {
@@ -23,7 +24,7 @@ export const normalizeTextNode = (
     // If there are more than one child, remove the node. Don't remove if this is the only child.
     if (numberOfChildren > 1) {
       Transforms.removeNodes(editor, { at: path });
-      return { editor, hasError: false };
+      return { editor, hasError: false, transformedNode: true };
     }
   }
 
@@ -36,17 +37,17 @@ export const normalizeTextNode = (
     // If next node and current node don't have errors, merge them
     if (!hasError && !nextHasError) {
       Transforms.mergeNodes(editor, { at: nextNodePath, match: Text.isText });
-      return { editor, hasError: false };
+      return { editor, hasError: false, transformedNode: true };
     }
   }
 
-  // Try to merge with next node
+  // // Try to merge with next node
   const lastChar = node.text.slice(-1);
   const doesEndWithPS = /[.,:;!?()\[\]{}'" \t\n\r]/.test(lastChar);
   const nodeDescendant = Editor.next(editor, { at: path });
 
   if (!doesEndWithPS) {
-    if (!nodeDescendant) return { editor, hasError };
+    if (!nodeDescendant) return { editor, hasError, transformedNode: false };
 
     const [nextNode, nextNodePath] = nodeDescendant;
     // console.log("currentNode", node);
@@ -64,9 +65,10 @@ export const normalizeTextNode = (
       if (!nextDoesStartWithPS) {
         // console.log("Merging with next node at path" + nextNodePath);
         Transforms.mergeNodes(editor, { at: nextNodePath, match: Text.isText });
+        return { editor, hasError: false, transformedNode: true };
       }
     }
   }
 
-  return { editor, hasError };
+  return { editor, hasError, transformedNode: false };
 };

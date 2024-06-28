@@ -12,6 +12,7 @@ import { joinWithPreviousWord } from "@/app/(home-page)/side-bar/join-with-previ
 import { checkSpellingNormalize } from "@/components/korektorr-editor/plugins/spell-checker-plugin/spell-checker-plugin";
 import { useWorker } from "@/app/worker-context";
 import { cn } from "@/utils/cn";
+import { resetNodeError } from "@/utils/reset-node-error";
 
 interface SideBarCardProps {
   leaf: KorektorrRichText;
@@ -21,43 +22,39 @@ const SideBarCard = ({ leaf }: SideBarCardProps) => {
   const { setErrorLeafs } = useKorektorr();
   const { worker } = useWorker();
   const editor = useEditorRef<KorektorrValue, KorektorrEditor>();
-  let type: "spellError" | "punctuationError" | "dotError" | null = null;
+  let type: "spellError" | "dotError" | "quotationError" | null = null;
   if (!leaf.path) return null;
 
   if (leaf.errors?.spellError) {
     type = "spellError";
-  } else if (leaf.errors?.punctuationError) {
-    type = "punctuationError";
   } else if (leaf.errors?.dotError) {
     type = "dotError";
+  } else if (leaf.errors?.quotationError) {
+    type = "quotationError";
   }
 
   const labelText =
-    type === "spellError" ? "Hrubá chyba" : type === "punctuationError" ? "Chyba v interpunkci" : "Chyba v tečce";
+    type === "spellError" ? "Hrubá chyba" : type === "quotationError" ? "Chyba v úvozovkách" : "Chyba v tečce";
 
   const prioritySuggestion =
-    type === "spellError" ? leaf.errors?.spellError?.prioritySuggestion : leaf.errors?.dotError?.prioritySuggestion;
+    type === "spellError"
+      ? leaf.errors?.spellError?.prioritySuggestion
+      : leaf.errors?.dotError?.prioritySuggestion || leaf.errors?.quotationError?.prioritySuggestion;
 
   const fixError = () => {
     if (!prioritySuggestion) return;
     if (!Editor.isEditor(editor)) return;
 
-    if (type === "spellError" || type === "dotError") {
+    if (type === "spellError" || type === "dotError" || type === "quotationError") {
+      if (!leaf.path) throw new Error("No leaf path");
+
       // Set new text
       Transforms.insertText(editor, prioritySuggestion, {
         at: leaf.path,
       });
 
       // Remove spell and dot error mark
-      Transforms.setNodes(
-        editor,
-        { errors: { dotError: undefined, spellError: undefined } } as Partial<KorektorrRichText>,
-        {
-          at: leaf.path,
-        }
-      );
-    } else if (type === "punctuationError") {
-      // TODO: Handle punctuation errors
+      resetNodeError(editor, leaf.path);
     }
 
     // Remove the error from context
@@ -90,7 +87,12 @@ const SideBarCard = ({ leaf }: SideBarCardProps) => {
         {correctedText && (
           <>
             <IconArrowNarrowRight
-              className={cn("h-5 w-5", (type === "spellError" || type === "dotError") && "text-error-spell")}
+              className={cn(
+                "h-5 w-5",
+                type === "spellError" && "text-error-spell",
+                type === "dotError" && "text-error-dot",
+                type === "quotationError" && "text-error-quotation"
+              )}
             />
             <p>{correctedText}</p>
           </>

@@ -2,7 +2,7 @@ import { Editor } from "slate";
 import { createPluginFactory } from "@udecode/plate";
 import { useWorker } from "@/app/worker-context";
 import { checkNode } from "@/components/korektorr-editor/plugins/spell-checker-plugin/check-node";
-import { normalizeTextNode } from "@/components/korektorr-editor/plugins/normalization-plugin/normalize-text-node";
+import { normalizeTextNode } from "@/components/korektorr-editor/plugins/spell-checker-plugin/normalize-text-node";
 import { KorektorrEditor, KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor-component";
 import { SetErrorLeafs, useKorektorr } from "@/app/korektorr-context";
 import { DictionaryWord, useGetUserDictionary } from "@/app/slovnik/queries";
@@ -52,14 +52,20 @@ const checkSpellingNormalize = async (
       const node = currentEditor.children[blockIndex].children[nodeIndex];
 
       // Update the editor with the changed editor
-      const { editor, hasError } = normalizeTextNode(currentEditor, node, [blockIndex, nodeIndex]);
+      const { editor, hasError, transformedNode } = normalizeTextNode(currentEditor, node, [blockIndex, nodeIndex]);
       currentEditor = editor;
 
-      if (hasError) {
-        errorLeafs.push(node);
-      }
+      // If the node was transformed, start from the beginning of the node and reset errors
+      if (transformedNode) {
+        nodeIndex = 0;
+        errorLeafs = [];
+      } else {
+        if (hasError) {
+          errorLeafs.push(node);
+        }
 
-      nodeIndex++;
+        nodeIndex++;
+      }
     }
 
     blockIndex++;

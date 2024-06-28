@@ -8,6 +8,8 @@ import { checkWord } from "@/components/korektorr-editor/plugins/spell-checker-p
 import { checkDots } from "@/components/korektorr-editor/plugins/spell-checker-plugin/check-dots";
 import { checkHasError } from "@/utils/check-has-error";
 import { DictionaryWord } from "@/app/slovnik/queries";
+import { checkQuotes } from "@/components/korektorr-editor/plugins/spell-checker-plugin/check-quotes";
+import { resetNodeError } from "@/utils/reset-node-error";
 
 export const checkNode = async (
   editor: KorektorrEditor,
@@ -21,7 +23,7 @@ export const checkNode = async (
   }
 
   const text = Node.string(node);
-  const partRegex = /(\p{L}+|\p{P}+|\s+)/gu;
+  const partRegex = /(\p{L}+|[^\p{L}\s"“”‘’„‟]+|["“”‘’„‟]|\s+)/gu;
   const parts = text.match(partRegex);
 
   if (!parts) {
@@ -40,21 +42,17 @@ export const checkNode = async (
     if (/^\.+$/.test(part)) {
       checkDots(part, range, editor);
     }
+    // If word is only from quotation marks
+    else if (/^[“”"‘’„‟]+$/.test(part)) {
+      checkQuotes(part, range, editor);
+    }
     // If word is made from letters
     else if (/^\p{L}+$/u.test(part)) {
       await checkWord(part, range, node, worker, editor, dictionary);
     }
     // If part is unknown such as a punctuation mark, it should not have an error
     else if (checkHasError(node)) {
-      Transforms.setNodes(
-        editor,
-        { errors: { spellError: undefined, dotError: undefined } } as Partial<KorektorrRichText>,
-        {
-          at: range,
-          match: Text.isText,
-          split: true,
-        }
-      );
+      resetNodeError(editor, range);
     }
   }
   return editor;

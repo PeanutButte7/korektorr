@@ -21,7 +21,7 @@ const Editor = React.forwardRef<HTMLDivElement, PlateContentProps>(
 
             const dotError = !!typedLeaf.errors?.dotError;
             const spellError = !!typedLeaf.errors?.spellError;
-            const punctuationError = !!typedLeaf.errors?.punctuationError;
+            const quotationError = !!typedLeaf.errors?.quotationError;
             const bold = !!typedLeaf.bold;
             const italic = !!typedLeaf.italic;
             const underline = !!typedLeaf.underline;
@@ -31,9 +31,9 @@ const Editor = React.forwardRef<HTMLDivElement, PlateContentProps>(
               <span
                 {...attributes}
                 className={cn(
-                  dotError && "underline decoration-2 decoration-red-500",
-                  spellError && "underline decoration-2 decoration-red-500",
-                  punctuationError && "underline decoration-2 decoration-amber-400",
+                  dotError && "underline decoration-2 decoration-error-dot",
+                  quotationError && "underline decoration-2 decoration-error-quotation",
+                  spellError && "underline decoration-2 decoration-error-spell",
                   bold && "font-bold",
                   italic && "italic",
                   underline && "underline",

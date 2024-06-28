@@ -18,7 +18,7 @@ import { countCharactersWords } from "@/components/korektorr-editor/plugins/docu
 import useDocumentMetricsPlugin from "@/components/korektorr-editor/plugins/document-metrics-plugin/document-metrics-plugin";
 import { DictionaryWord } from "@/app/slovnik/queries";
 
-export type ErrorType = "dotError" | "spellError" | "punctuationError"; // Add more error types as needed
+export type ErrorType = "dotError" | "spellError" | "quotationError"; // Add more error types as needed
 
 export type ErrorDetails = {
   suggestions?: string[]; // For spell and other suggestions
