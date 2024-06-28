@@ -20,13 +20,21 @@ const grotesk = localFont({
 
 export const metadata: Metadata = {
   title: "Korektorr",
+  description: "Opravte chyby v textu bez reklam a nutnosti přihlášení.",
   openGraph: {
     type: "website",
     locale: "cs_CZ",
     url: "https://korektorr.cz",
     siteName: "Korektorr",
-    title: "Korektorr - okamžitá oprava textu",
-    description: "Opravte chyby v textu bez přihlášení a bez reklam.",
+    title: "Korektorr - snadná oprava textu",
+    description: "Opravte chyby v textu bez reklam a nutnosti přihlášení.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@adambartas",
+    title: "Korektorr - snadná oprava textu",
+    description: "Opravte chyby v textu bez reklam a nutnosti přihlášení.",
+    creator: "@adambartas",
   },
 };
 
