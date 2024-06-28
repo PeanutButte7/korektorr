@@ -19,7 +19,7 @@ const grotesk = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Korektorr",
+  title: "Korektorr - snadná oprava textu",
   description: "Opravte chyby v textu bez reklam a nutnosti přihlášení.",
   openGraph: {
     type: "website",
