@@ -6,6 +6,7 @@ import { ReactNode } from "react";
 import { cn } from "@udecode/cn";
 import Navbar from "@/components/navbar/navbar";
 import localFont from "next/font/local";
+import Footer from "@/components/footer/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -47,8 +48,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(inter.className, grotesk.className, "relative flex min-h-screen flex-col bg-main")}>
         <Providers>
-          <Navbar />
-          <main className="container mx-auto gap-2 xl:px-44 lg:px-16 flex flex-col mt-4">{children}</main>
+          <div className="flex flex-col min-h-svh">
+            <Navbar />
+            <main className="container mx-auto gap-2 flex-grow xl:px-44 lg:px-16 flex flex-col mt-4">{children}</main>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>

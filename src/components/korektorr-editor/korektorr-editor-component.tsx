@@ -56,7 +56,7 @@ const defaultInitialValue: KorektorrValue = [
 ];
 
 const KorektorrEditorComponent = ({ dictionary }: { dictionary: DictionaryWord[] }) => {
-  const { setErrorLeafs, setDocumentMetrics } = useKorektorr();
+  const { setErrorLeafs, setDocumentMetrics, debug } = useKorektorr();
   const { worker, dictionaryReady } = useWorker();
   const editor = useEditorRef<KorektorrValue, KorektorrEditor>();
 
@@ -101,25 +101,27 @@ const KorektorrEditorComponent = ({ dictionary }: { dictionary: DictionaryWord[]
       >
         <FloatingToolbar />
         <PlateEditorComponent placeholder="Začněte psát..." />
-        <Accordion type="single" collapsible>
-          <AccordionItem value="item-1" className="border-none bg-white px-4 rounded-b-lg">
-            <AccordionTrigger>Otevřít vývojářské informace</AccordionTrigger>
-            <AccordionContent>
-              {debugValue.map((node, index) => (
-                <div key={"parentDebug" + index}>
-                  {JSON.stringify(node)}
-                  <div className="border-l border-red-400 ml-2 pl-2">
-                    {node.children.map((childNode, childIndex) => (
-                      <p key={"childDebug" + childIndex} className="my-1 bg-slate-100">
-                        {JSON.stringify(childNode)}
-                      </p>
-                    ))}
+        {debug && (
+          <Accordion type="single" collapsible>
+            <AccordionItem value="item-1" className="border-none bg-white px-4 rounded-b-lg">
+              <AccordionTrigger>Otevřít vývojářské informace</AccordionTrigger>
+              <AccordionContent>
+                {debugValue.map((node, index) => (
+                  <div key={"parentDebug" + index}>
+                    {JSON.stringify(node)}
+                    <div className="border-l border-red-400 ml-2 pl-2">
+                      {node.children.map((childNode, childIndex) => (
+                        <p key={"childDebug" + childIndex} className="my-1 bg-slate-100">
+                          {JSON.stringify(childNode)}
+                        </p>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
+                ))}
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        )}
       </Plate>
     </div>
   );

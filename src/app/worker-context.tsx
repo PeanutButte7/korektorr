@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 import { checkSpellingNormalize } from "@/components/korektorr-editor/plugins/spell-checker-plugin/spell-checker-plugin";
+import LoadingSpinner from "@/components/ui/loading-spinner";
 
 interface WorkerContextType {
   worker: Worker;
@@ -31,7 +32,12 @@ export const WorkerProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   if (!worker) {
-    return <p>Loading worker...</p>;
+    return (
+      <div className="flex flex-col items-center justify-center gap-2 h-screen">
+        <p>Korektorr se načítá...</p>
+        <LoadingSpinner size={32} className="text-primary" />
+      </div>
+    );
   }
 
   return <WorkerContext.Provider value={{ worker, dictionaryReady }}>{children}</WorkerContext.Provider>;

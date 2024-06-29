@@ -11,6 +11,8 @@ export type SetErrorLeafs = Dispatch<SetStateAction<KorektorrRichText[]>>;
 export type SetDocumentMetrics = Dispatch<SetStateAction<DocumentMetrics | undefined>>;
 
 interface KorektorrContextType {
+  debug: boolean;
+  setDebug: Dispatch<SetStateAction<boolean>>;
   errorLeafs: KorektorrRichText[];
   setErrorLeafs: SetErrorLeafs;
   setDocumentMetrics: SetDocumentMetrics;
@@ -20,11 +22,14 @@ interface KorektorrContextType {
 const KorektorrContext = createContext<KorektorrContextType | null>(null);
 
 export const KorektorrProvider = ({ children }: { children: ReactNode }) => {
+  const [debug, setDebug] = useState(false);
   const [errorLeafs, setErrorLeafs] = useState<KorektorrRichText[]>([]);
   const [documentMetrics, setDocumentMetrics] = useState<DocumentMetrics | undefined>(undefined);
 
   return (
-    <KorektorrContext.Provider value={{ errorLeafs, setErrorLeafs, documentMetrics, setDocumentMetrics }}>
+    <KorektorrContext.Provider
+      value={{ debug, setDebug, errorLeafs, setErrorLeafs, documentMetrics, setDocumentMetrics }}
+    >
       {children}
     </KorektorrContext.Provider>
   );
