@@ -30,21 +30,23 @@ const LoginSuccessBanner = () => {
     (style, item) =>
       item && (
         <animated.div style={style} className="absolute w-full">
-          <div className="flex items-center justify-between py-2 px-3.5 bg-gradient-to-b from-emerald-600 to-emerald-800 border border-emerald-200 shadow-pop rounded-lg">
-            <div className="flex gap-2 items-center">
+          <div className="hidden md:flex items-center justify-between py-2 px-3.5 bg-gradient-to-b from-emerald-600 to-emerald-800 border border-emerald-200 shadow-pop rounded-lg">
+            <div className="flex gap-2 items-center flex-wrap">
               <h3 className="text-white text-sm mr-1.5">Pokročilé funkce jsou aktivní!</h3>
-              <LoginPromoBannerPill>
-                <IconBook2 />
-                Slovník povolených slov
-              </LoginPromoBannerPill>
-              <LoginPromoBannerPill>
-                <IconFileDownload />
-                Ukládání textu skrz zařízení
-              </LoginPromoBannerPill>
-              <LoginPromoBannerPill>
-                <IconSparkles />
-                AI chytrá kontrola čárek (brzy)
-              </LoginPromoBannerPill>
+              <div className="flex gap-2 items-center">
+                <LoginPromoBannerPill>
+                  <IconBook2 />
+                  Slovník povolených slov
+                </LoginPromoBannerPill>
+                <LoginPromoBannerPill>
+                  <IconFileDownload />
+                  Ukládání textu skrz zařízení
+                </LoginPromoBannerPill>
+                <LoginPromoBannerPill>
+                  <IconSparkles />
+                  AI chytrá kontrola čárek (brzy)
+                </LoginPromoBannerPill>
+              </div>
             </div>
             <Button
               onClick={handleClose}
@@ -72,7 +74,7 @@ const LoginPromoBannerPill = ({
   return (
     <div
       className={cn(
-        "h-6 flex gap-2 items-center bg-emerald-600 text-success-foreground rounded-md border border-emerald-300 py-1 px-3 text-sm [&>svg]:h-4 [&>svg]:w-4 [&>svg]:text-emerald-100",
+        "h-6 flex gap-2 items-center flex-shrink-0 bg-emerald-600 text-success-foreground rounded-md border border-emerald-300 py-1 px-3 text-sm [&>svg]:h-4 [&>svg]:w-4 [&>svg]:text-emerald-100",
         className
       )}
       style={style}

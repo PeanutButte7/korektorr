@@ -7,22 +7,24 @@ import colors from "tailwindcss/colors";
 
 const LoginPromoBanner = () => {
   return (
-    <div className="absolute w-full flex items-center justify-between py-2 px-3.5 bg-blue-50 border border-blue-200 shadow-pop rounded-lg">
-      <div className="flex gap-2 items-center">
+    <div className="absolute w-full hidden md:flex items-center justify-between gap-2 py-2 px-3.5 bg-blue-50 border border-blue-200 shadow-pop rounded-lg">
+      <div className="flex gap-2 items-center flex-wrap">
         <h3 className="text-primary text-base font-extrabold mr-1.5">Aktivujte pokročilé funkce!</h3>
-        <LoginPromoBannerPill>
-          <IconBook2 />
-          Slovník povolených slov
-        </LoginPromoBannerPill>
-        <LoginPromoBannerPill>
-          <IconFileDownload />
-          Ukládání textu skrz zařízení
-        </LoginPromoBannerPill>
-        <div className="bg-gradient-to-b from-sky-400/70 to-blue-700/70 p-[1px] rounded-[0.45rem]">
-          <LoginPromoBannerPill className="h-[30px] border-none">
-            <IconSparkles />
-            AI chytrá kontrola čárek
+        <div className="flex gap-2 items-center">
+          <LoginPromoBannerPill>
+            <IconBook2 />
+            Slovník povolených slov
           </LoginPromoBannerPill>
+          <LoginPromoBannerPill>
+            <IconFileDownload />
+            Ukládání textu skrz zařízení
+          </LoginPromoBannerPill>
+          <div className="flex-shrink-0 bg-gradient-to-b from-sky-400/70 to-blue-700/70 p-[1px] rounded-[0.45rem]">
+            <LoginPromoBannerPill className="h-[30px] border-none">
+              <IconSparkles />
+              AI chytrá kontrola čárek (brzy)
+            </LoginPromoBannerPill>
+          </div>
         </div>
       </div>
       <Link href={"/auth/login"} className={buttonVariants({ variant: "fancy", size: "sm" })}>
@@ -44,7 +46,7 @@ const LoginPromoBannerPill = ({
   return (
     <div
       className={cn(
-        "h-8 flex gap-2 items-center bg-background text-blue-950 rounded-md border border-blue-200 py-1 px-3 text-sm [&>svg]:h-5 [&>svg]:w-5 [&>svg]:text-primary",
+        "h-8 flex gap-2 items-center flex-shrink-0 bg-background text-blue-950 rounded-md border border-blue-200 py-1 px-3 text-sm [&>svg]:h-5 [&>svg]:w-5 [&>svg]:text-primary",
         className
       )}
       style={style}
