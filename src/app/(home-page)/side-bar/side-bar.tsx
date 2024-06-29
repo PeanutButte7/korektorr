@@ -34,7 +34,7 @@ const SideBar = ({ setSideBarOpen }: SideBarProps) => {
   });
 
   return (
-    <div className="w-64 flex flex-col flex-shrink-0 gap-2 px-4 pt-2.5 pb-3 bg-gradient-to-b from-card to-blue-50 border border-blue-200 rounded-lg shadow-pop">
+    <div className="overflow-y-auto max-h-[36rem] w-64 flex flex-col flex-shrink-0 gap-2 px-4 pt-2.5 pb-3 bg-gradient-to-b from-card to-blue-50 border border-blue-200 rounded-lg shadow-pop">
       <div className="flex justify-between items-center">
         <h3 className="text-2xl font-extrabold text-primary">Chyby</h3>
         <Button
