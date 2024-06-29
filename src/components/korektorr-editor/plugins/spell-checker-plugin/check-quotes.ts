@@ -26,6 +26,8 @@ export const checkQuotes = (word: string, range: Range, editor: Editor) => {
         split: true,
       }
     );
+
+    return true;
   } else if (quotationMarkCount % 2 === 0 && word !== "“") {
     Transforms.setNodes(
       editor,
@@ -38,5 +40,9 @@ export const checkQuotes = (word: string, range: Range, editor: Editor) => {
         split: true,
       }
     );
+
+    return true;
   }
+
+  return false;
 };

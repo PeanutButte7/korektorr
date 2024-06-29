@@ -13,6 +13,8 @@ export const checkDots = (word: string, range: Range, editor: Editor) => {
         split: true,
       }
     );
+
+    return true;
   } else if (/^(\.{4,})$/.test(word)) {
     Transforms.setNodes(
       editor,
@@ -23,6 +25,8 @@ export const checkDots = (word: string, range: Range, editor: Editor) => {
         split: true,
       }
     );
+
+    return true;
   }
   // Match three dots or a single dot and remove the spell error
   else {
@@ -30,5 +34,7 @@ export const checkDots = (word: string, range: Range, editor: Editor) => {
       at: range,
       match: Text.isText,
     });
+
+    return true;
   }
 };

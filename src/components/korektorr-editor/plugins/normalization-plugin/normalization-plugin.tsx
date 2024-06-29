@@ -4,8 +4,11 @@ import { debouncedCheckSpellingNormalize } from "@/components/korektorr-editor/p
 import { createPluginFactory } from "@udecode/plate";
 import { Editor, Transforms, Element, Text, Node } from "slate";
 import { isKorektorrRichText } from "@/utils/is-korektorr-rich-text";
+import { checkNode } from "@/components/korektorr-editor/plugins/spell-checker-plugin/check-node";
 
 export const useNormalizationPlugin = () => {
+  const { worker } = useWorker();
+
   return createPluginFactory({
     key: "normalization",
     withOverrides: (editor) => {

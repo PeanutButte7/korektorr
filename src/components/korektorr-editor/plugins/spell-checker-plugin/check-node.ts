@@ -17,9 +17,15 @@ export const checkNode = async (
   path: Path,
   worker: Worker,
   dictionary: DictionaryWord[]
-) => {
+): Promise<{
+  editor: KorektorrEditor;
+  transformedNode: boolean;
+}> => {
   if (!Editor.isEditor(editor)) {
-    return editor;
+    return {
+      editor,
+      transformedNode: false,
+    };
   }
 
   const text = Node.string(node);
@@ -27,7 +33,10 @@ export const checkNode = async (
   const parts = text.match(partRegex);
 
   if (!parts) {
-    return editor;
+    return {
+      editor,
+      transformedNode: false,
+    };
   }
 
   for (const part of parts) {
@@ -39,21 +48,47 @@ export const checkNode = async (
     };
 
     // If word is only from dots
-    if (/^\.+$/.test(part)) {
-      checkDots(part, range, editor);
-    }
-    // If word is only from quotation marks
-    else if (/^[“”"‘’„‟]+$/.test(part)) {
-      checkQuotes(part, range, editor);
-    }
+    // if (/^\.+$/.test(part)) {
+    //   const transformedNode = checkDots(part, range, editor);
+    //   if (transformedNode) {
+    //     return {
+    //       editor,
+    //       transformedNode: true,
+    //     };
+    //   }
+    // }
+    // // If word is only from quotation marks
+    // else if (/^[“”"‘’„‟]+$/.test(part)) {
+    //   const transformedNode = checkQuotes(part, range, editor);
+    //   if (transformedNode) {
+    //     return {
+    //       editor,
+    //       transformedNode: true,
+    //     };
+    //   }
+    // }
     // If word is made from letters
-    else if (/^\p{L}+$/u.test(part)) {
-      await checkWord(part, range, node, worker, editor, dictionary);
+    if (/^\p{L}+$/u.test(part)) {
+      const { editor: newEditor, transformedNode } = await checkWord(part, range, node, worker, editor, dictionary);
+      if (transformedNode) {
+        return {
+          editor: newEditor,
+          transformedNode: true,
+        };
+      }
     }
     // If part is unknown such as a punctuation mark, it should not have an error
     else if (checkHasError(node)) {
-      resetNodeError(editor, range);
+      const newEditor = resetNodeError(editor, range);
+      return {
+        editor: newEditor,
+        transformedNode: true,
+      };
     }
   }
-  return editor;
+
+  return {
+    editor,
+    transformedNode: false,
+  };
 };

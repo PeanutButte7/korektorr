@@ -30,7 +30,15 @@ const checkSpellingNormalize = async (
       const node = currentEditor.children[blockIndex].children[nodeIndex];
 
       // Update the editor with the changed editor
-      currentEditor = await checkNode(currentEditor, node, [blockIndex, nodeIndex], worker, dictionary);
+      const { editor, transformedNode } = await checkNode(
+        currentEditor,
+        node,
+        [blockIndex, nodeIndex],
+        worker,
+        dictionary
+      );
+
+      currentEditor = editor;
       nodeIndex++;
     }
 
