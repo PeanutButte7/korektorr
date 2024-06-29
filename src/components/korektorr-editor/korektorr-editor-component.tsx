@@ -80,7 +80,7 @@ const KorektorrEditorComponent = ({ dictionary }: { dictionary: DictionaryWord[]
   }, [dictionaryReady, editor]);
 
   return (
-    <div className="bg-background rounded-lg border shadow-pop">
+    <div className="bg-background rounded-lg border shadow-pop flex-grow">
       {/*<Button*/}
       {/*  onClick={() => {*/}
       {/*    getPunctuationErrors.mutate(editor.children);*/}

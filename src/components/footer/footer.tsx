@@ -1,22 +1,29 @@
 "use client";
 
 import { useKorektorr } from "@/app/korektorr-context";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
   const { setDebug } = useKorektorr();
   const [count, setCount] = useState(0);
 
+  {
+    /* Toggle debug mode after 5 clicks */
+  }
+  useEffect(() => {
+    if (count > 5) {
+      setDebug((prev) => !prev);
+    }
+  }, [count]);
+
   return (
     <footer className="flex flex-col items-center justify-center gap-1 p-6 mt-8 text-center text-muted-foreground text-sm border-t">
-      {/* Set debug mode after 5 clicks */}
       <p
         onClick={() =>
           setCount((prev) => {
-            console.log(prev);
+            console.log(count);
             if (prev > 5) {
-              setDebug(true);
-              return prev;
+              return 0;
             }
 
             return prev + 1;
