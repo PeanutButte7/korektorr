@@ -22,7 +22,8 @@ interface KorektorrContextType {
 const KorektorrContext = createContext<KorektorrContextType | null>(null);
 
 export const KorektorrProvider = ({ children }: { children: ReactNode }) => {
-  const [debug, setDebug] = useState(false);
+  const env = process.env.NODE_ENV;
+  const [debug, setDebug] = useState(env === "development");
   const [errorLeafs, setErrorLeafs] = useState<KorektorrRichText[]>([]);
   const [documentMetrics, setDocumentMetrics] = useState<DocumentMetrics | undefined>(undefined);
 

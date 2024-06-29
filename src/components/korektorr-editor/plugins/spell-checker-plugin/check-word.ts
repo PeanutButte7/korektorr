@@ -1,4 +1,4 @@
-import { KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor-component";
+import { KorektorrEditor, KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor-component";
 import { Editor, Transforms, Text, Range } from "slate";
 import { findPrioritySuggestion } from "@/components/korektorr-editor/plugins/spell-checker-plugin/find-priority-suggestion";
 import { DictionaryWord } from "@/app/slovnik/queries";
@@ -11,9 +11,19 @@ export const checkWord = async (
   range: Range,
   node: KorektorrRichText,
   worker: Worker,
-  editor: Editor,
+  editor: KorektorrEditor,
   dictionary: DictionaryWord[]
-) => {
+): Promise<{
+  editor: KorektorrEditor;
+  transformedNode: boolean;
+}> => {
+  if (!Editor.isEditor(editor)) {
+    return {
+      editor,
+      transformedNode: false,
+    };
+  }
+
   // If word is in the dictionary, don't check it
   if (findInDictionary(word, dictionary)) {
     // If it also has an error mark, remove it
@@ -22,9 +32,17 @@ export const checkWord = async (
         at: range,
         match: Text.isText,
       });
+
+      return {
+        editor,
+        transformedNode: true,
+      };
     }
 
-    return editor;
+    return {
+      editor,
+      transformedNode: false,
+    };
   }
 
   // Otherwise check the word against Hunspell dictionary
@@ -51,11 +69,23 @@ export const checkWord = async (
         split: true,
       }
     );
+
+    return {
+      editor,
+      transformedNode: true,
+    };
   } else if (isCorrect && checkHasError(node)) {
     resetNodeError(editor, range);
+    return {
+      editor,
+      transformedNode: true,
+    };
   }
 
-  return editor;
+  return {
+    editor,
+    transformedNode: false,
+  };
 };
 
 const workerCheckSpelling = async (

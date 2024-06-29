@@ -1,7 +1,11 @@
-import { KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor-component";
-import { Transforms, Text, BaseEditor, Range, Path } from "slate";
+import { KorektorrEditor, KorektorrRichText } from "@/components/korektorr-editor/korektorr-editor-component";
+import { Transforms, Text, BaseEditor, Range, Path, Editor } from "slate";
 
-export const resetNodeError = (editor: BaseEditor, rangePath: Range | Path) => {
+export const resetNodeError = (editor: KorektorrEditor, rangePath: Range | Path) => {
+  if (!Editor.isEditor(editor)) {
+    return editor;
+  }
+
   if (Range.isRange(rangePath)) {
     Transforms.setNodes(
       editor,
@@ -25,4 +29,6 @@ export const resetNodeError = (editor: BaseEditor, rangePath: Range | Path) => {
       }
     );
   }
+
+  return editor;
 };
