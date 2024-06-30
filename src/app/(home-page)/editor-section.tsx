@@ -39,7 +39,7 @@ const EditorSection = ({ user }: EditorSectionProps) => {
         <TopBar sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen} />
         <KorektorrEditorComponent dictionary={dictionary} />
       </div>
-      {sideBarOpen && <SideBar setSideBarOpen={setSideBarOpen} />}
+      {sideBarOpen && <SideBar setSideBarOpen={setSideBarOpen} user={user} />}
     </div>
   );
 };

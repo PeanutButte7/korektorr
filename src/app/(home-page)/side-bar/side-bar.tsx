@@ -1,27 +1,18 @@
-import {
-  IconConfetti,
-  IconLayoutSidebarRightCollapse,
-  IconLayoutSidebarRightCollapseFilled,
-} from "@tabler/icons-react";
+import { IconConfetti, IconLayoutSidebarRightCollapseFilled } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
-import { useEditorRef, useEditorSelector, useEditorState } from "@udecode/plate-common";
-import {
-  KorektorrEditor,
-  KorektorrRichText,
-  KorektorrValue,
-} from "@/components/korektorr-editor/korektorr-editor-component";
-import { useEffect, useState } from "react";
 import { useKorektorr } from "@/app/korektorr-context";
 import SideBarCard from "@/app/(home-page)/side-bar/side-bar-card";
-import { useTransition, animated } from "@react-spring/web";
+import { animated, useTransition } from "@react-spring/web";
 import { useWorker } from "@/app/worker-context";
 import LoadingSpinner from "@/components/ui/loading-spinner";
+import { User } from "@supabase/supabase-js";
 
 interface SideBarProps {
   setSideBarOpen: (open: boolean) => void;
+  user: User | null;
 }
 
-const SideBar = ({ setSideBarOpen }: SideBarProps) => {
+const SideBar = ({ setSideBarOpen, user }: SideBarProps) => {
   const { errorLeafs } = useKorektorr();
   const { dictionaryReady } = useWorker();
 
@@ -54,7 +45,7 @@ const SideBar = ({ setSideBarOpen }: SideBarProps) => {
       ) : errorLeafs.length ? (
         transitions((style, item, _, key) => (
           <animated.div style={style} key={key}>
-            <SideBarCard leaf={item} />
+            <SideBarCard leaf={item} user={user} />
           </animated.div>
         ))
       ) : (

@@ -1,7 +1,7 @@
 "use client";
 
 import { CSSProperties, ReactNode, useState } from "react";
-import { IconBook2, IconFileDownload, IconSparkles, IconX } from "@tabler/icons-react";
+import { IconBook2, IconCircleDashedX, IconFileDownload, IconSparkles, IconX } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/utils/cn";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -36,13 +36,14 @@ const LoginSuccessBanner = () => {
               <h3 className="text-white text-sm mr-1.5">Pokročilé funkce jsou aktivní!</h3>
               <div className="flex gap-2 items-center">
                 <LoginPromoBannerPill>
+                  <IconCircleDashedX />
+                  Potlačení chyb
+                </LoginPromoBannerPill>
+                <Separator orientation="vertical" className="bg-emerald-300 h-3.5" />
+                <LoginPromoBannerPill>
                   <IconBook2 />
                   Slovník povolených slov
                 </LoginPromoBannerPill>
-                {/*<LoginPromoBannerPill>*/}
-                {/*  <IconFileDownload />*/}
-                {/*  Ukládání textu skrz zařízení*/}
-                {/*</LoginPromoBannerPill>*/}
                 <Separator orientation="vertical" className="bg-emerald-300 h-3.5" />
                 <LoginPromoBannerPill>
                   <IconSparkles />

@@ -4,7 +4,7 @@ import {
   KorektorrValue,
 } from "@/components/korektorr-editor/korektorr-editor-component";
 import { Button } from "@/components/ui/button";
-import { IconArrowNarrowRight, IconArrowRight, IconBook2, IconX } from "@tabler/icons-react";
+import { IconArrowNarrowRight, IconArrowRight, IconBook2, IconCircleDashedX, IconX } from "@tabler/icons-react";
 import { useEditorRef } from "@udecode/plate-common";
 import { Editor, Text, Transforms } from "slate";
 import { useKorektorr } from "@/app/korektorr-context";
@@ -15,15 +15,16 @@ import { Separator } from "@/components/ui/separator";
 import { useInsertDictionaryWord } from "@/app/slovnik/queries";
 import { createBrowserClient } from "@/utils/supabase/browser";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { User } from "@supabase/supabase-js";
 
 interface SideBarCardProps {
   leaf: KorektorrRichText;
+  user: User | null;
 }
 
-const SideBarCard = ({ leaf }: SideBarCardProps) => {
+const SideBarCard = ({ leaf, user }: SideBarCardProps) => {
   const supabase = createBrowserClient();
   const { setErrorLeafs } = useKorektorr();
-  const { worker } = useWorker();
   const editor = useEditorRef<KorektorrValue, KorektorrEditor>();
   const insertMutation = useInsertDictionaryWord(supabase);
 
@@ -70,7 +71,7 @@ const SideBarCard = ({ leaf }: SideBarCardProps) => {
     setErrorLeafs((prev) => prev.filter(({ path }) => JSON.stringify(path) !== JSON.stringify(leaf.path)));
   };
 
-  const removeError = () => {
+  const dismissError = () => {
     if (!Editor.isEditor(editor)) return;
     if (!leaf.path) throw new Error("No leaf path");
 
@@ -99,15 +100,20 @@ const SideBarCard = ({ leaf }: SideBarCardProps) => {
     });
   };
 
-  const tooltipContent =
-    type === "spellError" ? (
-      <span>
-        Odstranit upozornění a<br />
-        přidat slovo do slovníku
-      </span>
-    ) : (
-      <span>Odstranit upozornění</span>
-    );
+  const tooltipContent = !user ? (
+    <span>
+      Funkce potlačení chyb
+      <br />
+      vyžaduje příhlášení
+    </span>
+  ) : type === "spellError" ? (
+    <span>
+      Potlačit chybu a<br />
+      přidat slovo do slovníku
+    </span>
+  ) : (
+    <span>Potlačit chybu</span>
+  );
 
   // const originalJoinedText = joinWithPreviousWord(leaf.text, leaf.path, editor);
 
@@ -129,8 +135,16 @@ const SideBarCard = ({ leaf }: SideBarCardProps) => {
         <p className="text-xs text-muted-foreground">{labelText}</p>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button size="icon-sm" variant="ghost" onClick={removeError} className="h-4 w-4 text-muted-foreground">
-              <IconX />
+            <Button
+              size="icon-sm"
+              variant="ghost"
+              onClick={() => {
+                if (!user) return;
+                dismissError();
+              }}
+              className="h-5 w-5 text-muted-foreground"
+            >
+              <IconCircleDashedX />
             </Button>
           </TooltipTrigger>
           <TooltipContent side="left">{tooltipContent}</TooltipContent>

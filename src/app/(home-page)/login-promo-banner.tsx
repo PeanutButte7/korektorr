@@ -1,5 +1,11 @@
 import { CSSProperties, ReactNode } from "react";
-import { IconArrowNarrowRight, IconBook2, IconFileDownload, IconSparkles } from "@tabler/icons-react";
+import {
+  IconArrowNarrowRight,
+  IconBook2,
+  IconCircleDashedX,
+  IconFileDownload,
+  IconSparkles,
+} from "@tabler/icons-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import { cn } from "@/utils/cn";
@@ -13,14 +19,15 @@ const LoginPromoBanner = () => {
         <h3 className="text-primary text-base font-extrabold mr-1.5">Přihlašte se pro pokročilé funkce!</h3>
         <div className="flex gap-2 items-center">
           <LoginPromoBannerPill>
+            <IconCircleDashedX />
+            Potlačení chyb
+          </LoginPromoBannerPill>
+          <Separator orientation="vertical" className="bg-blue-300 h-3.5" />
+          <LoginPromoBannerPill>
             <IconBook2 />
             Slovník povolených slov
           </LoginPromoBannerPill>
           <Separator orientation="vertical" className="bg-blue-300 h-3.5" />
-          {/*<LoginPromoBannerPill>*/}
-          {/*  <IconFileDownload />*/}
-          {/*  Ukládání textu skrz zařízení*/}
-          {/*</LoginPromoBannerPill>*/}
           {/*<div className="flex-shrink-0 bg-gradient-to-b from-sky-400/70 to-blue-700/70 p-[1px] rounded-[0.45rem]">*/}
           <LoginPromoBannerPill>
             <IconSparkles />

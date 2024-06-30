@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { IconBook2, IconFileDownload, IconSparkles } from "@tabler/icons-react";
+import { IconBook2, IconCircleDashedX, IconFileDownload, IconSparkles } from "@tabler/icons-react";
 
 const LoginPromoSideBar = () => {
   return (
@@ -35,60 +35,14 @@ const LoginPromoSideBar = () => {
           description="Kontrolujte čárky a další záludné chyby ve slovech pomocí chytré AI opravy textu.*"
         />
         <LoginPromoSideBarCard
-          icon={
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M7.5 27C7.5 27.7956 7.81607 28.5587 8.37868 29.1213C8.94129 29.6839 9.70435 30 10.5 30H28.5V6H10.5C9.70435 6 8.94129 6.31607 8.37868 6.87868C7.81607 7.44129 7.5 8.20435 7.5 9V27ZM7.5 27C7.5 26.2044 7.81607 25.4413 8.37868 24.8787C8.94129 24.3161 9.70435 24 10.5 24H28.5M13.5 12H22.5"
-                stroke="url(#paint0_linear_38_5694)"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_38_5694"
-                  x1="18"
-                  y1="6"
-                  x2="18"
-                  y2="30"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#0EA5E9" />
-                  <stop offset="1" stopColor="#1E40AF" />
-                </linearGradient>
-              </defs>
-            </svg>
-          }
+          icon={<IconBook2 size={36} className="text-primary" />}
           title="Slovník povolených slov"
           description="Uložte si slova, která nemá Korektorr počítat jako chyby."
         />
         <LoginPromoSideBarCard
-          icon={
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M21 4.5V10.5C21 10.8978 21.158 11.2794 21.4393 11.5607C21.7206 11.842 22.1022 12 22.5 12H28.5M21 4.5H10.5C9.70435 4.5 8.94129 4.81607 8.37868 5.37868C7.81607 5.94129 7.5 6.70435 7.5 7.5V28.5C7.5 29.2956 7.81607 30.0587 8.37868 30.6213C8.94129 31.1839 9.70435 31.5 10.5 31.5H25.5C26.2956 31.5 27.0587 31.1839 27.6213 30.6213C28.1839 30.0587 28.5 29.2956 28.5 28.5V12M21 4.5L28.5 12M18 25.5V16.5M18 25.5L14.25 21.75M18 25.5L21.75 21.75"
-                stroke="url(#paint0_linear_38_5689)"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <defs>
-                <linearGradient
-                  id="paint0_linear_38_5689"
-                  x1="18"
-                  y1="4.5"
-                  x2="18"
-                  y2="31.5"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stopColor="#0EA5E9" />
-                  <stop offset="1" stopColor="#1E40AF" />
-                </linearGradient>
-              </defs>
-            </svg>
-          }
-          title="Ukládání textu skrz zařízení"
-          description="Už nikdy nepřijdete o svůj text. Bude se vám navíc sdílet napříč všemi přihlášenými zařízeními."
+          icon={<IconCircleDashedX size={36} className="text-primary" />}
+          title="Potlačení chyb"
+          description="Skryjte označené chyby, které považujete za nesprávné nebo rušivé."
         />
       </div>
       <p className="font-paragraph text-xs text-gray-400">*Chytrá oprava je v neplacené verzi omezena.</p>
