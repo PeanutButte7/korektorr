@@ -37,9 +37,9 @@ const FloatingToolbarAddToDictionary = () => {
   return (
     <ToolbarButton
       onClick={() => {
-        const wordLowerCase = node.text.toLowerCase();
+        const word = node.text;
 
-        insertMutation.mutateAsync(wordLowerCase).then((data) => {
+        insertMutation.mutateAsync(word).then((data) => {
           checkSpellingNormalize(editor, worker, setErrorLeafs, data);
         });
       }}

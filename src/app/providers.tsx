@@ -2,7 +2,6 @@
 
 import { ReactNode } from "react";
 import { WorkerProvider } from "@/app/worker-context";
-import { TooltipProvider } from "@/components/plate-ui/tooltip";
 import { PlateController } from "@udecode/plate-common";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -11,6 +10,7 @@ import { KorektorrProvider } from "@/app/korektorr-context";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 function makeQueryClient() {
   return new QueryClient({
@@ -60,9 +60,7 @@ const Providers = ({ children }: { children: ReactNode }) => {
         <WorkerProvider>
           <PlateController>
             <KorektorrProvider>
-              <TooltipProvider disableHoverableContent delayDuration={500} skipDelayDuration={0}>
-                {children}
-              </TooltipProvider>
+              <TooltipProvider>{children}</TooltipProvider>
             </KorektorrProvider>
           </PlateController>
         </WorkerProvider>

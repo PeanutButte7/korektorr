@@ -31,6 +31,7 @@ export const checkNode = async (
   const text = Node.string(node);
   const partRegex = /(\p{L}+|[^\p{L}\s"“”‘’„‟]+|["“”‘’„‟]|\s+)/gu;
   const parts = text.match(partRegex);
+  const nodeIgnoreQuoteDot = !!node.ignoreQuoteDot;
 
   if (!parts) {
     return {
@@ -48,25 +49,33 @@ export const checkNode = async (
     };
 
     // If word is only from dots
-    // if (/^\.+$/.test(part)) {
-    //   const transformedNode = checkDots(part, range, editor);
-    //   if (transformedNode) {
-    //     return {
-    //       editor,
-    //       transformedNode: true,
-    //     };
-    //   }
-    // }
-    // // If word is only from quotation marks
-    // else if (/^[“”"‘’„‟]+$/.test(part)) {
-    //   const transformedNode = checkQuotes(part, range, editor);
-    //   if (transformedNode) {
-    //     return {
-    //       editor,
-    //       transformedNode: true,
-    //     };
-    //   }
-    // }
+    if (/^\.+$/.test(part)) {
+      if (nodeIgnoreQuoteDot) {
+        continue;
+      }
+
+      const transformedNode = checkDots(part, range, node, editor);
+      if (transformedNode) {
+        return {
+          editor,
+          transformedNode: true,
+        };
+      }
+    }
+    // If word is only from quotation marks
+    else if (/^[“”"‘’„‟]+$/.test(part)) {
+      if (nodeIgnoreQuoteDot) {
+        continue;
+      }
+
+      const transformedNode = checkQuotes(part, range, editor);
+      if (transformedNode) {
+        return {
+          editor,
+          transformedNode: true,
+        };
+      }
+    }
     // If word is made from letters
     if (/^\p{L}+$/u.test(part)) {
       const { editor: newEditor, transformedNode } = await checkWord(part, range, node, worker, editor, dictionary);

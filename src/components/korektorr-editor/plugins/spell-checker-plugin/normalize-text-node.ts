@@ -10,6 +10,7 @@ export const normalizeTextNode = (
   path: Path
 ): { editor: KorektorrEditor; hasError: boolean; transformedNode: boolean } => {
   const hasError = checkHasError(node);
+  const nodeIgnoreQuoteDot = !!node.ignoreQuoteDot;
   if (!editor.children || !editor.children.length || !Editor.isEditor(editor))
     return { editor, hasError, transformedNode: false };
 
@@ -28,25 +29,27 @@ export const normalizeTextNode = (
     }
   }
 
-  // Try to merge nodes without errors adjacent to each other
+  // Try to merge nodes without errors and ignoreQuoteDot adjacent to each other
   const nextNodeEntry = Editor.next(editor, { at: path });
   if (nextNodeEntry) {
     const [nextNode, nextNodePath] = nextNodeEntry;
-    const nextHasError = isKorektorrRichText(nextNode) && checkHasError(nextNode);
+    const nextIsKorektorrRichText = isKorektorrRichText(nextNode);
+    const nextHasError = nextIsKorektorrRichText && checkHasError(nextNode);
+    const nextNodeIgnoreQuoteDot = nextIsKorektorrRichText && !!nextNode.ignoreQuoteDot;
 
-    // If next node and current node don't have errors, merge them
-    if (!hasError && !nextHasError) {
+    // If next node and current node don't have errors and ignoreQuoteDot, merge them
+    if (!hasError && !nodeIgnoreQuoteDot && !nextHasError && !nextNodeIgnoreQuoteDot) {
       Transforms.mergeNodes(editor, { at: nextNodePath, match: Text.isText });
       return { editor, hasError: false, transformedNode: true };
     }
   }
 
-  // // Try to merge with next node
+  // // Try to merge with next node if current node is not ignoreQuoteDot
   const lastChar = node.text.slice(-1);
   const doesEndWithPS = /[.,:;!?()\[\]{}'" \t\n\r]/.test(lastChar);
   const nodeDescendant = Editor.next(editor, { at: path });
 
-  if (!doesEndWithPS) {
+  if (!doesEndWithPS && !node.ignoreQuoteDot) {
     if (!nodeDescendant) return { editor, hasError, transformedNode: false };
 
     const [nextNode, nextNodePath] = nodeDescendant;

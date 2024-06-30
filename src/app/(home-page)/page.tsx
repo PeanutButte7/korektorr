@@ -11,7 +11,7 @@ const HomePage = async () => {
   } = await supabase.auth.getUser();
 
   return (
-    <div className="relative flex gap-2 flex-col">
+    <div className="flex flex-col">
       {!user && <LoginPromoBanner />}
       {user && <LoginSuccessBanner />}
       <EditorSection user={user} />

@@ -28,6 +28,7 @@ export type ErrorDetails = {
 export type KorektorrRichText = TDescendant & {
   text: string;
   path?: Path;
+  ignoreQuoteDot?: boolean;
   errors?: {
     [key in ErrorType]?: ErrorDetails;
   };
@@ -80,7 +81,7 @@ const KorektorrEditorComponent = ({ dictionary }: { dictionary: DictionaryWord[]
   }, [dictionaryReady, editor]);
 
   return (
-    <div className="bg-background rounded-lg border shadow-pop flex-grow">
+    <div className="relative bg-background rounded-lg border shadow-pop flex-grow">
       {/*<Button*/}
       {/*  onClick={() => {*/}
       {/*    getPunctuationErrors.mutate(editor.children);*/}
@@ -101,28 +102,23 @@ const KorektorrEditorComponent = ({ dictionary }: { dictionary: DictionaryWord[]
       >
         <FloatingToolbar />
         <PlateEditorComponent placeholder="Začněte psát..." />
-        {debug && (
-          <Accordion type="single" collapsible>
-            <AccordionItem value="item-1" className="border-none bg-white px-4 rounded-b-lg">
-              <AccordionTrigger>Otevřít vývojářské informace</AccordionTrigger>
-              <AccordionContent>
-                {debugValue.map((node, index) => (
-                  <div key={"parentDebug" + index}>
-                    {JSON.stringify(node)}
-                    <div className="border-l border-red-400 ml-2 pl-2">
-                      {node.children.map((childNode, childIndex) => (
-                        <p key={"childDebug" + childIndex} className="my-1 bg-slate-100">
-                          {JSON.stringify(childNode)}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        )}
       </Plate>
+      {debug && (
+        <div className="absolute bg-background">
+          {debugValue.map((node, index) => (
+            <div key={"parentDebug" + index}>
+              {/*{JSON.stringify(node)}*/}
+              <div className="border-l border-red-400 ml-2 pl-2">
+                {node.children.map((childNode, childIndex) => (
+                  <p key={"childDebug" + childIndex} className="my-1 bg-slate-100">
+                    {JSON.stringify(childNode)}
+                  </p>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
