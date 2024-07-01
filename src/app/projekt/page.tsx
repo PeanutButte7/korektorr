@@ -35,22 +35,22 @@ const ProjectPage = () => {
             proti němu kontrolovat, aniž by musely opustit váš počítač.
           </p>
         </div>
-        <div className="flex flex-col items-start gap-2 border p-4 rounded-lg">
-          <div className="flex gap-2 items-center">
-            <IconSparkles />
-            <h3 className="font-extrabold text-xl">AI funkce</h3>
-          </div>
-          <p className="text-muted-foreground">
-            Korektorr nabízí pokročilé AI funkce, které umožňují přesnější detekci chyb, včetně čárek. Vyzkoušení těchto
-            funkcí je možné zcela zdarma. Pro častější používaní je nutné si pořídit měsíční předplatné.
-            <br />
-            <br />
-            Při aktivaci těchto funkcí se text odesílá mimo váš prohlížeč.{" "}
-            <span className="underline">
-              Na těchto datech však nejsou AI modely trénovány a váš text se nikde trvale neukládá.
-            </span>
-          </p>
-        </div>
+        {/*<div className="flex flex-col items-start gap-2 border p-4 rounded-lg">*/}
+        {/*  <div className="flex gap-2 items-center">*/}
+        {/*    <IconSparkles />*/}
+        {/*    <h3 className="font-extrabold text-xl">AI funkce</h3>*/}
+        {/*  </div>*/}
+        {/*  <p className="text-muted-foreground">*/}
+        {/*    Korektorr nabízí pokročilé AI funkce, které umožňují přesnější detekci chyb, včetně čárek. Vyzkoušení těchto*/}
+        {/*    funkcí je možné zcela zdarma. Pro častější používaní je nutné si pořídit měsíční předplatné.*/}
+        {/*    <br />*/}
+        {/*    <br />*/}
+        {/*    Při aktivaci těchto funkcí se text odesílá mimo váš prohlížeč.{" "}*/}
+        {/*    <span className="underline">*/}
+        {/*      Na těchto datech však nejsou AI modely trénovány a váš text se nikde trvale neukládá.*/}
+        {/*    </span>*/}
+        {/*  </p>*/}
+        {/*</div>*/}
       </div>
     </div>
   );
