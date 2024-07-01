@@ -2,7 +2,7 @@ import { IconShieldCheckeredFilled, IconShieldCheckFilled, IconSparkles } from "
 
 const ProjectPage = () => {
   return (
-    <div className="flex items-start gap-20 mt-16">
+    <div className="flex flex-col md:flex-row items-start justify-between gap-6 md:gap-16 mt-16">
       <div className="flex flex-col items-start gap-2 flex-shrink-0">
         <h1 className="text-primary text-4xl font-black">O projektu</h1>
         <h2 className="text-muted-foreground">Zjistěte více informací o této stránce.</h2>
