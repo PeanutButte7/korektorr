@@ -11,7 +11,7 @@ const Navbar = async () => {
   return (
     <div className="flex items-center justify-center h-12 border-b border-gray-200">
       <div className="container flex items-center justify-between gap-2 xl:px-44 lg:px-16 ">
-        <Link href="/" className="font-black text-3xl text-primary">
+        <Link href="/" className="font-black text-3xl text-primary hover:no-underline">
           Korektorr
         </Link>
         {data.user ? (

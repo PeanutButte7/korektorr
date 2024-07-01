@@ -2,6 +2,7 @@
 
 import { useKorektorr } from "@/app/korektorr-context";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const Footer = () => {
   const { setDebug } = useKorektorr();
@@ -17,25 +18,36 @@ const Footer = () => {
   }, [count]);
 
   return (
-    <footer className="flex flex-col items-center justify-center gap-1 p-6 mt-8 text-center text-muted-foreground text-sm border-t">
-      <p
-        onClick={() =>
-          setCount((prev) => {
-            console.log(count);
-            if (prev > 5) {
-              return 0;
-            }
+    <footer className="flex flex-col items-center justify-center gap-2 p-6 mt-8 text-center text-muted-foreground text-sm border-t">
+      <div className="flex gap-6">
+        <Link href={"/projekt"} className="text-muted-foreground">
+          O projektu
+        </Link>
+        <Link href={"/kontakt"} className="text-muted-foreground">
+          Kontakt
+        </Link>
+        {/*<Link href={"/podminky"} className="text-muted-foreground">*/}
+        {/*  Podmínky*/}
+        {/*</Link>*/}
+      </div>
+      <p className="text-muted-foreground/70 text-xs">
+        <a href="https://www.adam-barta.com/" target="_blank">
+          Adam Bárta
+        </a>{" "}
+        <span
+          onClick={() =>
+            setCount((prev) => {
+              if (prev > 5) {
+                return 0;
+              }
 
-            return prev + 1;
-          })
-        }
-        className="text-muted-foreground/60 text-xs"
-      >
-        Vytvořil
+              return prev + 1;
+            })
+          }
+        >
+          © {new Date().getFullYear()}
+        </span>
       </p>
-      <a href="https://www.adam-barta.com/" target="_blank" className="hover:underline">
-        Adam Bárta
-      </a>
     </footer>
   );
 };
