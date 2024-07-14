@@ -45,17 +45,6 @@ export type KorektorrValue = KorektorrRootBlock[];
 
 export type KorektorrEditor = PlateEditor<KorektorrValue>;
 
-const defaultInitialValue: KorektorrValue = [
-  {
-    type: "p",
-    children: [
-      {
-        text: "Vítejte v českém editoru s automatickou kontrolou chib! Text se ukládá do vašeho prohlížeče, takže se neztratí pokud opustíte stránku.",
-      },
-    ],
-  },
-];
-
 const KorektorrEditorComponent = ({ dictionary }: { dictionary: DictionaryWord[] }) => {
   const { setErrorLeafs, setDocumentMetrics, debug } = useKorektorr();
   const { worker, dictionaryReady } = useWorker();
@@ -93,7 +82,7 @@ const KorektorrEditorComponent = ({ dictionary }: { dictionary: DictionaryWord[]
       {/*</Button>*/}
       <Plate
         normalizeInitialValue
-        initialValue={initialLocalStorageValue ? JSON.parse(initialLocalStorageValue) : defaultInitialValue}
+        initialValue={initialLocalStorageValue ? JSON.parse(initialLocalStorageValue) : undefined}
         onChange={(newValue) => {
           setDebugValue(newValue);
           localStorage.setItem("editorValue", JSON.stringify(newValue));
