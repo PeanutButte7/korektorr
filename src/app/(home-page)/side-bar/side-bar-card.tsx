@@ -12,10 +12,11 @@ import { useWorker } from "@/app/worker-context";
 import { cn } from "@/utils/cn";
 import { resetNodeError } from "@/utils/reset-node-error";
 import { Separator } from "@/components/ui/separator";
-import { useInsertDictionaryWord } from "@/app/slovnik/queries";
+import { useGetUserDictionary, useInsertDictionaryWord } from "@/app/slovnik/queries";
 import { createBrowserClient } from "@/utils/supabase/browser";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { User } from "@supabase/supabase-js";
+import { checkSpellingNormalize } from "@/components/korektorr-editor/plugins/spell-checker-plugin/spell-checker-plugin";
 
 interface SideBarCardProps {
   leaf: KorektorrRichText;
@@ -25,6 +26,7 @@ interface SideBarCardProps {
 const SideBarCard = ({ leaf, user }: SideBarCardProps) => {
   const supabase = createBrowserClient();
   const { setErrorLeafs } = useKorektorr();
+  const { worker } = useWorker();
   const editor = useEditorRef<KorektorrValue, KorektorrEditor>();
   const insertMutation = useInsertDictionaryWord(supabase);
 
@@ -96,7 +98,7 @@ const SideBarCard = ({ leaf, user }: SideBarCardProps) => {
       if (!leaf.path) throw new Error("No leaf path");
 
       resetNodeError(editor, leaf.path);
-      setErrorLeafs((prev) => prev.filter(({ path }) => JSON.stringify(path) !== JSON.stringify(leaf.path)));
+      checkSpellingNormalize(editor, worker, setErrorLeafs, data);
     });
   };
 
@@ -133,7 +135,7 @@ const SideBarCard = ({ leaf, user }: SideBarCardProps) => {
     >
       <div className="flex justify-between items-center">
         <p className="text-xs text-muted-foreground">{labelText}</p>
-        <Tooltip>
+        <Tooltip delayDuration={user ? 500 : 0}>
           <TooltipTrigger asChild>
             <Button
               size="icon-sm"
