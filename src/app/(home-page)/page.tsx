@@ -15,10 +15,12 @@ const HomePage = async () => {
     <div className="flex flex-col">
       {!user && <LoginPromoBanner />}
       {user && <LoginSuccessBanner />}
-      <div className="flex flex-col gap-4 mt-12">
+      <div className="flex flex-col gap-4 mt-4 md:mt-12">
         <div className="flex flex-col">
-          <h3 className="text-2xl font-extrabold text-foreground/80">Váš asistent pro bezchybné psaní</h3>
-          <p className="text-muted-foreground">
+          <h3 className="text-xl md:text-2xl font-extrabold text-foreground/80 text-pretty">
+            Váš asistent pro bezchybné psaní
+          </h3>
+          <p className="text-muted-foreground text-pretty text-sm md:text-md">
             Zvýrazněte a opravte chyby svých emailech, příspěvcích a dalším obsahu. Vyzkoušejte také AI funkce jako je
             chytrá kontrola čárek.
           </p>

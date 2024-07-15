@@ -28,8 +28,8 @@ const TopBar = ({ sideBarOpen, setSideBarOpen }: TopBarProps) => {
   };
 
   return (
-    <div className="flex items-center justify-between py-2 px-2 bg-card border rounded-lg ">
-      <div className="flex items-center gap-2">
+    <div className="flex items-center justify-between flex-wrap py-2 px-2 bg-card border rounded-lg ">
+      <div className="flex items-center gap-2 flex-wrap">
         <TopBarPill>
           {dictionaryReady ? (
             <IconDiscountCheckFilled size={18} className="text-emerald-500 flex-shrink-0" />
@@ -38,7 +38,9 @@ const TopBar = ({ sideBarOpen, setSideBarOpen }: TopBarProps) => {
               <LoadingSpinner size={18} />
             </div>
           )}
-          <p className="text-sm">{dictionaryReady ? "Korektor slov je aktivní!" : "Korektor slov se načítá..."}</p>
+          <p className="text-xs md:text-sm">
+            {dictionaryReady ? "Korektor slov je aktivní!" : "Korektor slov se načítá..."}
+          </p>
         </TopBarPill>
         <DocumentMetrics />
       </div>
@@ -81,7 +83,9 @@ const DocumentMetrics = () => {
 
 const TopBarPill = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="h-8 flex gap-2 items-center bg-background rounded-md border py-1 px-3 text-sm">{children}</div>
+    <div className="h-8 flex gap-2 items-center bg-background rounded-md border py-1 px-3 text-xs md:text-sm text-nowrap">
+      {children}
+    </div>
   );
 };
 
