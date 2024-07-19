@@ -1,6 +1,6 @@
 import { handleErrorResponse } from "@/utils/api/handleErrorResponse";
 import { createServerClient } from "@/utils/supabase/server";
-import { fetchOpenAi } from "@/app/api/sentence-analysis/fetchOpenAi";
+import { fetchOpenAi } from "@/app/api/smart-correction/fetchOpenAi";
 
 export async function POST(request: Request) {
   const supabase = createServerClient();
@@ -17,15 +17,15 @@ export async function POST(request: Request) {
   }
 
   // Attempt to parse the request JSON
-  const { editorValue } = await request.json();
-  if (!editorValue) {
-    return handleErrorResponse(null, "Editor value is missing", 400);
+  const { text } = await request.json();
+  if (!text) {
+    return handleErrorResponse(null, "Text is missing", 400);
   }
 
   // Call OpenAI
-  const openAiRes = await fetchOpenAi(editorValue);
+  const openAiRes = await fetchOpenAi(text);
 
-  if (!openAiRes.suggestions) {
+  if (!openAiRes.correctedText) {
     return Response.json({ error: "AI did not generate any content" }, { status: 502 });
   }
 
@@ -52,8 +52,13 @@ export async function POST(request: Request) {
 
   // Parse generated content and return it
   try {
-    const json = JSON.parse(openAiRes.suggestions);
-    return Response.json(json, { status: 200 });
+    return Response.json(
+      {
+        correctedText: JSON.parse(openAiRes.correctedText).text,
+        originalText: text,
+      },
+      { status: 200 }
+    );
   } catch (parseError) {
     return handleErrorResponse(parseError, "Error parsing generated content", 500);
   }

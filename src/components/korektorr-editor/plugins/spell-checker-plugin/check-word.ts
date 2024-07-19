@@ -24,6 +24,14 @@ export const checkWord = async (
     };
   }
 
+  // If word is only one character, don't check it
+  if (word.length <= 1) {
+    return {
+      editor,
+      transformedNode: false,
+    };
+  }
+
   // If word is in the dictionary, don't check it
   if (findInDictionary(word, dictionary)) {
     // If it also has an error mark, remove it

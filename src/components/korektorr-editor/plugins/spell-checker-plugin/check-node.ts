@@ -40,6 +40,13 @@ export const checkNode = async (
     };
   }
 
+  if (node.aiSet) {
+    return {
+      editor,
+      transformedNode: false,
+    };
+  }
+
   for (const part of parts) {
     const partStart = text.indexOf(part);
     const partEnd = partStart + part.length;
@@ -86,14 +93,14 @@ export const checkNode = async (
         };
       }
     }
-    // If part is unknown such as a punctuation mark, it should not have an error
-    else if (checkHasError(node)) {
-      const newEditor = resetNodeError(editor, range);
-      return {
-        editor: newEditor,
-        transformedNode: true,
-      };
-    }
+    // // If part is unknown such as a punctuation mark, it should not have an error
+    // else if (checkHasError(node)) {
+    //   const newEditor = resetNodeError(editor, range);
+    //   return {
+    //     editor: newEditor,
+    //     transformedNode: true,
+    //   };
+    // }
   }
 
   return {

@@ -36,7 +36,7 @@ const EditorSection = ({ user }: EditorSectionProps) => {
   return (
     <div className="flex gap-2">
       <div className="flex flex-col gap-2 flex-grow">
-        <TopBar sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen} />
+        <TopBar sideBarOpen={sideBarOpen} setSideBarOpen={setSideBarOpen} dictionary={dictionary} />
         <KorektorrEditorComponent dictionary={dictionary} />
       </div>
       {sideBarOpen && <SideBar setSideBarOpen={setSideBarOpen} user={user} />}

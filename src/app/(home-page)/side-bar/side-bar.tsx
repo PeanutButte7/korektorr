@@ -1,4 +1,4 @@
-import { IconConfetti, IconLayoutSidebarRightCollapseFilled } from "@tabler/icons-react";
+import { IconConfetti, IconLayoutSidebarRightCollapseFilled, IconSparkles } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
 import { useKorektorr } from "@/app/korektorr-context";
 import SideBarCard from "@/app/(home-page)/side-bar/side-bar-card";
@@ -13,10 +13,12 @@ interface SideBarProps {
 }
 
 const SideBar = ({ setSideBarOpen, user }: SideBarProps) => {
-  const { errorLeafs } = useKorektorr();
+  const { errorLeafs, aiAnalyzing } = useKorektorr();
   const { dictionaryReady } = useWorker();
 
-  const transitions = useTransition(errorLeafs, {
+  const cleanErrorLeafs = errorLeafs.filter(({ path }) => path !== undefined);
+
+  const transitions = useTransition(cleanErrorLeafs, {
     keys: (item) => JSON.stringify(item.path),
     from: { opacity: 0, transform: "translate3d(0, -40px, 0)" },
     enter: { opacity: 1, transform: "translate3d(0, 0, 0)" },
@@ -41,6 +43,15 @@ const SideBar = ({ setSideBarOpen, user }: SideBarProps) => {
         <div className="flex flex-col gap-2 justify-center items-center self-center text-blue-400 h-3/4">
           <LoadingSpinner className="h-9 w-9 text-blue-400" />
           <p className="font-bold">Korektor slov se načítá...</p>
+        </div>
+      ) : aiAnalyzing ? (
+        <div className="flex flex-col gap-2 justify-center items-center self-center text-blue-400 h-3/4 animate-pulse">
+          <IconSparkles className="h-9 w-9" />
+          <p className="font-bold">
+            Probíhá chytrá
+            <br />
+            kontrola textu...
+          </p>
         </div>
       ) : errorLeafs.length ? (
         transitions((style, item, _, key) => (

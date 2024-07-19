@@ -22,6 +22,7 @@ const Editor = React.forwardRef<HTMLDivElement, PlateContentProps>(
             const dotError = !!typedLeaf.errors?.dotError;
             const spellError = !!typedLeaf.errors?.spellError;
             const quotationError = !!typedLeaf.errors?.quotationError;
+            const punctuationError = !!typedLeaf.errors?.punctuationError;
             const bold = !!typedLeaf.bold;
             const italic = !!typedLeaf.italic;
             const underline = !!typedLeaf.underline;
@@ -34,6 +35,7 @@ const Editor = React.forwardRef<HTMLDivElement, PlateContentProps>(
                   dotError && "underline decoration-2 decoration-error-dot",
                   quotationError && "underline decoration-2 decoration-error-quotation",
                   spellError && "underline decoration-2 decoration-error-spell",
+                  punctuationError && "underline decoration-2 decoration-error-punctuation",
                   bold && "font-bold",
                   italic && "italic",
                   underline && "underline",

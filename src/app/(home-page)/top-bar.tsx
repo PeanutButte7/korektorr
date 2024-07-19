@@ -14,17 +14,22 @@ import { useEditorRef } from "@udecode/plate-common";
 import { KorektorrEditor, KorektorrValue } from "@/components/korektorr-editor/korektorr-editor-component";
 import { ReactNode, useEffect } from "react";
 import { Separator } from "@/components/ui/separator";
+import { useSmartCorrection } from "@/components/korektorr-editor/utils/use-smart-correction";
+import { DictionaryWord } from "@/app/slovnik/queries";
 
 interface TopBarProps {
   sideBarOpen: boolean;
   setSideBarOpen: (open: boolean) => void;
+  dictionary: DictionaryWord[];
 }
 
-const TopBar = ({ sideBarOpen, setSideBarOpen }: TopBarProps) => {
+const TopBar = ({ sideBarOpen, setSideBarOpen, dictionary }: TopBarProps) => {
+  const editor = useEditorRef<KorektorrValue, KorektorrEditor>();
   const { dictionaryReady } = useWorker();
+  const mutation = useSmartCorrection(editor, dictionary);
 
   const smartCorrect = () => {
-    setSideBarOpen(true);
+    mutation.mutate(editor);
   };
 
   return (
@@ -44,17 +49,17 @@ const TopBar = ({ sideBarOpen, setSideBarOpen }: TopBarProps) => {
         </TopBarPill>
         <DocumentMetrics />
       </div>
-      {!sideBarOpen && (
-        <div className="flex gap-2">
-          {/*<Button onClick={smartCorrect} size="sm" variant="fancy">*/}
-          {/*  <IconSparkles />*/}
-          {/*  Chytrá kontrola*/}
-          {/*</Button>*/}
+      <div className="flex gap-2">
+        <Button onClick={smartCorrect} loading={mutation.isPending} size="sm" variant="fancy">
+          <IconSparkles />
+          Chytrá kontrola
+        </Button>
+        {!sideBarOpen && (
           <Button onClick={() => setSideBarOpen(true)} size="icon-sm" variant="outline">
             <IconLayoutSidebarRightExpandFilled />
           </Button>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

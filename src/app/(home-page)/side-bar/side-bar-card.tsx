@@ -30,8 +30,7 @@ const SideBarCard = ({ leaf, user }: SideBarCardProps) => {
   const editor = useEditorRef<KorektorrValue, KorektorrEditor>();
   const insertMutation = useInsertDictionaryWord(supabase);
 
-  let type: "spellError" | "dotError" | "quotationError" | null = null;
-  if (!leaf.path) return null;
+  let type: "spellError" | "dotError" | "quotationError" | "punctuationError" | null = null;
 
   if (leaf.errors?.spellError) {
     type = "spellError";
@@ -39,25 +38,37 @@ const SideBarCard = ({ leaf, user }: SideBarCardProps) => {
     type = "dotError";
   } else if (leaf.errors?.quotationError) {
     type = "quotationError";
+  } else if (leaf.errors?.punctuationError) {
+    type = "punctuationError";
   }
 
   const labelText =
-    type === "spellError" ? "Hrubá chyba" : type === "quotationError" ? "Chyba v úvozovkách" : "Chyba v tečce";
+    type === "spellError"
+      ? "Hrubá chyba"
+      : type === "quotationError"
+        ? "Chyba v úvozovkách"
+        : type === "punctuationError"
+          ? "Chyba v čárce"
+          : "Chyba v tečce";
 
   const prioritySuggestion =
     type === "spellError"
       ? leaf.errors?.spellError?.prioritySuggestion
-      : leaf.errors?.dotError?.prioritySuggestion || leaf.errors?.quotationError?.prioritySuggestion;
+      : leaf.errors?.dotError?.prioritySuggestion ||
+        leaf.errors?.quotationError?.prioritySuggestion ||
+        leaf.errors?.punctuationError?.prioritySuggestion;
 
   const suggestions =
     type === "spellError"
       ? leaf.errors?.spellError?.suggestions
-      : leaf.errors?.dotError?.suggestions || leaf.errors?.quotationError?.suggestions;
+      : leaf.errors?.dotError?.suggestions ||
+        leaf.errors?.quotationError?.suggestions ||
+        leaf.errors?.punctuationError?.suggestions;
 
   const fixError = (suggestion: string) => {
     if (!Editor.isEditor(editor)) return;
 
-    if (type === "spellError" || type === "dotError" || type === "quotationError") {
+    if (type === "spellError" || type === "dotError" || type === "quotationError" || type === "punctuationError") {
       if (!leaf.path) throw new Error("No leaf path");
 
       // Set new text
@@ -130,7 +141,8 @@ const SideBarCard = ({ leaf, user }: SideBarCardProps) => {
         "w-full font-paragraph text-sm flex flex-col gap-2 p-3 bg-card rounded-md shadow-pop transition-all border",
         type === "spellError" && "border-error-spell/40",
         type === "dotError" && "border-error-dot/40",
-        type === "quotationError" && "border-error-quotation/40"
+        type === "quotationError" && "border-error-quotation/40",
+        type === "punctuationError" && "border-error-punctuation/40"
       )}
     >
       <div className="flex justify-between items-center">
@@ -158,7 +170,8 @@ const SideBarCard = ({ leaf, user }: SideBarCardProps) => {
             "underline decoration-2",
             type === "spellError" && "decoration-error-spell",
             type === "dotError" && "decoration-error-dot",
-            type === "quotationError" && "decoration-error-quotation"
+            type === "quotationError" && "decoration-error-quotation",
+            type === "punctuationError" && "decoration-error-punctuation"
           )}
         >
           {leaf.text}
@@ -170,7 +183,8 @@ const SideBarCard = ({ leaf, user }: SideBarCardProps) => {
                 "h-5 w-5",
                 type === "spellError" && "text-error-spell",
                 type === "dotError" && "text-error-dot",
-                type === "quotationError" && "text-error-quotation"
+                type === "quotationError" && "text-error-quotation",
+                type === "punctuationError" && "text-error-punctuation"
               )}
             />
             <button
@@ -182,7 +196,7 @@ const SideBarCard = ({ leaf, user }: SideBarCardProps) => {
           </>
         )}
       </div>
-      {type !== "quotationError" && (
+      {suggestions && (
         <>
           <Separator />
           <div className="flex gap-1 items-center flex-wrap w-full">

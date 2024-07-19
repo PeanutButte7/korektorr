@@ -54,6 +54,7 @@ const config = {
           spell: colors.pink[500],
           dot: colors.violet[500],
           quotation: colors.violet[500],
+          punctuation: colors.amber[400],
         },
       },
       boxShadow: {

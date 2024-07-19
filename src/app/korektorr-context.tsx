@@ -13,6 +13,8 @@ export type SetDocumentMetrics = Dispatch<SetStateAction<DocumentMetrics | undef
 interface KorektorrContextType {
   debug: boolean;
   setDebug: Dispatch<SetStateAction<boolean>>;
+  aiAnalyzing: boolean;
+  setAiAnalyzing: Dispatch<SetStateAction<boolean>>;
   errorLeafs: KorektorrRichText[];
   setErrorLeafs: SetErrorLeafs;
   setDocumentMetrics: SetDocumentMetrics;
@@ -23,13 +25,23 @@ const KorektorrContext = createContext<KorektorrContextType | null>(null);
 
 export const KorektorrProvider = ({ children }: { children: ReactNode }) => {
   const env = process.env.NODE_ENV;
+  const [aiAnalyzing, setAiAnalyzing] = useState(true);
   const [debug, setDebug] = useState(env === "development");
   const [errorLeafs, setErrorLeafs] = useState<KorektorrRichText[]>([]);
   const [documentMetrics, setDocumentMetrics] = useState<DocumentMetrics | undefined>(undefined);
 
   return (
     <KorektorrContext.Provider
-      value={{ debug, setDebug, errorLeafs, setErrorLeafs, documentMetrics, setDocumentMetrics }}
+      value={{
+        debug,
+        setDebug,
+        aiAnalyzing,
+        setAiAnalyzing,
+        errorLeafs,
+        setErrorLeafs,
+        documentMetrics,
+        setDocumentMetrics,
+      }}
     >
       {children}
     </KorektorrContext.Provider>

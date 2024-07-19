@@ -42,14 +42,18 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, loading = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
-    if (loading)
-      return (
-        <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} disabled={true}>
-          <LoadingSpinner size={18} className="text-white" />
-        </Comp>
-      );
 
-    return <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />;
+    return (
+      <Comp
+        className={cn(loading && "!text-transparent", buttonVariants({ variant, size, className }))}
+        ref={ref}
+        disabled={loading || props.disabled}
+        {...props}
+      >
+        <LoadingSpinner size={18} className={cn("absolute text-white", !loading && "hidden")} />
+        {props.children}
+      </Comp>
+    );
   }
 );
 Button.displayName = "Button";

@@ -18,7 +18,7 @@ import { countCharactersWords } from "@/components/korektorr-editor/plugins/docu
 import useDocumentMetricsPlugin from "@/components/korektorr-editor/plugins/document-metrics-plugin/document-metrics-plugin";
 import { DictionaryWord } from "@/app/slovnik/queries";
 
-export type ErrorType = "dotError" | "spellError" | "quotationError"; // Add more error types as needed
+export type ErrorType = "dotError" | "spellError" | "quotationError" | "punctuationError"; // Add more error types as needed
 
 export type ErrorDetails = {
   suggestions?: string[]; // For spell and other suggestions
@@ -29,6 +29,7 @@ export type KorektorrRichText = TDescendant & {
   text: string;
   path?: Path;
   ignoreQuoteDot?: boolean;
+  aiSet?: boolean;
   errors?: {
     [key in ErrorType]?: ErrorDetails;
   };
@@ -46,7 +47,7 @@ export type KorektorrValue = KorektorrRootBlock[];
 export type KorektorrEditor = PlateEditor<KorektorrValue>;
 
 const KorektorrEditorComponent = ({ dictionary }: { dictionary: DictionaryWord[] }) => {
-  const { setErrorLeafs, setDocumentMetrics, debug } = useKorektorr();
+  const { setErrorLeafs, setDocumentMetrics, debug, aiAnalyzing } = useKorektorr();
   const { worker, dictionaryReady } = useWorker();
   const editor = useEditorRef<KorektorrValue, KorektorrEditor>();
 
@@ -81,6 +82,7 @@ const KorektorrEditorComponent = ({ dictionary }: { dictionary: DictionaryWord[]
       {/*  {getPunctuationErrors.isPending ? "Analyzing..." : "Analyze sentences"}*/}
       {/*</Button>*/}
       <Plate
+        readOnly={aiAnalyzing}
         normalizeInitialValue
         initialValue={initialLocalStorageValue ? JSON.parse(initialLocalStorageValue) : undefined}
         onChange={(newValue) => {
