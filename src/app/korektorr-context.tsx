@@ -25,7 +25,7 @@ const KorektorrContext = createContext<KorektorrContextType | null>(null);
 
 export const KorektorrProvider = ({ children }: { children: ReactNode }) => {
   const env = process.env.NODE_ENV;
-  const [aiAnalyzing, setAiAnalyzing] = useState(true);
+  const [aiAnalyzing, setAiAnalyzing] = useState(false);
   const [debug, setDebug] = useState(env === "development");
   const [errorLeafs, setErrorLeafs] = useState<KorektorrRichText[]>([]);
   const [documentMetrics, setDocumentMetrics] = useState<DocumentMetrics | undefined>(undefined);

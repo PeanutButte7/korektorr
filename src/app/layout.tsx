@@ -7,6 +7,7 @@ import { cn } from "@udecode/cn";
 import Navbar from "@/components/navbar/navbar";
 import localFont from "next/font/local";
 import Footer from "@/components/footer/footer";
+import { CookieConsent } from "@/components/ui/cookie-consent";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -53,6 +54,7 @@ export default function RootLayout({
             <main className="container mx-auto gap-2 flex-grow xl:px-44 lg:px-16 flex flex-col mt-4">{children}</main>
             <Footer />
           </div>
+          <CookieConsent />
         </Providers>
       </body>
     </html>
