@@ -38,6 +38,35 @@ export type Database = {
           },
         ]
       }
+      profiles: {
+        Row: {
+          customer_id: number | null
+          id: string
+          is_plus: boolean
+          updated_at: string | null
+        }
+        Insert: {
+          customer_id?: number | null
+          id: string
+          is_plus?: boolean
+          updated_at?: string | null
+        }
+        Update: {
+          customer_id?: number | null
+          id?: string
+          is_plus?: boolean
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "profiles_id_fkey"
+            columns: ["id"]
+            isOneToOne: true
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       sentence_check_requests: {
         Row: {
           completion_tokens: number

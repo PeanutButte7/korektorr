@@ -1,25 +1,24 @@
-import { handleErrorResponse } from "@/utils/api/handleErrorResponse";
 import { createServerClient } from "@/utils/supabase/server";
 import { fetchOpenAi } from "@/app/api/smart-correction/fetchOpenAi";
 
-export async function POST(request: Request) {
+export async function POST(req: Request) {
   const supabase = createServerClient();
 
   // Attempt to retrieve the user
   const { data: userData, error: userError } = await supabase.auth.getUser();
   if (userError) {
-    return handleErrorResponse(userError, "Error retrieving user data", 500);
+    return Response.json({ error: "Error retrieving user data" }, { status: 500 });
   }
 
   const user = userData?.user;
   if (!user) {
-    return handleErrorResponse(null, "User is not logged in", 401);
+    return Response.json({ error: "User is not logged in" }, { status: 401 });
   }
 
   // Attempt to parse the request JSON
-  const { text } = await request.json();
+  const { text } = await req.json();
   if (!text) {
-    return handleErrorResponse(null, "Text is missing", 400);
+    return Response.json({ error: "Text is missing" }, { status: 400 });
   }
 
   // Call OpenAI
@@ -60,6 +59,6 @@ export async function POST(request: Request) {
       { status: 200 }
     );
   } catch (parseError) {
-    return handleErrorResponse(parseError, "Error parsing generated content", 500);
+    return Response.json({ error: "Error parsing generated content" }, { status: 500 });
   }
 }

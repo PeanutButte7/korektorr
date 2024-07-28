@@ -12,10 +12,12 @@ import { Button } from "@/components/ui/button";
 import { useKorektorr } from "@/app/korektorr-context";
 import { useEditorRef } from "@udecode/plate-common";
 import { KorektorrEditor, KorektorrValue } from "@/components/korektorr-editor/korektorr-editor-component";
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import { Separator } from "@/components/ui/separator";
 import { useSmartCorrection } from "@/components/korektorr-editor/utils/use-smart-correction";
 import { DictionaryWord } from "@/app/slovnik/queries";
+import { createBrowserClient } from "@/utils/supabase/browser";
+import { useGetProfile } from "@/utils/queries";
 
 interface TopBarProps {
   sideBarOpen: boolean;
@@ -24,9 +26,12 @@ interface TopBarProps {
 }
 
 const TopBar = ({ sideBarOpen, setSideBarOpen, dictionary }: TopBarProps) => {
-  const editor = useEditorRef<KorektorrValue, KorektorrEditor>();
+  const supabase = createBrowserClient();
   const { dictionaryReady } = useWorker();
+  const editor = useEditorRef<KorektorrValue, KorektorrEditor>();
+
   const mutation = useSmartCorrection(editor, dictionary);
+  const { data, isSuccess } = useGetProfile(supabase);
 
   const smartCorrect = () => {
     mutation.mutate(editor);
@@ -50,10 +55,18 @@ const TopBar = ({ sideBarOpen, setSideBarOpen, dictionary }: TopBarProps) => {
         <DocumentMetrics />
       </div>
       <div className="flex gap-2">
-        <Button onClick={smartCorrect} loading={mutation.isPending} size="sm" variant="fancy">
-          <IconSparkles />
-          Chytrá kontrola
-        </Button>
+        {isSuccess &&
+          (data.isPlus ? (
+            <Button onClick={smartCorrect} loading={mutation.isPending} size="sm" variant="fancy">
+              <IconSparkles />
+              Chytrá kontrola
+            </Button>
+          ) : (
+            <Button onClick={() => (window.location.href = "/predplatne")} size="sm" variant="fancy">
+              <IconSparkles />
+              Koupit chytrou kontrolu
+            </Button>
+          ))}
         {!sideBarOpen && (
           <Button onClick={() => setSideBarOpen(true)} size="icon-sm" variant="outline">
             <IconLayoutSidebarRightExpandFilled />

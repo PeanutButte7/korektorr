@@ -1,6 +1,6 @@
 import { createServerClient } from "@/utils/supabase/server";
 import AvatarDropdown from "@/components/navbar/avatar-dropdown";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import { IconBook2 } from "@tabler/icons-react";
 
@@ -20,7 +20,7 @@ const Navbar = async () => {
               Slovník
               <IconBook2 />
             </Link>
-            <AvatarDropdown email={data.user?.email} />
+            <AvatarDropdown />
           </div>
         ) : (
           <Link href={"/auth/login"} className={buttonVariants({ variant: "outline" })}>

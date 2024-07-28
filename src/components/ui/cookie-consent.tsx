@@ -72,7 +72,8 @@ const CookieConsent = ({ onAcceptCallback = () => {}, onDeclineCallback = () => 
               <br />
               <br />
               <span>
-                Kliknutím na"<span className="font-medium opacity-80">Přijmout</span>", souhlasíte s používáním cookies.
+                Kliknutím na `&quot;`<span className="font-medium opacity-80">Přijmout</span>`&quot;`, souhlasíte s
+                používáním cookies.
               </span>
             </p>
           </div>
